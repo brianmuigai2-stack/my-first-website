@@ -1,5 +1,5 @@
 body {
-    background: blue;
+    background: #e0e5ec;
 }
 .BMM {
     box-shadow: 10px 10px 20px #a3b1c6, -10px -10px 20px #ffffff;
@@ -38,18 +38,15 @@ body {
     display: flex;
     flex-direction: column;
     width: 500px;
-    display: flex;
     justify-content: center;
-}
-.contact-form, .email-form {
     
 }
 .feedback {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 500px;
     justify-content: center;
-    width: 300px;
+    width: 500px;
 }
 .profile {
     width:300px;
@@ -61,4 +58,9 @@ body {
     font-family: Arial, sans-serif;
     font-size: xx-large;
     margin: 20px;
+}
+.message {
+    font-size: large;
+    color: #333;
+    line-height: 1.6;
 }
