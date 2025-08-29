@@ -37,7 +37,7 @@ body {
 .email-form {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 500px;
     display: flex;
     justify-content: center;
 }
@@ -56,4 +56,9 @@ body {
     display: grid;
     place-items: center;
     border-radius: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    font-size: xx-large;
+    margin: 20px;
 }
