@@ -64,3 +64,10 @@ body {
     color: #333;
     line-height: 1.6;
 }
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: lightblue;
+    border-top: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
