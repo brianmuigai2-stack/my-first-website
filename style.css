@@ -71,3 +71,37 @@ footer{
     border-top: 1px solid #eee;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+.xx {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    color: white;
+    font-family: "Geologic", sans-serif;
+    width: 500px;
+    height: 500px;
+}
+h5 {
+    font-size: 3rem;
+}
+h5 > span {
+    display: inline-block;
+    position: relative;
+    height: 1.25em;
+    overflow: hidden;
+    vertical-align: bottom;
+    color: blue;
+}
+h5 > span > span {
+    display: block;
+    animation: animateWords 5s infinite ease;
+}
+@keyframes animateWords {
+    10%{transform: translateY(10%);}
+    25%{transform: translateY(-100%);}
+    50%{transform: translateY(-200%);}
+    100%{transform: translateY(-200%);}
+}
