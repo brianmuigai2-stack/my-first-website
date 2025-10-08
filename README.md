@@ -1,3 +1,11 @@
+# 🌐 Brian Muigai — Developer Portfolio
+
+> 🚀 A clean, modern, and responsive portfolio website showcasing my projects, skills, and contact information.  
+> Built with **HTML**, **CSS**, and **JavaScript** — simple, fast, and easy to deploy anywhere!
+
+---
+
+
 ## 📁 Project Structure
 
 | File | Description |
@@ -42,17 +50,11 @@
 ### 1️⃣ Clone the repository
 git clone https://github.com/brianmuigai2-stack/portfolio.git
 cd portfolio
-2️⃣ Run locally
-You can use any local web server, for example:
 
-bash
-Copy code
-# Python 3
-python -m http.server 8000
 # Then open your browser at http://localhost:8000
 Or use VS Code Live Server extension.
 
-🚀 Deployment Options
+## 🚀 Deployment Options
 🌍 GitHub Pages
 Push your repo to GitHub.
 
@@ -63,31 +65,30 @@ Choose branch: main and folder: /root.
 Save — your site will be live at:
 👉 https://<your-username>.github.io/<repo-name>/
 
-☁️ Netlify / Vercel
+### ☁️ Netlify / Vercel
 Drag & drop the project folder into Netlify.
 
 Or connect your GitHub repo to Vercel — deploys automatically.
 
-📬 Setting up EmailJS (for the contact form)
+### 📬 Setting up EmailJS (for the contact form)
 Go to EmailJS.com and create an account.
 
 Create a new email service (like Gmail).
 
 Add a template with variables:
 
-Copy code
 from_name, user_email, message
 Copy your User ID, Service ID, and Template ID.
 
 In your script.js, replace:
 
 js
-Copy code
+
 emailjs.init("YOUR_USER_ID");
 emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
 💡 Test on a live URL — EmailJS won’t work on local file://.
 
-🧩 Customization Checklist
+### 🧩 Customization Checklist
  Replace profile.jpg with your photo
 
  Update name, title, and description in index.html
@@ -102,7 +103,7 @@ emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
 
  Optimize images (use .webp format for better performance)
 
-💡 Tips & Tricks
+### 💡 Tips & Tricks
 Use loading="lazy" for large images
 
 Test Lighthouse performance in Chrome DevTools
@@ -113,37 +114,37 @@ Compress your CSS & JS for faster loading
 
 Use alt attributes for accessibility
 
-🐛 Troubleshooting
-⚠️ Icons not showing?
+## 🐛 Troubleshooting
+### ⚠️ Icons not showing?
 Check your folder paths — use a local server instead of opening via file://.
 
-📨 Email form not working?
+### 📨 Email form not working?
 Test on a live domain — EmailJS blocks local origins.
 
-🐙 GitHub repos not loading?
+### 🐙 GitHub repos not loading?
 You may have hit a GitHub API rate limit (wait a few minutes or authenticate if needed).
 
-🧭 Credits
+## 🧭 Credits
 🧩 Icons — Simple Icons / inline SVG
 
-💌 Contact form — EmailJS
+## 💌 Contact form — EmailJS
 
-🐙 GitHub stats — Vercel’s GitHub Readme Stats
+## 🐙 GitHub stats — Vercel’s GitHub Readme Stats
 
-💻 Built by Brian Muigai
+## 💻 Built by Brian Muigai
 
-📜 License
+## 📜 License
 This project is licensed under the MIT License — feel free to use, modify, and share!
 Add a LICENSE file with the MIT text to your repository.
 
-💬 Connect with Me
-🌍 Portfolio: brianmuigai2-stack.github.io/portfolio
-💼 LinkedIn: linkedin.com/in/brianmuigai
-🐙 GitHub: github.com/brianmuigai2-stack
-💬 WhatsApp: +254 XXXXXXXXX
-📧 Email: brianmuigai@gmail.com
+## 💬 Connect with Me
+### 🌍 Portfolio: brianmuigai2-stack.github.io/portfolio
+### 💼 LinkedIn: linkedin.com/in/brianmuigai
+### 🐙 GitHub: github.com/brianmuigai2-stack
+### 💬 WhatsApp: +254 XXXXXXXXX
+### 📧 Email: brianmuigai@gmail.com
 
-⭐ If you like this portfolio, give it a star on GitHub! ⭐
+## ⭐ If you like this portfolio, give it a star on GitHub! ⭐
 
-Copy code
+
 
