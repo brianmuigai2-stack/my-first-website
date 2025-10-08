@@ -4,12 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brian Muigai — Portfolio</title>
+
+  <!-- SEO / Social preview -->
+  <meta name="description" content="Brian Muigai — Software Engineering student. I build modern web apps and open-source tools.">
+  <meta property="og:title" content="Brian Muigai — Software Engineer">
+  <meta property="og:description" content="I build modern web applications and tools.">
+  <meta property="og:image" content="og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="style.css" />
+  <!-- EmailJS (for contact form sending) -->
+  <script defer src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
 </head>
 <body>
-  <nav class="nav">
+  <nav class="nav" role="navigation" aria-label="Main navigation">
     <a href="#home">Home</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
     <button id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙</button>
@@ -17,83 +29,124 @@
 
   <header id="home" class="hero">
     <h1>Hello, I'm <span class="highlight">Brian Muigai</span></h1>
-    <p>A 19-year-old Software Engineering student at Moringa School</p>
+    <p><span id="typed" aria-live="polite">Software Engineering student.</span></p>
+    <p class="hero-ctas">
+      <a href="#projects" class="cta-btn">See My Work →</a>
+      <a href="resume.pdf" download class="cta-outline">Download Resume</a>
+    </p>
 
     <div class="profile-wrap" aria-hidden="false">
-      <img class="profile" id="profile-img" src="profile.jpg" alt="Photo of Brian Muigai" />
+      <img class="profile" id="profile-img" src="profile.jpg" alt="Photo of Brian Muigai" loading="lazy" />
       <span class="glow-ring" aria-hidden="true"></span>
     </div>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I’m passionate about technology and enjoy learning new things.
-      In my free time, I work on personal projects and explore different
-      programming languages.
-    </p>
-  </section>
+  <main>
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About Me</h2>
+      <p>
+        I’m passionate about technology and enjoy learning new things.
+        I build web apps, explore new languages, and contribute to open-source.
+      </p>
+    </section>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Password Strength Checker</h3>
-        <a href="https://brianmuigai2-stack.github.io/week-two-code-challenge/">View Project</a>
+    <section id="skills" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill">
+          <div class="skill-head"><span>JavaScript</span><span>85%</span></div>
+          <div class="progress"><div class="bar" data-width="85" aria-hidden="true"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>HTML &amp; CSS</span><span>90%</span></div>
+          <div class="progress"><div class="bar" data-width="90" aria-hidden="true"></div></div>
+        </div>
+        <div class="skill">
+          <div class="skill-head"><span>React</span><span>70%</span></div>
+          <div class="progress"><div class="bar" data-width="70" aria-hidden="true"></div></div>
+        </div>
       </div>
-      <div class="project-card">
-        <h3>Typing Speed Test</h3>
-        <a href="#">Coming Soon</a>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+
+      <div class="project-controls" role="toolbar" aria-label="Project filters">
+        <button data-filter="all" class="filter-btn active">All</button>
+        <button data-filter="web" class="filter-btn">Web</button>
+        <button data-filter="ui" class="filter-btn">UI</button>
+        <button data-filter="tools" class="filter-btn">Tools</button>
       </div>
-    </div>
-  </section>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact">
-    <h2>Contact Me</h2>
+      <div class="project-grid" aria-live="polite">
+        <div class="project-card" data-tags="web tools">
+          <img src="projects/pw-checker-thumb.jpg" alt="Password Checker screenshot" loading="lazy" />
+          <div class="project-overlay">
+            <h3>Password Strength Checker</h3>
+            <p>Vanilla JS tool to help users craft secure passwords.</p>
+            <a href="https://brianmuigai2-stack.github.io/week-two-code-challenge/" target="_blank" rel="noopener noreferrer">View</a>
+          </div>
+        </div>
 
-    <div class="contact-info">
-      <p><strong>Email:</strong> <a href="mailto:brian11613bmw@gmail.com">brian11613bmw@gmail.com</a></p>
-      <p><strong>Phone:</strong> <a href="tel:+254707528414">+254 707528414</a></p>
+        <div class="project-card" data-tags="web ui">
+          <img src="projects/typing-thumb.jpg" alt="Typing Speed Test screenshot" loading="lazy" />
+          <div class="project-overlay">
+            <h3>Typing Speed Test</h3>
+            <p>Interactive typing test with fixed timer and stats.</p>
+            <a href="#" rel="noopener noreferrer">Coming Soon</a>
+          </div>
+        </div>
+      </div>
 
-      <div class="social-links" aria-label="Social links">
-        <!-- GitHub -->
-        <a href="https://github.com/brianmuigai2-stack" target="_blank" aria-label="GitHub">
-          <svg width="30" height="30" viewBox="0 0 24 24" role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg">
-            <title>GitHub</title>
-            <path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1.1.1-.9.4-1.4.7-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z" />
-          </svg>
-        </a>
-      
-        <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/brian-muigai-197210382
+      <!-- GitHub quick stats + recent repos -->
+      <div class="github-widget" aria-hidden="false">
+        <img src="https://github-readme-stats.vercel.app/api?username=brianmuigai2-stack&show_icons=true" alt="GitHub stats" />
+        <div id="recent-repos" class="recent-repos" aria-live="polite"></div>
+      </div>
+    </section>
 
-        /" target="_blank" aria-label="LinkedIn">
-          <svg width="30" height="30" viewBox="0 0 24 24" role="img" aria-hidden="false" xmlns="http://www.w3.org/2000/svg">
-            <title>LinkedIn</title>
-            <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.6h.1c.5-.9 1.8-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.3c0-1.3 0-3-1.9-3-1.9 0-2.2 1.5-2.2 2.9V21h-4z"/>
-          </svg>
-        </a>
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact Me</h2>
 
-         <!-- whatsapp -->
-        <a href="https://wa.me/254707528414" target="_blank" aria-label="WhatsApp">
-            <svg width="30" height="30" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.52-.075-.149-.67-1.61-.916-2.21-.242-.579-.487-.5-.67-.51l-.572-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.198 2.096 3.2 5.08 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.647-.235-.374a9.86 9.86 0 01-1.514-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.82 9.82 0 012.893 6.994c-.003 5.45-4.437 9.884-9.883 9.884M20.52 3.48A11.815 11.815 0 0012.05 0C5.495 0 .16 5.334.157 11.888c0 2.096.547 4.14 1.588 5.94L0 24l6.305-1.654a11.84 11.84 0 005.713 1.454h.005c6.554 0 11.89-5.334 11.893-11.888a11.82 11.82 0 00-3.396-8.432" fill="currentColor"/>
-            </svg>
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:brian11613bmw@gmail.com">brian11613bmw@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+254707528414">+254 707528414</a></p>
+
+        <div class="social-links" aria-label="Social links">
+          <!-- GitHub -->
+          <a href="https://github.com/brianmuigai2-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><title>GitHub</title><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1.1.1-.9.4-1.4.7-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z" fill="currentColor"/></svg>
           </a>
-    
-      </div>
-      
-    </div>
 
-    <form id="contact-form">
-      <label>Email:</label>
-      <input type="email" id="email" required />
-      <label>Message:</label>
-      <textarea id="message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/brian-muigai-197210382/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><title>LinkedIn</title>
+              <path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.6h.1c.5-.9 1.8-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.3c0-1.3 0-3-1.9-3-1.9 0-2.2 1.5-2.2 2.9V21h-4z" fill="currentColor"/></svg>
+          </a>
+
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/254707528414" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false"><title>WhatsApp</title>
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.149-.67.15-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.15-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.654-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.297.298-.495.099-.198.05-.372-.025-.52-.075-.149-.67-1.61-.916-2.21-.242-.579-.487-.5-.67-.51l-.572-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.064 2.875 1.213 3.074.149.198 2.096 3.2 5.08 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.718 2.006-1.413.247-.694.247-1.289.173-1.413-.074-.124-.272-.198-.57-.347" fill="currentColor"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <form id="contact-form" class="contact-form" aria-label="Contact form">
+        <label for="user_email">Email:</label>
+        <input type="email" id="user_email" name="user_email" required />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <!-- this hidden field is useful for EmailJS templates -->
+        <input type="hidden" name="from_name" value="Portfolio visitor" />
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Brian Muigai</p>
