@@ -24,7 +24,7 @@
     transition: background 0.4s, color 0.4s;
   }
   
-  /* Navigation */
+  /* NAVIGATION */
   .nav {
     display: flex;
     justify-content: center;
@@ -60,7 +60,7 @@
     transform: rotate(25deg);
   }
   
-  /* Hero */
+  /* HERO */
   .hero {
     text-align: center;
     padding: 60px 20px;
@@ -75,61 +75,39 @@
     color: var(--accent);
   }
   
-  /* PROFILE WRAPPER + GLOW */
-  .profile-wrap{
+  /* PROFILE WRAPPER */
+  .profile-wrap {
     margin: 28px auto 8px;
-    width: 360px;     /* outer box — slightly larger to accommodate glow */
+    width: 360px;
     height: 360px;
     position: relative;
     display: grid;
     place-items: center;
-    pointer-events: none; /* keep img hover handling on img itself */
   }
   
-  /* the circular photo */
   .profile {
-    width: 340px;     /* image slightly smaller than wrap so glow shows */
-    height: 340px;
+    width: 340px;
+    height: 400px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 10px 25px var(--shadow);
     animation: fadeInScale 1.2s ease forwards, floaty 4s ease-in-out infinite;
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-    pointer-events: auto; /* allow hover on image */
-    display: block;
   }
   
-  /* glow ring sits behind the image */
-  .glow-ring{
+  .glow-ring {
     position: absolute;
     inset: 0;
-    display: block;
-    margin: auto;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     filter: blur(28px);
-    background: radial-gradient(circle at 30% 30%, var(--glow-color), rgba(0,0,0,0));
+    background: radial-gradient(circle at 30% 30%, var(--glow-color), transparent);
     opacity: 0.9;
     transform: scale(0.92);
-    transition: transform 0.6s ease, opacity 0.6s ease;
     z-index: -1;
-    pointer-events: none;
   }
   
-  /* hover: subtle intensify + rotate of image */
-  .profile:hover {
-    transform: scale(1.08) rotate(3deg);
-    box-shadow: 0 15px 35px var(--shadow);
-  }
-  .profile:hover + .glow-ring,
-  .profile-wrap:hover .glow-ring {
-    transform: scale(1);
-    opacity: 1;
-    filter: blur(30px) saturate(130%);
-  }
-  
-  /* Sections */
+  /* SECTIONS */
   section {
     max-width: 800px;
     margin: 50px auto;
@@ -137,10 +115,9 @@
     background: var(--card);
     border-radius: 15px;
     box-shadow: 0 4px 10px var(--shadow);
-    animation: fadeUp 0.8s ease-in;
   }
   
-  /* Projects */
+  /* PROJECTS */
   .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -168,7 +145,39 @@
     font-weight: bold;
   }
   
-  /* Contact */
+  /* CONTACT SECTION */
+  .contact-info {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin: 6px 0;
+  }
+  
+  .contact-info a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-links img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+  }
+  
+  .social-links img:hover {
+    transform: scale(1.2);
+  }
+  
+  /* FORM */
   form {
     display: flex;
     flex-direction: column;
@@ -194,7 +203,7 @@
     background: #0070e0;
   }
   
-  /* Footer */
+  /* FOOTER */
   footer {
     text-align: center;
     padding: 20px;
@@ -202,14 +211,9 @@
     box-shadow: 0 -2px 5px var(--shadow);
   }
   
-  /* Animations */
+  /* ANIMATIONS */
   @keyframes fadeIn {
     from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
   
@@ -223,13 +227,6 @@
     50% { transform: translateY(-8px); }
   }
   
-  /* Respect reduced motion */
-  @media (prefers-reduced-motion: reduce){
-    .profile { animation: none; transition: none; }
-    .glow-ring { transition: none; animation: none; filter: none; }
-  }
-  
-  /* Responsive: scale wrap down on small screens */
   @media (max-width:480px){
     .profile-wrap{ width: 220px; height: 220px; }
     .profile{ width: 200px; height: 200px; }
