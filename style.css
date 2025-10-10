@@ -104,3 +104,63 @@
     .project-overlay { padding:12px; }
   }
   
+  /* 💻 Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #f8fafc;
+  padding: 60px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  margin-bottom: 40px;
+}
+
+.hero-text {
+  flex: 1 1 300px;
+  max-width: 420px;
+  text-align: left;
+}
+
+.hero-text h1 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+  color: #38bdf8;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.hero-gif {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-gif img {
+  max-width: 100%;
+  width: 260px;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards ease-in-out;
+}
+
+.hero-gif img:hover {
+  transform: scale(1.05) rotate(1deg);
+  box-shadow: 0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
