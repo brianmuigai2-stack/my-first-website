@@ -3,147 +3,822 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brian Muigai — Portfolio</title>
-  <meta name="description" content="Brian Muigai — Software Engineering student. I build modern web apps and open-source tools.">
-  <meta property="og:title" content="Brian Muigai — Software Engineer">
-  <meta property="og:description" content="I build modern web applications and tools.">
-  <meta property="og:image" content="og-image.jpg">
+  <title>Brian Muigai — Full-Stack Developer Portfolio</title>
+  <meta name="description" content="Brian Muigai - Full-Stack Developer specializing in React, Node.js, and modern web technologies. Building innovative digital experiences with clean code and user-centered design.">
+  <meta name="keywords" content="Brian Muigai, web developer, React, Node.js, JavaScript, portfolio, full-stack developer, software engineer, Nairobi, Kenya">
+  <meta name="author" content="Brian Muigai">
+  <meta property="og:title" content="Brian Muigai — Full-Stack Developer">
+  <meta property="og:description" content="Building innovative digital experiences with React, Node.js, and modern web technologies">
+  <meta property="og:image" content="https://your-domain.com/og-image.jpg">
+  <meta property="og:url" content="https://your-domain.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Brian Muigai — Full-Stack Developer">
+  <meta name="twitter:description" content="Building innovative digital experiences with React, Node.js, and modern web technologies">
+  <meta name="twitter:image" content="https://your-domain.com/og-image.jpg">
+  <link rel="canonical" href="https://your-domain.com">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
   <script defer src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Brian Muigai",
+    "jobTitle": "Full-Stack Developer",
+    "url": "https://your-domain.com",
+    "sameAs": [
+      "https://github.com/brianmuigai2-stack",
+      "https://linkedin.com/in/brian-muigai-197210382/"
+    ],
+    "knowsAbout": ["React", "Node.js", "JavaScript", "Web Development", "Frontend", "Backend"],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Software Engineering Program"
+    }
+  }
+  </script>
 </head>
 <body>
+  <!-- Page Transition Overlay -->
+  <div class="page-transition-overlay">
+    <div class="transition-loader">
+      <div class="loader-logo">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+          <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="bold" fill="currentColor">BM</text>
+        </svg>
+      </div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <button id="theme-toggle" aria-pressed="false" aria-label="Toggle theme">🌙</button>
+    <div class="nav-container">
+      <div class="logo">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle class="logo-circle" cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="3"/>
+          <text class="logo-text" x="50" y="50" text-anchor="middle" dominant-baseline="middle" font-size="24" font-weight="bold" fill="currentColor">BM</text>
+          <path class="logo-path" d="M 20 50 Q 35 30, 50 50 T 80 50" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="nav-links">
+        <a href="#home" class="nav-link" data-section="home">Home</a>
+        <a href="#about" class="nav-link" data-section="about">About</a>
+        <a href="#services" class="nav-link" data-section="services">Services</a>
+        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#blog" class="nav-link" data-section="blog">Blog</a>
+        <a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a>
+        <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+      </div>
+      <div class="nav-controls">
+        <!-- Font Size Adjuster -->
+        <div class="font-size-controls">
+          <button class="font-btn" data-size="decrease" aria-label="Decrease font size">
+            <i class="fas fa-minus"></i>
+          </button>
+          <span class="font-size-label">A</span>
+          <button class="font-btn" data-size="increase" aria-label="Increase font size">
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="language-switcher">
+          <button class="lang-btn" aria-label="Select language">
+            <i class="fas fa-globe"></i>
+            <span class="lang-current">EN</span>
+          </button>
+          <div class="lang-menu">
+            <button class="lang-option active" data-lang="en">English</button>
+            <button class="lang-option" data-lang="es">Español</button>
+            <button class="lang-option" data-lang="fr">Français</button>
+            <button class="lang-option" data-lang="de">Deutsch</button>
+            <button class="lang-option" data-lang="zh">中文</button>
+          </div>
+        </div>
+
+        <!-- Theme Controls -->
+        <div class="theme-controls">
+          <div class="theme-dropdown">
+            <button class="theme-toggle-btn" aria-label="Select theme">
+              <i class="fas fa-palette"></i>
+              <span data-translate="themes">Themes</span>
+            </button>
+            <div class="theme-menu">
+              <button class="theme-option active" data-theme="light">
+                <i class="fas fa-sun"></i>
+                <span data-translate="light">Light</span>
+              </button>
+              <button class="theme-option" data-theme="dark">
+                <i class="fas fa-moon"></i>
+                <span data-translate="dark">Dark</span>
+              </button>
+              <button class="theme-option" data-theme="ocean">
+                <i class="fas fa-water"></i>
+                <span data-translate="ocean">Ocean</span>
+              </button>
+              <button class="theme-option" data-theme="forest">
+                <i class="fas fa-tree"></i>
+                <span data-translate="forest">Forest</span>
+              </button>
+              <button class="theme-option" data-theme="sunset">
+                <i class="fas fa-cloud-sun"></i>
+                <span data-translate="sunset">Sunset</span>
+              </button>
+              <button class="theme-option" data-theme="galaxy">
+                <i class="fas fa-star"></i>
+                <span data-translate="galaxy">Galaxy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
   </nav>
 
   <section id="home" class="hero">
-    <div class="hero-text">
-      <h1>Hey, I'm Brian 👋</h1>
-      <p id="typed">Front-End Developer | JavaScript Enthusiast | Problem Solver</p>
+    <div class="hero-bg">
+      <div class="hero-3d-bg">
+        <div class="floating-shapes">
+          <div class="shape shape-1"></div>
+          <div class="shape shape-2"></div>
+          <div class="shape shape-3"></div>
+          <div class="shape shape-4"></div>
+          <div class="shape shape-5"></div>
+          <div class="shape shape-6"></div>
+        </div>
+      </div>
+      <div class="particles"></div>
     </div>
-    <div class="hero-gif">
-      <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Animated coding illustration">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 data-translate="hero-title">Hey, I'm Brian <span class="wave">👋</span></h1>
+        <p id="typed" data-translate="hero-subtitle">Full-Stack Developer | React Enthusiast | Problem Solver</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary" data-translate="view-projects">View Projects</a>
+          <a href="#contact" class="btn btn-outline" data-translate="contact-me">Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-gif">
+        <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Animated coding illustration">
+      </div>
     </div>
   </section>
-
 
   <div class="profile-wrap" aria-hidden="true">
     <img class="profile" src="profile.jpg" alt="Photo of Brian Muigai" loading="lazy" />
     <span class="glow-ring"></span>
   </div>
 
-  <main>
-    <section id="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About Me</h2>
-      <p>
-        I’m a passionate software engineering student focused on building clean, responsive web applications.
-        I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks.
-        Currently exploring React and full-stack development to create impactful digital experiences.
-      </p>
-    </section>
+  <!-- Resume Download Section -->
+  <div class="resume-section">
+    <h3 data-translate="resume-title">Download My Resume</h3>
+    <p data-translate="resume-subtitle">Get a detailed overview of my experience and skills</p>
+    <div class="resume-buttons">
+      <a href="/resume.pdf" download class="btn btn-primary" target="_blank">
+        <i class="fas fa-download"></i>
+        <span data-translate="download-pdf">Download PDF</span>
+      </a>
+      <a href="/resume.docx" download class="btn btn-outline" target="_blank">
+        <i class="fas fa-file-word"></i>
+        <span data-translate="download-doc">Download DOCX</span>
+      </a>
+    </div>
+  </div>
 
-    <section id="skills" aria-labelledby="skills-heading">
-      <h2 id="skills-heading">Skills</h2>
-      <div class="skills-grid">
-        <div class="skill">
-          <div class="skill-head"><span>JavaScript</span><span>50%</span></div>
-          <div class="progress"><div class="bar" data-width="50"></div></div>
+  <main>
+    <section id="about" aria-labelledby="about-heading" class="page-section">
+      <h2 id="about-heading" class="section-title" data-translate="about-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p data-translate="about-text">
+            I'm a passionate software engineering student focused on building clean, responsive web applications.
+            I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks.
+            Currently exploring React and full-stack development to create impactful digital experiences.
+          </p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="15">0</span>
+              <span class="stat-label" data-translate="projects-label">Projects</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="8">0</span>
+              <span class="stat-label" data-translate="technologies-label">Technologies</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="500">0</span>
+              <span class="stat-label" data-translate="commits-label">Commits</span>
+            </div>
+          </div>
         </div>
-        <div class="skill">
-          <div class="skill-head"><span>HTML &amp; CSS</span><span>90%</span></div>
-          <div class="progress"><div class="bar" data-width="90"></div></div>
-        </div>
-        <div class="skill">
-          <div class="skill-head"><span>React</span><span>30%</span></div>
-          <div class="progress"><div class="bar" data-width="30"></div></div>
+        <div class="about-image">
+          <div class="image-container">
+            <img src="https://picsum.photos/seed/developer/400/400.jpg" alt="Working on code" loading="lazy">
+            <div class="image-overlay">
+              <div class="tech-stack">
+                <i class="fab fa-html5"></i>
+                <i class="fab fa-css3-alt"></i>
+                <i class="fab fa-js"></i>
+                <i class="fab fa-react"></i>
+                <i class="fab fa-node-js"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="projects" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
+    <section id="services" aria-labelledby="services-heading" class="page-section">
+      <h2 id="services-heading" class="section-title" data-translate="services-title">Services I Offer</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 data-translate="service-frontend">Front-End Development</h3>
+          <p data-translate="service-frontend-desc">Creating responsive, interactive web applications using React, Vue.js, and modern JavaScript frameworks.</p>
+          <ul class="service-features">
+            <li data-translate="service-frontend-feature1">React/Vue.js Development</li>
+            <li data-translate="service-frontend-feature2">Responsive Design</li>
+            <li data-translate="service-frontend-feature3">Performance Optimization</li>
+          </ul>
+          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3 data-translate="service-backend">Back-End Development</h3>
+          <p data-translate="service-backend-desc">Building robust server-side applications with Node.js, Express, and database integration.</p>
+          <ul class="service-features">
+            <li data-translate="service-backend-feature1">Node.js/Express APIs</li>
+            <li data-translate="service-backend-feature2">Database Design</li>
+            <li data-translate="service-backend-feature3">Authentication Systems</li>
+          </ul>
+          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+        </div>
+        
+        <div class="service-card">
+          <div class="service-icon">
+            <i class="fas fa-paint-brush"></i>
+          </div>
+          <h3 data-translate="service-uiux">UI/UX Design</h3>
+          <p data-translate="service-uiux-desc">Designing beautiful, user-centered interfaces that provide exceptional user experiences.</p>
+          <ul class="service-features">
+            <li data-translate="service-uiux-feature1">Wireframing & Prototyping</li>
+            <li data-translate="service-uiux-feature2">User Research</li>
+            <li data-translate="service-uiux-feature3">Design Systems</li>
+          </ul>
+          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-heading" class="page-section">
+      <h2 id="skills-heading" class="section-title" data-translate="skills-title">Skills</h2>
+      <div class="skills-container">
+        <div class="skills-grid">
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-js"></i>
+            </div>
+            <div class="skill-info">
+              <h3>JavaScript</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="85"></div></div>
+                <span class="skill-percent">85%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-react"></i>
+            </div>
+            <div class="skill-info">
+              <h3>React</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="75"></div></div>
+                <span class="skill-percent">75%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-node-js"></i>
+            </div>
+            <div class="skill-info">
+              <h3>Node.js</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="70"></div></div>
+                <span class="skill-percent">70%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-html5"></i>
+            </div>
+            <div class="skill-info">
+              <h3>HTML & CSS</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="90"></div></div>
+                <span class="skill-percent">90%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-git-alt"></i>
+            </div>
+            <div class="skill-info">
+              <h3>Git</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="80"></div></div>
+                <span class="skill-percent">80%</span>
+              </div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill-icon">
+              <i class="fab fa-python"></i>
+            </div>
+            <div class="skill-info">
+              <h3>Python</h3>
+              <div class="skill-level">
+                <div class="progress"><div class="bar" data-width="65"></div></div>
+                <span class="skill-percent">65%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading" class="page-section">
+      <h2 id="projects-heading" class="section-title" data-translate="projects-title">Projects</h2>
 
       <div class="project-controls" role="toolbar" aria-label="Project filters">
-        <button data-filter="all" class="filter-btn active">All</button>
-        <button data-filter="web" class="filter-btn">Web</button>
-        <button data-filter="ui" class="filter-btn">UI</button>
-        <button data-filter="tools" class="filter-btn">Tools</button>
+        <button data-filter="all" class="filter-btn active" data-translate="filter-all">All</button>
+        <button data-filter="web" class="filter-btn" data-translate="filter-web">Web</button>
+        <button data-filter="mobile" class="filter-btn" data-translate="filter-mobile">Mobile</button>
+        <button data-filter="ui" class="filter-btn" data-translate="filter-ui">UI</button>
+        <button data-filter="tools" class="filter-btn" data-translate="filter-tools">Tools</button>
       </div>
 
       <div class="project-grid" aria-live="polite">
-        <div class="project-card" data-tags="web tools">
-          <img src="app.jpg" alt="Project Tracker app interface" loading="lazy" />
-          <div class="project-overlay">
-            <h3>Project Tracker</h3>
-            <p>A React app to manage and track company projects.</p>
-            <div class="project-links">
-              <a href="https://project-tracker-own.vercel.app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-              <a href="https://github.com/brianmuigai2-stack/project-tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="project-card-3d" data-tags="web tools">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="project-image">
+                <img src="https://picsum.photos/seed/project1/400/300.jpg" alt="Project Tracker app interface" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://project-tracker-own.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://github.com/brianmuigai2-stack/project-tracker" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Project Tracker</h3>
+                <p>A comprehensive project management system with real-time collaboration features.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">MongoDB</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h3>Project Details</h3>
+                <p>Advanced project management system with real-time updates, team collaboration features, and comprehensive analytics dashboard.</p>
+                <div class="back-tech">
+                  <h4>Technologies Used:</h4>
+                  <ul>
+                    <li>React.js with Hooks</li>
+                    <li>Node.js & Express</li>
+                    <li>MongoDB with Mongoose</li>
+                    <li>Socket.io for real-time</li>
+                    <li>JWT Authentication</li>
+                  </ul>
+                </div>
+                <div class="back-links">
+                  <a href="https://project-tracker-own.vercel.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="https://github.com/brianmuigai2-stack/project-tracker" target="_blank" class="btn btn-outline">View Code</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="project-card" data-tags="web ui">
-          <img src="projects/typing-thumb.jpg" alt="Typing Speed Test interface" loading="lazy" />
-          <div class="project-overlay">
-            <h3>Typing Speed Test</h3>
-            <p>Interactive typing test with timer and accuracy stats.</p>
-            <div class="project-links">
-              <a href="https://brianmuigai2-stack.github.io/BRIANS-WORK/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-              <a href="https://github.com/brianmuigai2-stack/BRIANS-WORK" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="project-card-3d" data-tags="web ui">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="project-image">
+                <img src="https://picsum.photos/seed/typing/400/300.jpg" alt="Typing Speed Test interface" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://brianmuigai2-stack.github.io/BRIANS-WORK/" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://github.com/brianmuigai2-stack/BRIANS-WORK" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Typing Speed Test</h3>
+                <p>Interactive typing test with real-time WPM calculation and accuracy tracking.</p>
+                <div class="project-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">CSS3</span>
+                  <span class="tag">HTML5</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h3>Project Details</h3>
+                <p>Interactive typing speed test with real-time WPM calculation, accuracy tracking, and leaderboard functionality.</p>
+                <div class="back-tech">
+                  <h4>Features:</h4>
+                  <ul>
+                    <li>Real-time speed calculation</li>
+                    <li>Accuracy tracking system</li>
+                    <li>Multiple difficulty levels</li>
+                    <li>Local storage for scores</li>
+                    <li>Responsive design</li>
+                  </ul>
+                </div>
+                <div class="back-links">
+                  <a href="https://brianmuigai2-stack.github.io/BRIANS-WORK/" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="https://github.com/brianmuigai2-stack/BRIANS-WORK" target="_blank" class="btn btn-outline">View Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-3d" data-tags="mobile tools">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="project-image">
+                <img src="https://picsum.photos/seed/weather/400/300.jpg" alt="Weather App interface" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Weather App</h3>
+                <p>Modern weather application with geolocation support and beautiful animations.</p>
+                <div class="project-tags">
+                  <span class="tag">React Native</span>
+                  <span class="tag">API</span>
+                  <span class="tag">Mobile</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h3>Project Details</h3>
+                <p>Cross-platform mobile weather application with geolocation support, 7-day forecast, and beautiful weather animations.</p>
+                <div class="back-tech">
+                  <h4>Features:</h4>
+                  <ul>
+                    <li>Geolocation support</li>
+                    <li>7-day weather forecast</li>
+                    <li>Beautiful weather animations</li>
+                    <li>Multiple cities support</li>
+                    <li>Offline functionality</li>
+                  </ul>
+                </div>
+                <div class="back-links">
+                  <a href="#" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="#" target="_blank" class="btn btn-outline">View Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-3d" data-tags="web tools">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="project-image">
+                <img src="https://picsum.photos/seed/todo/400/300.jpg" alt="Todo App interface" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Task Manager Pro</h3>
+                <p>Advanced todo application with drag-and-drop and collaboration features.</p>
+                <div class="project-tags">
+                  <span class="tag">Vue.js</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">PWA</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h3>Project Details</h3>
+                <p>Feature-rich task management application with drag-and-drop, categories, priorities, and real-time collaboration.</p>
+                <div class="back-tech">
+                  <h4>Features:</h4>
+                  <ul>
+                    <li>Drag & drop functionality</li>
+                    <li>Categories & priorities</li>
+                    <li>Real-time collaboration</li>
+                    <li>Offline support (PWA)</li>
+                    <li>Push notifications</li>
+                  </ul>
+                </div>
+                <div class="back-links">
+                  <a href="#" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="#" target="_blank" class="btn btn-outline">View Code</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="github-widget" aria-hidden="false">
-        <img src="https://github-readme-stats.vercel.app/api?username=brianmuigai2-stack&show_icons=true&theme=dark" alt="GitHub stats" />
+        <img src="https://github-readme-stats.vercel.app/api?username=brianmuigai2-stack&show_icons=true&theme=dark&include_all_commits=true&count_private=true" alt="GitHub stats" />
         <div id="recent-repos" class="recent-repos" aria-live="polite"></div>
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-heading">
-      <h2 id="contact-heading">Contact Me</h2>
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:brian11613bmw@gmail.com">brian11613bmw@gmail.com</a></p>
-        <p><strong>Phone:</strong> <a href="tel:+254707528414">+254 707 528 414</a></p>
-        <div class="social-links" aria-label="Social media links">
-          <a href="https://github.com/brianmuigai2-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>GitHub</title><path d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.6-1.4-2-1.4-2-1.1-.8.1-.8.1-.8 1.2.1 1.9 1.2 1.9 1.2 1.1 1.9 2.9 1.4 3.6 1.1.1-.9.4-1.4.7-1.7-2.6-.3-5.3-1.3-5.3-5.9 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 016 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.9 1.2 1.9 1.2 3.1 0 4.6-2.7 5.6-5.3 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0012 .5z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/brian-muigai-197210382/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img"><title>LinkedIn</title><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.6h.1c.5-.9 1.8-1.9 3.6-1.9 3.8 0 4.5 2.5 4.5 5.8V21h-4v-5.3c0-1.3 0-3-1.9-3-1.9 0-2.2 1.5-2.2 2.9V21h-4z" fill="currentColor"/></svg>
-          </a>
-          <a href="https://wa.me/254707528414?text=Hello%20Brian!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
-              <path fill="#25D366" d="M4.868 43.132l2.93-10.693a17.56 17.56 0 0 1-2.356-8.831C5.442 11.26 13.06 3.64 22.406 3.64c4.61 0 8.949 1.797 12.213 5.06a17.236 17.236 0 0 1 5.06 12.212c0 9.347-7.62 16.964-17.057 16.964a17.44 17.44 0 0 1-8.318-2.119l-9.436 2.375z"/>
-              <path fill="#FFF" d="M18.86 13.646c-.46-1.026-.945-1.046-1.384-1.066-.36-.016-.776-.015-1.192-.015s-1.096.157-1.674.776c-.578.618-2.2 2.148-2.2 5.238s2.253 6.07 2.57 6.489c.316.419 4.347 6.96 10.729 9.477 5.302 2.091 6.38 1.676 7.532 1.57 1.152-.105 3.717-1.518 4.24-2.982.524-1.465.524-2.719.366-2.982-.157-.263-.576-.42-1.192-.736-.617-.315-3.717-1.83-4.293-2.038-.577-.21-.997-.315-1.415.314-.419.63-1.622 2.037-1.988 2.455-.366.419-.732.472-1.349.157-.617-.315-2.607-.962-4.967-3.065-1.836-1.64-3.075-3.665-3.44-4.283-.366-.619-.04-.953.275-1.267.283-.283.63-.736.944-1.104.315-.367.419-.63.63-1.049.21-.419.105-.786-.053-1.101-.158-.315-1.382-3.448-1.935-4.702z"/>
-            </svg>
-          </a>
+    <section id="blog" aria-labelledby="blog-heading" class="page-section">
+      <h2 id="blog-heading" class="section-title" data-translate="blog-title">Latest Articles</h2>
+      <div class="blog-grid">
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="https://picsum.photos/seed/blog1/400/250.jpg" alt="Blog post thumbnail" loading="lazy" />
+            <div class="blog-category">JavaScript</div>
+          </div>
+          <div class="blog-content">
+            <h3>10 React Hooks Every Developer Should Master in 2024</h3>
+            <p>Master the most powerful React hooks and learn when to use them in your applications for optimal performance...</p>
+            <div class="blog-meta">
+              <span class="blog-date">Nov 15, 2024</span>
+              <span class="blog-read-time">8 min read</span>
+            </div>
+            <a href="#" class="blog-link" data-translate="read-more">Read More →</a>
+          </div>
+        </article>
+        
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="https://picsum.photos/seed/blog2/400/250.jpg" alt="Blog post thumbnail" loading="lazy" />
+            <div class="blog-category">CSS</div>
+          </div>
+          <div class="blog-content">
+            <h3>Modern CSS Techniques for Building Responsive Layouts</h3>
+            <p>Explore the latest CSS features including Grid, Container Queries, and new pseudo-classes for modern web design...</p>
+            <div class="blog-meta">
+              <span class="blog-date">Nov 10, 2024</span>
+              <span class="blog-read-time">6 min read</span>
+            </div>
+            <a href="#" class="blog-link" data-translate="read-more">Read More →</a>
+          </div>
+        </article>
+
+        <article class="blog-card">
+          <div class="blog-image">
+            <img src="https://picsum.photos/seed/blog3/400/250.jpg" alt="Blog post thumbnail" loading="lazy" />
+            <div class="blog-category">Node.js</div>
+          </div>
+          <div class="blog-content">
+            <h3>Building Scalable APIs with Node.js and Express</h3>
+            <p>Learn how to create robust, scalable backend applications using Node.js, Express, and best practices for API design...</p>
+            <div class="blog-meta">
+              <span class="blog-date">Nov 5, 2024</span>
+              <span class="blog-read-time">10 min read</span>
+            </div>
+            <a href="#" class="blog-link" data-translate="read-more">Read More →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="testimonials" aria-labelledby="testimonials-heading" class="page-section">
+      <h2 id="testimonials-heading" class="section-title" data-translate="testimonials-title">What Clients Say</h2>
+      <div class="testimonials-carousel">
+        <div class="testimonial-track">
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p data-translate="testimonial1">"Brian delivered an exceptional web application that exceeded our expectations. His attention to detail and problem-solving skills are outstanding. Highly recommended!"</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://picsum.photos/seed/client1/60/60.jpg" alt="Client photo">
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <p data-translate="testimonial1-role">CEO, TechStart Inc.</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+          
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p data-translate="testimonial2">"Working with Brian was a pleasure. He brought our vision to life with clean code and innovative solutions. His communication and professionalism are top-notch."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://picsum.photos/seed/client2/60/60.jpg" alt="Client photo">
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <p data-translate="testimonial2-role">Product Manager, InnovateCo</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="testimonial-content">
+              <p data-translate="testimonial3">"Brian's expertise in React and modern web technologies helped us launch our product ahead of schedule. His dedication to quality is impressive."</p>
+            </div>
+            <div class="testimonial-author">
+              <img src="https://picsum.photos/seed/client3/60/60.jpg" alt="Client photo">
+              <div class="author-info">
+                <h4>Emily Rodriguez</h4>
+                <p data-translate="testimonial3-role">CTO, StartupHub</p>
+              </div>
+            </div>
+            <div class="testimonial-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-btn prev" aria-label="Previous testimonial">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="carousel-btn next" aria-label="Next testimonial">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
+    </section>
 
-      <form id="contact-form" class="contact-form" aria-label="Contact form">
-        <label for="user_email">Email:</label>
-        <input type="email" id="user_email" name="user_email" required />
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-        <input type="hidden" name="from_name" value="Portfolio visitor" />
-        <button type="submit">Send Message</button>
+    <section id="newsletter" aria-labelledby="newsletter-heading" class="page-section">
+      <h2 id="newsletter-heading" class="section-title" data-translate="newsletter-title">Stay Updated</h2>
+      <p data-translate="newsletter-subtitle">Get the latest updates on my projects and articles delivered to your inbox</p>
+      <form class="newsletter-form" id="newsletter-form">
+        <div class="form-group">
+          <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">
+            <span data-translate="subscribe">Subscribe</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+        <p class="newsletter-privacy" data-translate="privacy-notice">
+          I respect your privacy. Unsubscribe at any time. No spam, ever.
+        </p>
       </form>
+      <div class="newsletter-success" id="newsletter-success">
+        <i class="fas fa-check-circle"></i>
+        <span data-translate="success-message">Successfully subscribed! Check your email for confirmation.</span>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading" class="page-section">
+      <h2 id="contact-heading" class="section-title" data-translate="contact-title">Get In Touch</h2>
+      <div class="contact-container">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h3 data-translate="email-label">Email</h3>
+              <a href="mailto:brian11613bmw@gmail.com">brian11613bmw@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-phone"></i>
+            </div>
+            <div class="contact-details">
+              <h3 data-translate="phone-label">Phone</h3>
+              <a href="tel:+254707528414">+254 707 528 414</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h3 data-translate="location-label">Location</h3>
+              <p>Nairobi, Kenya</p>
+            </div>
+          </div>
+          <div class="social-links" aria-label="Social media links">
+            <a href="https://github.com/brianmuigai2-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/brian-muigai-197210382/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/254707528414?text=Hello%20Brian!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-container">
+          <form id="contact-form" class="contact-form" aria-label="Contact form">
+            <div class="form-group">
+              <label for="user_name" data-translate="name-label">Your Name</label>
+              <input type="text" id="user_name" name="user_name" required />
+            </div>
+            <div class="form-group">
+              <label for="user_email" data-translate="email-input-label">Your Email</label>
+              <input type="email" id="user_email" name="user_email" required />
+            </div>
+            <div class="form-group">
+              <label for="subject" data-translate="subject-label">Subject</label>
+              <input type="text" id="subject" name="subject" required />
+            </div>
+            <div class="form-group">
+              <label for="message" data-translate="message-label">Message</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <input type="hidden" name="from_name" value="Portfolio visitor" />
+            <button type="submit" class="btn btn-primary" data-translate="send-message">Send Message</button>
+          </form>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2025 Brian Muigai. Built with ❤️ and JavaScript.</p>
+    <p>&copy; 2025 Brian Muigai. Built with ❤️ and modern web technologies.</p>
+    <div class="footer-links">
+      <a href="#privacy" data-translate="privacy">Privacy Policy</a>
+      <a href="#terms" data-translate="terms">Terms of Service</a>
+    </div>
+    <div class="back-to-top">
+      <a href="#home" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
