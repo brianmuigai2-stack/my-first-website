@@ -2222,6 +2222,7 @@ textarea:focus {
     }
   }
   /* Additional music player styles */
+/* Additional music player styles */
 .music-hint {
   text-align: center;
   margin-top: 8px;
@@ -2259,15 +2260,13 @@ textarea:focus {
 
 /* Mobile improvements */
 @media (max-width: 480px) {
+  .music-player {
+    bottom: 15px;
+    right: 15px;
+  }
+  
   .music-player-controls {
-    width: 200px;
-  }
-  
-  .music-title {
-    font-size: 0.8rem;
-  }
-  
-  .music-artist {
-    font-size: 0.7rem;
+    width: 220px;
+    padding: 12px;
   }
 }

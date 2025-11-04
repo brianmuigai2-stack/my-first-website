@@ -796,40 +796,43 @@
     </div>
   </footer>
 
-  <!-- Music Player -->
+  <!-- Music Player - Updated Version -->
   <div class="music-player" id="music-player">
-    <div class="music-player-toggle" id="music-toggle">
+    <div class="music-player-toggle" id="music-toggle" title="Click to open music player">
       <i class="fas fa-music"></i>
     </div>
     <div class="music-player-controls">
       <div class="music-info">
-        <span class="music-title">Ambient Vibes</span>
+        <span class="music-title">Loading...</span>
         <span class="music-artist">Portfolio Experience</span>
       </div>
       <div class="music-controls">
-        <button id="prev-btn" class="control-btn">
+        <button id="prev-btn" class="control-btn" title="Previous track">
           <i class="fas fa-backward"></i>
         </button>
-        <button id="play-btn" class="control-btn play-pause">
+        <button id="play-btn" class="control-btn play-pause" title="Play/Pause">
           <i class="fas fa-play"></i>
         </button>
-        <button id="next-btn" class="control-btn">
+        <button id="next-btn" class="control-btn" title="Next track">
           <i class="fas fa-forward"></i>
         </button>
       </div>
       <div class="volume-control">
         <i class="fas fa-volume-up"></i>
-        <input type="range" id="volume-slider" min="0" max="100" value="30">
+        <input type="range" id="volume-slider" min="0" max="100" value="30" title="Volume">
       </div>
       <div class="progress-bar">
         <div class="progress"></div>
       </div>
+      <div class="music-hint">
+        <small>Click play to start music</small>
+      </div>
     </div>
   </div>
 
-  <!-- Audio element for background music -->
-  <audio id="background-music" loop>
-    <source src="https://cdn.pixabay.com/download/audio/2022/02/16/audio_1b5a6c9f8c.mp3" type="audio/mpeg">
+  <!-- Audio element for background music - Updated with reliable source -->
+  <audio id="background-music" preload="auto">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
