@@ -1101,3 +1101,240 @@
   if (typeof gtag !== 'undefined') {
     initAnalytics();
   }
+  
+  /* ===========================
+     MUSIC PLAYER - IMPROVED VERSION
+     =========================== */
+  document.addEventListener('DOMContentLoaded', function() {
+    const musicPlayer = document.getElementById('music-player');
+    const musicToggle = document.getElementById('music-toggle');
+    const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const volumeSlider = document.getElementById('volume-slider');
+    const progressBar = document.querySelector('.progress');
+    const backgroundMusic = document.getElementById('background-music');
+    
+    // Check if all elements exist
+    if (!musicPlayer || !musicToggle || !playBtn || !backgroundMusic) {
+      console.warn('Music player elements not found');
+      return;
+    }
+    
+    // Playlist with multiple reliable sources
+    const playlist = [
+      {
+        title: "Ambient Vibes",
+        artist: "Portfolio Experience",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+      },
+      {
+        title: "Creative Flow",
+        artist: "Background Music",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+      },
+      {
+        title: "Digital Dreams",
+        artist: "Ambient Sounds",
+        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+      }
+    ];
+    
+    let currentTrackIndex = 0;
+    let isPlaying = false;
+    let hasInteracted = false;
+    
+    // Initialize audio element
+    backgroundMusic.preload = 'auto';
+    backgroundMusic.volume = 0.3;
+    
+    // Load first track
+    loadTrack(0);
+    
+    // Toggle music player visibility
+    musicToggle.addEventListener('click', function() {
+      musicPlayer.classList.toggle('active');
+      hasInteracted = true;
+      localStorage.setItem('musicPlayerInteracted', 'true');
+      
+      // Try to play music on first interaction
+      if (!isPlaying && hasInteracted) {
+        attemptPlay();
+      }
+    });
+    
+    // Play/Pause functionality
+    playBtn.addEventListener('click', function(e) {
+      e.stopPropagation(); // Prevent toggling the player
+      hasInteracted = true;
+      
+      if (isPlaying) {
+        backgroundMusic.pause();
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+        isPlaying = false;
+      } else {
+        attemptPlay();
+      }
+    });
+    
+    // Attempt to play with user interaction
+    function attemptPlay() {
+      const playPromise = backgroundMusic.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          // Audio started playing successfully
+          isPlaying = true;
+          playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+          console.log('Music started playing');
+        }).catch(error => {
+          // Autoplay was prevented
+          console.log('Autoplay prevented:', error);
+          isPlaying = false;
+          playBtn.innerHTML = '<i class="fas fa-play"></i>';
+          
+          // Show a message to the user
+          showMusicHint();
+        });
+      }
+    }
+    
+    // Show hint to user
+    function showMusicHint() {
+      const hint = document.createElement('div');
+      hint.style.cssText = `
+        position: fixed;
+        bottom: 100px;
+        right: 20px;
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        z-index: 10000;
+        animation: fadeInOut 3s ease-in-out;
+      `;
+      hint.textContent = 'Click the play button to start music';
+      document.body.appendChild(hint);
+      
+      setTimeout(() => {
+        document.body.removeChild(hint);
+      }, 3000);
+    }
+    
+    // Previous track
+    prevBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentTrackIndex = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+      loadTrack(currentTrackIndex);
+      if (isPlaying) {
+        setTimeout(() => attemptPlay(), 100);
+      }
+    });
+    
+    // Next track
+    nextBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      if (isPlaying) {
+        setTimeout(() => attemptPlay(), 100);
+      }
+    });
+    
+    // Volume control
+    volumeSlider.addEventListener('input', function(e) {
+      e.stopPropagation();
+      const volume = this.value / 100;
+      backgroundMusic.volume = volume;
+      localStorage.setItem('musicVolume', volume);
+    });
+    
+    // Load saved volume
+    const savedVolume = localStorage.getItem('musicVolume');
+    if (savedVolume) {
+      backgroundMusic.volume = parseFloat(savedVolume);
+      volumeSlider.value = savedVolume * 100;
+    }
+    
+    // Update progress bar
+    backgroundMusic.addEventListener('timeupdate', function() {
+      if (backgroundMusic.duration) {
+        const progress = (backgroundMusic.currentTime / backgroundMusic.duration) * 100;
+        progressBar.style.width = progress + '%';
+      }
+    });
+    
+    // Handle track end
+    backgroundMusic.addEventListener('ended', function() {
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+      if (isPlaying) {
+        setTimeout(() => attemptPlay(), 100);
+      }
+    });
+    
+    // Handle audio errors
+    backgroundMusic.addEventListener('error', function(e) {
+      console.error('Audio error:', e);
+      // Try next track
+      currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+      loadTrack(currentTrackIndex);
+    });
+    
+    // Load track function
+    function loadTrack(index) {
+      const track = playlist[index];
+      backgroundMusic.src = track.src;
+      document.querySelector('.music-title').textContent = track.title;
+      document.querySelector('.music-artist').textContent = track.artist;
+      progressBar.style.width = '0%';
+      
+      // Update play button
+      if (isPlaying) {
+        playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+      } else {
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    }
+    
+    // Check if user has previously interacted with music player
+    const hasInteractedBefore = localStorage.getItem('musicPlayerInteracted');
+    if (hasInteractedBefore === 'true') {
+      // Auto-open the player if user has interacted before
+      setTimeout(() => {
+        musicPlayer.classList.add('active');
+      }, 2000);
+    }
+    
+    // Add keyboard controls
+    document.addEventListener('keydown', function(e) {
+      if (e.code === 'Space' && musicPlayer.classList.contains('active')) {
+        e.preventDefault();
+        playBtn.click();
+      }
+    });
+    
+    // Add visual feedback for loading
+    backgroundMusic.addEventListener('loadstart', function() {
+      playBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+    });
+    
+    backgroundMusic.addEventListener('canplay', function() {
+      if (!isPlaying) {
+        playBtn.innerHTML = '<i class="fas fa-play"></i>';
+      }
+    });
+  });
+  
+  // Add CSS animation for hint
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fadeInOut {
+      0% { opacity: 0; transform: translateY(10px); }
+      20% { opacity: 1; transform: translateY(0); }
+      80% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(-10px); }
+    }
+  `;
+  document.head.appendChild(style);
