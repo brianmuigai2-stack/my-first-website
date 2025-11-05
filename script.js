@@ -1126,18 +1126,18 @@
       {
         title: "Ambient Vibes",
         artist: "Portfolio Experience",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-      },
-      {
-        title: "Creative Flow",
-        artist: "Background Music",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-      },
-      {
-        title: "Digital Dreams",
-        artist: "Ambient Sounds",
-        src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-      }
+        src: "./audio/music.mp3"
+      // },
+      // {
+      //   title: "Creative Flow",
+      //   artist: "Background Music",
+      //   src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+      // },
+      // {
+      //   title: "Digital Dreams",
+      //   artist: "Ambient Sounds",
+      //   src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+       }
     ];
     
     let currentTrackIndex = 0;
