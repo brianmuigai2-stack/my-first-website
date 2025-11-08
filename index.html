@@ -388,6 +388,12 @@
     </section>
 
     <section id="projects" aria-labelledby="projects-heading" class="page-section">
+      <div class="projects-video-bg">
+        <video autoplay muted loop playsinline>
+          <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+      </div>
       <h2 id="projects-heading" class="section-title" data-translate="projects-title">Projects</h2>
 
       <div class="project-controls" role="toolbar" aria-label="Project filters">
@@ -550,12 +556,63 @@
           <div class="card-inner">
             <div class="card-front">
               <div class="project-image">
+                <img src="https://picsum.photos/seed/launch/400/300.jpg" alt="Launch Stack interface" loading="lazy" />
+                <div class="project-overlay">
+                  <div class="project-links">
+                    <a href="https://launch-stack.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://github.com/brianmuigai2-stack/Launch-stack" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                      <i class="fab fa-github"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="project-info">
+                <h3>Launch Stack</h3>
+                <p>Modern web application with sleek design and powerful functionality.</p>
+                <div class="project-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Next.js</span>
+                  <span class="tag">Vercel</span>
+                </div>
+              </div>
+            </div>
+            <div class="card-back">
+              <div class="back-content">
+                <h3>Project Details</h3>
+                <p>Launch Stack is a comprehensive web application built with modern technologies, featuring responsive design and optimized performance.</p>
+                <div class="back-tech">
+                  <h4>Features:</h4>
+                  <ul>
+                    <li>Modern React architecture</li>
+                    <li>Responsive design</li>
+                    <li>Fast loading performance</li>
+                    <li>Clean user interface</li>
+                    <li>Deployed on Vercel</li>
+                  </ul>
+                </div>
+                <div class="back-links">
+                  <a href="https://launch-stack.vercel.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="https://github.com/brianmuigai2-stack/Launch-stack" target="_blank" class="btn btn-outline">View Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card-3d" data-tags="web tools">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="project-image">
                 <!-- ACTION: Replace with a real screenshot of your project -->
                 <img src="https://picsum.photos/seed/todo/400/300.jpg" alt="Todo App interface" loading="lazy" />
                 <div class="project-overlay">
                   <div class="project-links">
-                    <!-- Link removed until project is live -->
-                    <a href="https://github.com/brianmuigai2-stack/my-first-website" target="_blank" rel="noopener noreferrer" aria-label="View source code">
+                    <a href="https://task-manager-ten-vert.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                      <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a href="https://github.com/brianmuigai2-stack/Task-manager" target="_blank" rel="noopener noreferrer" aria-label="View source code">
                       <i class="fab fa-github"></i>
                     </a>
                   </div>
@@ -586,7 +643,8 @@
                   </ul>
                 </div>
                 <div class="back-links">
-                  <a href="https://github.com/brianmuigai2-stack/my-first-website" target="_blank" class="btn btn-outline">View Code</a>
+                  <a href="https://task-manager-ten-vert.vercel.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+                  <a href="https://github.com/brianmuigai2-stack/Task-manager" target="_blank" class="btn btn-outline">View Code</a>
                 </div>
               </div>
             </div>
