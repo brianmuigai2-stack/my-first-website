@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://brianmuigai2-stack.github.io/my-first-website/sitemap.xml
