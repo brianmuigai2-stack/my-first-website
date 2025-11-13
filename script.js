@@ -987,9 +987,40 @@
   });
   
   /* ===========================
+     SEO CANONICAL URL FIX
+     =========================== */
+  function ensureCanonicalURL() {
+    const currentURL = 'https://brianmuigai2-stack.github.io/my-first-website/';
+    let canonical = document.querySelector('link[rel="canonical"]');
+    
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.rel = 'canonical';
+      document.head.appendChild(canonical);
+    }
+    
+    canonical.href = currentURL;
+    
+    // Also update Open Graph URL
+    const ogURL = document.querySelector('meta[property="og:url"]');
+    if (ogURL) {
+      ogURL.content = currentURL;
+    }
+    
+    // Update Twitter URL
+    const twitterURL = document.querySelector('meta[property="twitter:url"]');
+    if (twitterURL) {
+      twitterURL.content = currentURL;
+    }
+  }
+  
+  /* ===========================
      INITIALIZATION
      =========================== */
   document.addEventListener('DOMContentLoaded', () => {
+    // Ensure canonical URL is correct
+    ensureCanonicalURL();
+    
     // Apply hero text fix on load
     fixHeroTextVisibility();
     
