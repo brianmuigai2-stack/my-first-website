@@ -124,6 +124,16 @@ Test on a live domain — EmailJS blocks local origins.
 ### 🐙 GitHub repos not loading?
 You may have hit a GitHub API rate limit (wait a few minutes or authenticate if needed).
 
+## Star History
+
+<a href="https://www.star-history.com/#brianmuigai2-stack/my-first-website&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&legend=top-left" />
+ </picture>
+</a>
+
 ## 🧭 Credits
 🧩 Icons — Simple Icons / inline SVG
 
@@ -141,8 +151,8 @@ Add a LICENSE file with the MIT text to your repository.
 ### 🌍 Portfolio: brianmuigai2-stack.github.io/portfolio
 ### 💼 LinkedIn: linkedin.com/in/brianmuigai
 ### 🐙 GitHub: github.com/brianmuigai2-stack
-### 💬 WhatsApp: +254 XXXXXXXXX
-### 📧 Email: brianmuigai@gmail.com
+### 💬 WhatsApp: +254 707528414
+### 📧 Email: brian11613bmw@gmail.com
 
 ## ⭐ If you like this portfolio, give it a star on GitHub! ⭐
 
