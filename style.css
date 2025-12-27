@@ -22,6 +22,8 @@
   --hero-btn-text: #ffffff;
   --hero-outline-border: #007bff;
   --hero-outline-text: #007bff;
+  /* Snow color for themes */
+  --snow-color: rgba(0, 0, 0, 0.25);
 }
 
 /* Ocean Theme */
@@ -43,6 +45,7 @@ body.ocean {
   --hero-btn-text: #004d40;
   --hero-outline-border: #4dd0e1;
   --hero-outline-text: #4dd0e1;
+  --snow-color: rgba(173, 216, 230, 0.8);
 }
 
 /* Forest Theme */
@@ -64,6 +67,7 @@ body.forest {
   --hero-btn-text: #1b5e20;
   --hero-outline-border: #66bb6a;
   --hero-outline-text: #66bb6a;
+  --snow-color: rgba(144, 238, 144, 0.7);
 }
 
 /* Sunset Theme */
@@ -85,6 +89,7 @@ body.sunset {
   --hero-btn-text: #e65100;
   --hero-outline-border: #ffb74d;
   --hero-outline-text: #ffb74d;
+  --snow-color: rgba(255, 218, 185, 0.8);
 }
 
 /* Galaxy Theme */
@@ -106,6 +111,7 @@ body.galaxy {
   --hero-btn-text: #4a148c;
   --hero-outline-border: #ba68c8;
   --hero-outline-text: #ba68c8;
+  --snow-color: rgba(221, 160, 221, 0.9);
 }
 
 /* Dark Theme */
@@ -125,6 +131,7 @@ body.dark {
   --hero-btn-text: #007bff;
   --hero-outline-border: #ffffff;
   --hero-outline-text: #ffffff;
+  --snow-color: rgba(255, 255, 255, 0.9);
 }
 
 * {
@@ -2305,4 +2312,87 @@ textarea:focus {
     width: 220px;
     padding: 12px;
   }
+}
+.snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+
+  /* More flakes with different positions */
+  background-image:
+    radial-gradient(2px 2px at 10px 20px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 40px 60px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 70px 30px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 100px 90px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 130px 50px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 160px 110px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 190px 70px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 220px 140px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 250px 90px, var(--snow-color), transparent),
+    radial-gradient(2px 2px at 280px 160px, var(--snow-color), transparent);
+
+  background-size: 300px 300px;
+  animation: snowFall 10s linear infinite;
+  opacity: 0.9;
+  will-change: transform;
+}
+
+@keyframes snowFall {
+  from {
+    transform: translateY(-300px);
+  }
+  to {
+    transform: translateY(300px);
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .snow {
+    animation: none;
+  }
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .snow {
+    opacity: 0.7;
+  }
+}
+.glow-orb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+  animation: floatOrb 8s ease-in-out infinite;
+}
+
+@keyframes floatOrb {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(30px, -20px); }
+  50% { transform: translate(-30px, 40px); }
+  75% { transform: translate(20px, -10px); }
+  100% { transform: translate(0, 0); }
+}
+.hero-bg {
+  background: linear-gradient(
+    135deg, 
+    #ff6b6b,  /* red/pink */
+    #feca57,  /* yellow/orange */
+    #48dbfb,  /* light blue */
+    #1dd1a1,  /* mint green */
+    #5f27cd,  /* purple */
+    #ff9ff3   /* pastel pink */
+  );
+  background-size: 1200% 1200%; /* increase for smoother gradient movement */
+  animation: gradientShift 30s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
