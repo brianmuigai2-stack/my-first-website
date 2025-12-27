@@ -1,12 +1,12 @@
-# 🌐 Brian Muigai — Developer Portfolio
+# Brian Muigai — Developer Portfolio
 
-> 🚀 A clean, modern, and responsive portfolio website showcasing my projects, skills, and contact information.  
+>  A clean, modern, and responsive portfolio website showcasing my projects, skills, and contact information.  
 > Built with **HTML**, **CSS**, and **JavaScript** — simple, fast, and easy to deploy anywhere!
 
 ---
 
 
-## 📁 Project Structure
+## Project Structure
 
 | File | Description |
 |------|--------------|
@@ -20,7 +20,7 @@
 
 ---
 
-## ✨ Features
+## Features
 
 ✅ Fully responsive design (works on desktop, tablet, and mobile)  
 🌗 Light & Dark theme toggle (remembers user preference)  
@@ -34,7 +34,7 @@
 
 ---
 
-## 🧰 Technologies Used
+##  Technologies Used
 
 - **HTML5**
 - **CSS3 (Flexbox, Grid, Animations)**
@@ -45,17 +45,17 @@
 
 ---
 
-## ⚙️ Getting Started
+##  Getting Started
 
-### 1️⃣ Clone the repository
+### Clone the repository
 git clone https://github.com/brianmuigai2-stack/portfolio.git
 cd portfolio
 
 # Then open your browser at http://localhost:8000
 Or use VS Code Live Server extension.
 
-## 🚀 Deployment Options
-🌍 GitHub Pages
+##  Deployment Options
+ GitHub Pages
 Push your repo to GitHub.
 
 Go to Settings → Pages.
@@ -65,12 +65,12 @@ Choose branch: main and folder: /root.
 Save — your site will be live at:
 👉 https://<your-username>.github.io/<repo-name>/
 
-### ☁️ Netlify / Vercel
+###  Netlify / Vercel
 Drag & drop the project folder into Netlify.
 
 Or connect your GitHub repo to Vercel — deploys automatically.
 
-### 📬 Setting up EmailJS (for the contact form)
+###  Setting up EmailJS (for the contact form)
 Go to EmailJS.com and create an account.
 
 Create a new email service (like Gmail).
@@ -86,9 +86,9 @@ js
 
 emailjs.init("YOUR_USER_ID");
 emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
-💡 Test on a live URL — EmailJS won’t work on local file://.
+Test on a live URL — EmailJS won’t work on local file://.
 
-### 🧩 Customization Checklist
+### Customization Checklist
  Replace profile.jpg with your photo
 
  Update name, title, and description in index.html
@@ -103,7 +103,7 @@ emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
 
  Optimize images (use .webp format for better performance)
 
-### 💡 Tips & Tricks
+### Tips & Tricks
 Use loading="lazy" for large images
 
 Test Lighthouse performance in Chrome DevTools
@@ -114,35 +114,45 @@ Compress your CSS & JS for faster loading
 
 Use alt attributes for accessibility
 
-## 🐛 Troubleshooting
-### ⚠️ Icons not showing?
+## Troubleshooting
+### Icons not showing?
 Check your folder paths — use a local server instead of opening via file://.
 
-### 📨 Email form not working?
+### Email form not working?
 Test on a live domain — EmailJS blocks local origins.
 
-### 🐙 GitHub repos not loading?
+### GitHub repos not loading?
 You may have hit a GitHub API rate limit (wait a few minutes or authenticate if needed).
 
-## 🧭 Credits
-🧩 Icons — Simple Icons / inline SVG
+## Star History
 
-## 💌 Contact form — EmailJS
+<a href="https://www.star-history.com/#brianmuigai2-stack/my-first-website&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&legend=top-left" />
+ </picture>
+</a>
 
-## 🐙 GitHub stats — Vercel’s GitHub Readme Stats
+##  Credits
+Icons — Simple Icons / inline SVG
 
-## 💻 Built by Brian Muigai
+## Contact form — EmailJS
 
-## 📜 License
+## GitHub stats — Vercel’s GitHub Readme Stats
+
+## Built by Brian Muigai
+
+## License
 This project is licensed under the MIT License — feel free to use, modify, and share!
 Add a LICENSE file with the MIT text to your repository.
 
-## 💬 Connect with Me
-### 🌍 Portfolio: brianmuigai2-stack.github.io/portfolio
-### 💼 LinkedIn: linkedin.com/in/brianmuigai
-### 🐙 GitHub: github.com/brianmuigai2-stack
-### 💬 WhatsApp: +254 XXXXXXXXX
-### 📧 Email: brianmuigai@gmail.com
+## Connect with Me
+### Portfolio: brianmuigai2-stack.github.io/portfolio
+### LinkedIn: linkedin.com/in/brianmuigai
+### GitHub: github.com/brianmuigai2-stack
+### WhatsApp: +254 707528414
+### Email: brian11613bmw@gmail.com
 
 ## ⭐ If you like this portfolio, give it a star on GitHub! ⭐
 
