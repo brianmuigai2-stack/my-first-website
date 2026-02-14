@@ -11,11 +11,11 @@
       'sunset': 'Sunset',
       'galaxy': 'Galaxy',
       'hero-title': "Hey, I'm Brian 👋",
-      'hero-subtitle': 'Junior Developer | React Enthusiast | Problem Solver',
+      'hero-subtitle': 'Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.',
       'view-projects': 'View Projects',
       'contact-me': 'Contact Me',
       'about-title': 'About Me',
-      'about-text': "I'm a passionate software engineering student focused on building clean, responsive web applications. I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks. Currently exploring React and full-stack development to create impactful digital experiences.",
+      'about-text': "I'm a passionate software engineering student focused on building clean, responsive web applications. I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks. Currently exploring React and full-stack development to create impactful digital experiences. I love designing full-stack systems that solve real-world problems — from job platforms to real-time collaboration tools and AI-powered applications. My development philosophy centers on writing clean, maintainable code and creating user experiences that make a difference.",
       'projects-label': 'Projects',
       'technologies-label': 'Technologies',
       'commits-label': 'Commits',
@@ -66,10 +66,9 @@
       'subscribe': 'Subscribe',
       'privacy-notice': 'I respect your privacy. Unsubscribe at any time. No spam, ever.',
       'success-message': 'Successfully subscribed! Check your email for confirmation.',
-      'resume-title': 'Download My Resume',
+      'resume-title': 'Resume & Achievements',
       'resume-subtitle': 'Get a detailed overview of my experience and skills',
-      'download-pdf': 'Download PDF',
-      'download-doc': 'Download DOCX',
+      'view-resume': 'View Resume',
       'privacy': 'Privacy Policy',
       'terms': 'Terms of Service'
     },
@@ -125,13 +124,6 @@
       'send-message': 'Enviar Mensaje',
       'blog-title': 'Últimos Artículos',
       'read-more': 'Leer Más →',
-      'testimonials-title': 'Qué Dicen los Clientes',
-      'testimonial1': '"Brian entregó una aplicación web excepcional que superó nuestras expectativas. Su atención al detalle y habilidades para resolver problemas son sobresalientes. ¡Muy recomendado!"',
-      'testimonial1-role': 'CEO, TechStart Inc.',
-      'testimonial2': '"Trabajar con Brian fue un placer. Él dio vida a nuestra visión con código limpio e soluciones innovadoras. Su comunicación y profesionalismo son de primera clase."',
-      'testimonial2-role': 'Product Manager, InnovateCo',
-      'testimonial3': '"La experiencia de Brian en React y tecnologías web modernas nos ayudó a lanzar nuestro producto antes de lo previsto. Su dedicación a la calidad es impresionante."',
-      'testimonial3-role': 'CTO, StartupHub',
       'newsletter-title': 'Mantente Actualizado',
       'newsletter-subtitle': 'Obtén las últimas actualizaciones sobre mis proyectos y artículos entregados en tu bandeja de entrada',
       'subscribe': 'Suscribirse',
@@ -139,8 +131,7 @@
       'success-message': '¡Suscrito exitosamente! Revisa tu correo para confirmación.',
       'resume-title': 'Descargar Mi CV',
       'resume-subtitle': 'Obtén una descripción detallada de mi experiencia y habilidades',
-      'download-pdf': 'Descargar PDF',
-      'download-doc': 'Descargar DOCX',
+      'view-resume': 'Ver Currículum',
       'privacy': 'Política de Privacidad',
       'terms': 'Términos de Servicio'
     },
@@ -196,13 +187,6 @@
       'send-message': 'Envoyer Message',
       'blog-title': 'Derniers Articles',
       'read-more': 'Lire Plus →',
-      'testimonials-title': 'Que Disent les Clients',
-      'testimonial1': '"Brian a livré une application web exceptionnelle qui a dépassé nos attentes. Son attention aux détails et ses compétences en résolution de problèmes sont remarquables. Fortement recommandé!"',
-      'testimonial1-role': 'PDG, TechStart Inc.',
-      'testimonial2': '"Travailler avec Brian était un plaisir. Il a donné vie à notre vision avec du code propre et des solutions innovantes. Sa communication et son professionnalisme sont de première classe."',
-      'testimonial2-role': 'Chef de Produit, InnovateCo',
-      'testimonial3': '"L\'expertise de Brian en React et technologies web modernes nous a aidés à lancer notre produit avant le prévu. Sa dédicación à la qualité est impressionnante."',
-      'testimonial3-role': 'CTO, StartupHub',
       'newsletter-title': 'Restez Informé',
       'newsletter-subtitle': 'Obtenez les dernières mises à jour sur mes projets et articles livrés dans votre boîte de réception',
       'subscribe': 'S\'abonner',
@@ -210,8 +194,7 @@
       'success-message': 'Abonné avec succès! Vérifiez votre email pour confirmation.',
       'resume-title': 'Télécharger Mon CV',
       'resume-subtitle': 'Obtenez une vue d\'ensemble détaillée de mon expérience et compétences',
-      'download-pdf': 'Télécharger PDF',
-      'download-doc': 'Télécharger DOCX',
+      'view-resume': 'Voir CV',
       'privacy': 'Politique de Confidentialité',
       'terms': 'Conditions d\'Utilisation'
     },
@@ -267,13 +250,6 @@
       'send-message': 'Nachricht Senden',
       'blog-title': 'Neueste Artikel',
       'read-more': 'Mehr Lesen →',
-      'testimonials-title': 'Was Kunden Sagen',
-      'testimonial1': '"Brian hat eine herausragende Webanwendung geliefert, die unsere Erwartungen übertroffen. Seine Aufmerksamkeit für Details und Problemlösungsfähigkeiten sind herausragend. Sehr empfohlen!"',
-      'testimonial1-role': 'CEO, TechStart Inc.',
-      'testimonial2': '"Mit Brian zu arbeiten war ein Vergnügen. Er hat unsere Vision mit sauberem Code und innovativen Lösungen zum Leben erweckt. Seine Kommunikation und Professionalität sind erstklassig."',
-      'testimonial2-role': 'Produktmanager, InnovateCo',
-      'testimonial3': '"Brians Expertise in React und modernen Web-Technologien hat uns geholfen, unser Produkt vor dem Zeitplan zu starten. Seine Hingabe zur Qualität ist beeindruckend."',
-      'testimonial3-role': 'CTO, StartupHub',
       'newsletter-title': 'Bleib auf dem Laufenden',
       'newsletter-subtitle': 'Erhalten Sie die neuesten Updates zu meinen Projekten und Artikeln direkt in Ihrem Posteingang',
       'subscribe': 'Abonnieren',
@@ -281,8 +257,7 @@
       'success-message': 'Erfolgreich abonniert! Überprüfen Sie Ihre E-Mail zur Bestätigung.',
       'resume-title': 'Lebenslauf Herunterladen',
       'resume-subtitle': 'Erhalten Sie eine detaillierte Übersicht meiner Erfahrung und Fähigkeiten',
-      'download-pdf': 'PDF Herunterladen',
-      'download-doc': 'DOCX Herunterladen',
+      'view-resume': 'Lebenslauf Ansehen',
       'privacy': 'Datenschutzerklärung',
       'terms': 'Nutzungsbedingungen'
     },
@@ -338,13 +313,6 @@
       'send-message': '发送消息',
       'blog-title': '最新文章',
       'read-more': '阅读更多 →',
-      'testimonials-title': '客户评价',
-      'testimonial1': '"Brian交付了一个卓越的网络应用，超出了我们的期望。他对细节的关注和解决问题的能力非常出色。强烈推荐！"',
-      'testimonial1-role': 'CEO，TechStart Inc.',
-      'testimonial2': '"与Brian合作是一次愉快的经历。他用清晰的代码和创新解决方案将我们的愿景变为现实。他的沟通和专业精神是一流的。"',
-      'testimonial2-role': '产品经理，InnovateCo',
-      'testimonial3': '"Brian在React和现代Web技术方面的专业知识帮助我们提前推出了产品。他对质量的投入令人印象深刻。"',
-      'testimonial3-role': 'CTO，StartupHub',
       'newsletter-title': '保持更新',
       'newsletter-subtitle': '获取我的项目和文章的最新更新，直接发送到您的收件箱',
       'subscribe': '订阅',
@@ -352,8 +320,7 @@
       'success-message': '订阅成功！请查看您的电子邮件进行确认。',
       'resume-title': '下载我的简历',
       'resume-subtitle': '获取我的经验和技能的详细概述',
-      'download-pdf': '下载PDF',
-      'download-doc': '下载DOCX',
+      'view-resume': '查看简历',
       'privacy': '隐私政策',
       'terms': '服务条款'
     }
@@ -727,24 +694,191 @@
   createParticles();
   
   /* ===========================
-     SCROLL ANIMATIONS
+     ENHANCED SCROLL ANIMATIONS
      =========================== */
   const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.15, // Trigger earlier for better swipe effect
+    rootMargin: '0px 0px -30px 0px' // Adjusted for earlier triggering
   };
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+        
+        // Enhanced stagger animation for multiple elements
+        const staggerElements = entry.target.querySelectorAll('.skill-item, .practice-item, .tech-group, .achievement, .service-card, .project-item, .building-card, .featured-card');
+        staggerElements.forEach((el, index) => {
+          setTimeout(() => {
+            el.classList.add('visible');
+          }, index * 150); // Increased delay for more dramatic swipe effect
+        });
+        
+        // Special handling for about section
+        if (entry.target.querySelector('.about-text, .about-image')) {
+          setTimeout(() => {
+            entry.target.querySelector('.about-text')?.classList.add('visible');
+          }, 200);
+          
+          setTimeout(() => {
+            entry.target.querySelector('.about-image')?.classList.add('visible');
+          }, 400);
+        }
       }
     });
   }, observerOptions);
   
-  // Observe all sections
-  document.querySelectorAll('.page-section').forEach(section => {
-    observer.observe(section);
+  // Observe all sections with enhanced timing
+  document.querySelectorAll('.page-section').forEach((section, index) => {
+    // Add initial delay for each section
+    setTimeout(() => {
+      observer.observe(section);
+    }, index * 100);
+  });
+  
+  // Enhanced smooth scroll behavior with offset
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        const offsetTop = target.offsetTop - 100; // Increased offset for better spacing
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+        
+        // Add active state to navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+        });
+        this.classList.add('active');
+      }
+    });
+  });
+  
+  // Enhanced parallax effect with smoother performance
+  let parallaxTicking = false;
+  
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.hero-bg, .floating-shapes .shape');
+    
+    parallaxElements.forEach((element, index) => {
+      const speed = 0.3 + (index * 0.05); // Reduced speed for subtler effect
+      const yPos = -(scrolled * speed);
+      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    });
+    
+    parallaxTicking = false;
+  }
+  
+  function requestParallaxTick() {
+    if (!parallaxTicking) {
+      window.requestAnimationFrame(updateParallax);
+      parallaxTicking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', requestParallaxTick);
+  
+  // Enhanced reveal animations for specific elements
+  const revealElements = document.querySelectorAll('.resume-achievements .achievement, .featured-card, .building-card');
+  revealElements.forEach((el, index) => {
+    setTimeout(() => {
+      observer.observe(el);
+    }, index * 50);
+  });
+
+  /* ===========================
+     SCROLL PROGRESS INDICATOR
+     =========================== */
+  const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollProgress = (scrollTop / scrollHeight) * 100;
+    
+    if (scrollProgressBar) {
+      scrollProgressBar.style.width = scrollProgress + '%';
+    }
+    
+    // Hide/show scroll progress based on scroll position
+    const scrollProgressContainer = document.querySelector('.scroll-progress');
+    if (scrollProgressContainer) {
+      if (scrollTop > 100) {
+        scrollProgressContainer.style.opacity = '1';
+      } else {
+        scrollProgressContainer.style.opacity = '0';
+      }
+    }
+  });
+
+  /* ===========================
+     IMAGE LOADING ANIMATIONS
+     =========================== */
+  const images = document.querySelectorAll('img');
+  images.forEach(img => {
+    if (img.complete) {
+      img.classList.add('loaded');
+    } else {
+      img.addEventListener('load', () => {
+        img.classList.add('loaded');
+      });
+    }
+  });
+
+  /* ===========================
+     ENHANCED PARALLAX EFFECTS
+     =========================== */
+  let ticking = false;
+  
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    const parallaxElements = document.querySelectorAll('.floating-shapes .shape');
+    
+    parallaxElements.forEach((element, index) => {
+      const speed = 0.5 + (index * 0.1);
+      const yPos = -(scrolled * speed);
+      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+    });
+    
+    ticking = false;
+  }
+  
+  function requestTick() {
+    if (!ticking) {
+      window.requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', requestTick);
+
+  /* ===========================
+     MOUSE TILT EFFECT FOR CARDS
+     =========================== */
+  const cards = document.querySelectorAll('.service-card, .project-item, .featured-card, .building-card');
+  
+  cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
+      
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+    
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+    });
   });
   
   /* ===========================
@@ -886,34 +1020,6 @@
   }
   
   /* ===========================
-     TESTIMONIALS CAROUSEL
-     =========================== */
-  let currentTestimonial = 0;
-  const testimonials = document.querySelectorAll('.testimonial-card');
-  const totalTestimonials = testimonials.length;
-  const track = document.querySelector('.testimonial-track');
-  
-  function updateTestimonial() {
-    track.style.transform = `translateX(-${currentTestimonial * 100}%)`;
-  }
-  
-  document.querySelector('.carousel-btn.next').addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-    updateTestimonial();
-  });
-  
-  document.querySelector('.carousel-btn.prev').addEventListener('click', () => {
-    currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-    updateTestimonial();
-  });
-  
-  // Auto-rotate testimonials
-  setInterval(() => {
-    currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-    updateTestimonial();
-  }, 5000);
-  
-  /* ===========================
      GITHUB: Recent Repos
      =========================== */
   (function loadRecentRepos() {
@@ -1015,6 +1121,111 @@
   }
   
   /* ===========================
+     GITHUB INTEGRATION
+     =========================== */
+  const githubUsername = 'brianmuigai2-stack';
+  
+  async function fetchGitHubData() {
+    try {
+      // Fetch user data
+      const userResponse = await fetch(`https://api.github.com/users/${githubUsername}`);
+      const userData = await userResponse.json();
+      
+      // Fetch repositories
+      const reposResponse = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=10`);
+      const reposData = await reposResponse.json();
+      
+      // Update stats
+      updateGitHubStats(userData, reposData);
+      
+      // Update projects with real data
+      updateProjectsWithGitHubData(reposData);
+      
+    } catch (error) {
+      console.log('GitHub API rate limit reached or error occurred:', error);
+    }
+  }
+  
+  function updateGitHubStats(userData, reposData) {
+    // Update project count
+    const projectCount = document.querySelector('[data-target="15"]');
+    if (projectCount && userData.public_repos) {
+      projectCount.setAttribute('data-target', userData.public_repos);
+    }
+    
+    // Update commit count (approximate)
+    const commitCount = document.querySelector('[data-target="500"]');
+    if (commitCount) {
+      const totalCommits = reposData.reduce((sum, repo) => sum + (repo.pushed_at ? 1 : 0), 0) * 10;
+      commitCount.setAttribute('data-target', Math.min(totalCommits, 2000));
+    }
+    
+    // Update technologies based on languages from repos
+    const languages = new Set();
+    reposData.forEach(repo => {
+      if (repo.language) {
+        languages.add(repo.language);
+      }
+    });
+    
+    const techCount = document.querySelector('[data-target="8"]');
+    if (techCount) {
+      techCount.setAttribute('data-target', languages.size);
+    }
+  }
+  
+  function updateProjectsWithGitHubData(reposData) {
+    // Add real GitHub data to project cards
+    const projectCards = document.querySelectorAll('.project-card-3d');
+    
+    reposData.slice(0, 5).forEach((repo, index) => {
+      if (projectCards[index]) {
+        const card = projectCards[index];
+        
+        // Update project links to use real GitHub URLs
+        const links = card.querySelectorAll('.project-links a');
+        if (links[1]) { // GitHub link
+          links[1].href = repo.html_url;
+        }
+        
+        // Add last updated info
+        const lastUpdated = new Date(repo.updated_at).toLocaleDateString();
+        const projectInfo = card.querySelector('.project-info p');
+        if (projectInfo) {
+          projectInfo.innerHTML += `<br><small>Last updated: ${lastUpdated}</small>`;
+        }
+        
+        // Add stars count
+        if (repo.stargazers_count > 0) {
+          const projectInfo = card.querySelector('.project-info');
+          const starsBadge = document.createElement('div');
+          starsBadge.className = 'github-stars';
+          starsBadge.innerHTML = `<i class="fas fa-star"></i> ${repo.stargazers_count}`;
+          projectInfo.appendChild(starsBadge);
+        }
+      }
+    });
+  }
+  
+  // Add GitHub stars CSS
+  const githubStyle = document.createElement('style');
+  githubStyle.textContent = `
+    .github-stars {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: var(--accent);
+      color: white;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 10;
+    }
+  `;
+  document.head.appendChild(githubStyle);
+
+  /* ===========================
      INITIALIZATION
      =========================== */
   document.addEventListener('DOMContentLoaded', () => {
@@ -1032,7 +1243,68 @@
     createParticles();
     
     // Load GitHub repos
-    loadRecentRepos();
+    fetchGitHubData();
+    
+    // Add smooth scrolling behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    
+    // Add scroll animations
+    const scrollObserverOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const scrollObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          
+          // Animate stat numbers when they come into view
+          const statNumbers = entry.target.querySelectorAll('.stat-number');
+          statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-target'));
+            if (!stat.classList.contains('animated')) {
+              animateNumber(stat, 0, target, 2000);
+              stat.classList.add('animated');
+            }
+          });
+        }
+      });
+    }, scrollObserverOptions);
+    
+    // Observe all sections
+    document.querySelectorAll('.page-section').forEach(section => {
+      scrollObserver.observe(section);
+    });
+    
+    function animateNumber(element, start, end, duration) {
+      const startTime = performance.now();
+      
+      function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        
+        const current = Math.floor(start + (end - start) * progress);
+        element.textContent = current;
+        
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+      
+      requestAnimationFrame(update);
+    }
   });
   
   /* ===========================
@@ -1369,3 +1641,61 @@
     }
   `;
   document.head.appendChild(style);
+
+  /* ===========================
+     RESUME MODAL FUNCTIONS
+     =========================== */
+  function openResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close modal when clicking outside
+  document.getElementById('resume-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeResumeModal();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeResumeModal();
+    }
+  });
+
+  /* ===========================
+     ENHANCED SKILL BARS ANIMATION
+     =========================== */
+  const enhancedSkillBars = document.querySelectorAll(".skill-progress");
+  if ("IntersectionObserver" in window) {
+    const enhancedSkillObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const width = entry.target.dataset.width;
+          entry.target.style.setProperty('--skill-width', width + '%');
+          entry.target.style.width = width + '%';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    enhancedSkillBars.forEach(bar => {
+      // Set initial width to 0 for animation
+      bar.style.width = '0%';
+      enhancedSkillObserver.observe(bar);
+    });
+  } else {
+    // Fallback for browsers without IntersectionObserver
+    enhancedSkillBars.forEach(bar => {
+      const width = bar.dataset.width;
+      bar.style.width = width + '%';
+    });
+  }

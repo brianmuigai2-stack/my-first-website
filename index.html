@@ -65,6 +65,11 @@
   </script>
 </head>
 <body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
   <!-- Page Transition Overlay -->
   <div class="page-transition-overlay">
     <div class="transition-loader">
@@ -93,11 +98,11 @@
       <div class="nav-links">
         <a href="#home" class="nav-link" data-section="home">Home</a>
         <a href="#about" class="nav-link" data-section="about">About</a>
-        <a href="#services" class="nav-link" data-section="services">Services</a>
-        <a href="#skills" class="nav-link" data-section="skills">Skills</a>
-        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
-        <!-- Blog link removed until section is active -->
-        <a href="#testimonials" class="nav-link" data-section="testimonials">Testimonials</a>
+        <a href="#resume" class="nav-link" data-section="resume">Resume</a>
+        <a href="#featured-projects" class="nav-link" data-section="featured-projects">Featured</a>
+        <a href="#technical-highlights" class="nav-link" data-section="technical-highlights">Skills</a>
+        <a href="#currently-building" class="nav-link" data-section="currently-building">Building</a>
+        <a href="#projects" class="nav-link" data-section="projects">All Projects</a>
         <a href="#contact" class="nav-link" data-section="contact">Contact</a>
       </div>
       <div class="nav-controls">
@@ -187,11 +192,20 @@
     </div>
     <div class="hero-content">
       <div class="hero-text">
+        <p class="hero-eyebrow">Software Engineering Intern | Frontend-Focused Developer</p>
         <h1 data-translate="hero-title">Hey, I'm Brian <span class="wave">👋</span></h1>
-        <p id="typed" data-translate="hero-subtitle">Junior Developer | React Enthusiast | Problem Solver</p>
+        <p id="typed" data-translate="hero-subtitle">Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.</p>
         <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary" data-translate="view-projects">View Projects</a>
+          <a href="#featured-projects" class="btn btn-primary" data-translate="view-projects">View Projects</a>
           <a href="#contact" class="btn btn-outline" data-translate="contact-me">Contact Me</a>
+        </div>
+        <div class="hero-tech-badges" aria-label="Primary tech stack">
+          <span class="hero-tech-badge">React</span>
+          <span class="hero-tech-badge">JavaScript</span>
+          <span class="hero-tech-badge">Node.js</span>
+          <span class="hero-tech-badge">HTML/CSS</span>
+          <span class="hero-tech-badge">Git</span>
+          <span class="hero-tech-badge">Firebase</span>
         </div>
       </div>
       <div class="hero-gif">
@@ -200,68 +214,674 @@
     </div>
   </section>
 
-  <!-- Resume Download Section -->
-  <div class="resume-section">
-    <h3 data-translate="resume-title">Download My Resume</h3>
-    <p data-translate="resume-subtitle">Get a detailed overview of my experience and skills</p>
-    <div class="resume-buttons">
-      <!-- ACTION: Upload your resume files to the root of your repository -->
-      <a href="Brian.pdf" download class="btn btn-primary" target="_blank">
-        <i class="fas fa-download"></i>
-        <span data-translate="download-pdf">Download PDF</span>
-      </a>
-      <a href="/resume.docx" download class="btn btn-outline" target="_blank">
-        <i class="fas fa-file-word"></i>
-        <span data-translate="download-doc">Download DOCX</span>
-      </a>
-    </div>
-    <div class="snow"></div>
-
-  </div>
-
-  <main>
-    <section id="about" aria-labelledby="about-heading" class="page-section">
-      <h2 id="about-heading" class="section-title" data-translate="about-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p data-translate="about-text">
-            I'm a passionate software engineering student focused on building clean, responsive web applications.
-            I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks.
-            Currently exploring React and full-stack development to create impactful digital experiences.
-          </p>
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-number" data-target="15">0</span>
-              <span class="stat-label" data-translate="projects-label">Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-target="8">0</span>
-              <span class="stat-label" data-translate="technologies-label">Technologies</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-target="500">0</span>
-              <span class="stat-label" data-translate="commits-label">Commits</span>
+  <!-- About Section -->
+  <section id="about" class="page-section">
+    <h2 class="section-title" data-translate="about-title">About Me</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p data-translate="about-text">
+          I'm a passionate software engineering student focused on building clean, responsive web applications.
+          I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks.
+          Currently exploring React and full-stack development to create impactful digital experiences.
+          I love designing full-stack systems that solve real-world problems — from job platforms to real-time collaboration
+          tools and AI-powered applications. My development philosophy centers on writing clean, maintainable code
+          and creating user experiences that make a difference.
+        </p>
+        <div class="about-stats">
+          <div class="stat">
+            <span class="stat-number" data-target="15">0</span>
+            <span class="stat-label" data-translate="projects-label">Projects</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="8">0</span>
+            <span class="stat-label" data-translate="technologies-label">Technologies</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number" data-target="500">0</span>
+            <span class="stat-label" data-translate="commits-label">Commits</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <div class="image-container">
+          <img src="Yobi.jpg" alt="Photo of Brian Muigai" loading="lazy">
+          <div class="image-overlay">
+            <div class="tech-stack">
+              <i class="fab fa-html5"></i>
+              <i class="fab fa-css3-alt"></i>
+              <i class="fab fa-js"></i>
+              <i class="fab fa-react"></i>
+              <i class="fab fa-node-js"></i>
             </div>
           </div>
         </div>
-        <div class="about-image">
-          <div class="image-container">
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="page-section">
+    <h2 class="section-title" data-translate="resume-title">Resume & Achievements</h2>
+    <p class="section-subtitle" data-translate="resume-subtitle">Key achievements and technical summary</p>
+    
+    <div class="resume-achievements">
+      <div class="achievement">
+        <i class="fas fa-code"></i>
+        <h4>Built 15+ Full-Stack Applications</h4>
+        <p>From concept to deployment with modern tech stacks</p>
+      </div>
+      <div class="achievement">
+        <i class="fas fa-server"></i>
+        <h4>Designed Production APIs</h4>
+        <p>RESTful services serving thousands of requests daily</p>
+      </div>
+      <div class="achievement">
+        <i class="fas fa-cloud"></i>
+        <h4>Deployed Cloud-Based Systems</h4>
+        <p>AWS, Vercel, and Docker containerization</p>
+      </div>
+      <div class="achievement">
+        <i class="fas fa-brain"></i>
+        <h4>Developed AI-Integrated Platforms</h4>
+        <p>Machine learning-powered applications</p>
+      </div>
+    </div>
+    
+    <div class="resume-buttons">
+      <button class="btn btn-primary" onclick="openResumeModal()">
+        <i class="fas fa-eye"></i>
+        <span data-translate="view-resume">View Resume</span>
+      </button>
+    </div>
+  </section>
+    
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3>My Resume</h3>
+          <button class="modal-close" onclick="closeResumeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="resume-content">
+            <div class="resume-section">
+              <h1 class="resume-name">Brian Muigai</h1>
+              <p class="resume-title">Software Engineering Intern | Frontend-Focused Developer</p>
+              <p class="resume-contact">
+                📍 Nairobi, Kenya<br>
+                📞 0707 528 414<br>
+                📧 brian11613bmw@gmail.com<br>
+                🔗 https://github.com/brianmuigai2-stack
+              </p>
+            </div>
             
-            <img src="Yobi.jpg" alt="Photo of Brian Muigai" loading="lazy">
-            <div class="image-overlay">
-              <div class="tech-stack">
-                <i class="fab fa-html5"></i>
-                <i class="fab fa-css3-alt"></i>
-                <i class="fab fa-js"></i>
-                <i class="fab fa-react"></i>
-                <i class="fab fa-node-js"></i>
+            <div class="resume-section">
+              <h3>PROFESSIONAL SUMMARY</h3>
+              <p>Motivated software engineering intern with hands-on experience building responsive and scalable web applications using React, JavaScript, HTML, and CSS. Currently training in software development at Moringa School. Experienced in fullstack development, REST API integration, and deploying production-ready applications. Strong interest in building reliable systems, improving user experience, and contributing to collaborative engineering teams.</p>
+            </div>
+            
+            <div class="resume-section">
+              <h3>TECHNICAL SKILLS</h3>
+              <div class="skills-detailed">
+                <div class="skill-group">
+                  <h4>Programming Languages</h4>
+                  <p>JavaScript (ES6+), Python, HTML5, CSS3</p>
+                </div>
+                <div class="skill-group">
+                  <h4>Frontend Development</h4>
+                  <p>React.js, Component-Based UI, Responsive Web Design</p>
+                </div>
+                <div class="skill-group">
+                  <h4>Backend & APIs</h4>
+                  <p>Node.js, Express.js, FastAPI (basic), RESTful APIs</p>
+                </div>
+                <div class="skill-group">
+                  <h4>Databases</h4>
+                  <p>Firebase, MongoDB (introductory), PostgreSQL (basic exposure)</p>
+                </div>
+                <div class="skill-group">
+                  <h4>Tools & Platforms</h4>
+                  <p>Git, GitHub, VS Code, Vite, Figma, Vercel, Render</p>
+                </div>
+                <div class="skill-group">
+                  <h4>Concepts</h4>
+                  <p>Debugging, API Integration, Version Control Workflows, Testing Basics, Deployment & Production Troubleshooting</p>
+                </div>
               </div>
+            </div>
+            
+            <div class="resume-section">
+              <h3>PROJECT EXPERIENCE</h3>
+              
+              <div class="project-item">
+                <h4>Smart Recruiter — Technical Assessment Platform (Fullstack Application)</h4>
+                <p class="project-link">Live Demo: https://own-app-ten.vercel.app</p>
+                <ul>
+                  <li>Developed a fullstack recruitment and technical assessment platform with role-based workflows.</li>
+                  <li>Built dynamic React dashboards and assessment interfaces for structured user interaction.</li>
+                  <li>Developed backend APIs and integrated database operations for managing assessments and users.</li>
+                  <li>Implemented authentication flows, notifications, and deployment troubleshooting in production environments.</li>
+                  <li>Focused on scalability, clean architecture, and improving performance across features.</li>
+                </ul>
+              </div>
+              
+              <div class="project-item">
+                <h4>Kazi Connect — Frontend Web Application</h4>
+                <p class="project-link">Live Demo: https://hacker-thon-mg8o.vercel.app/</p>
+                <ul>
+                  <li>Developed a responsive web application connecting users with opportunities through structured interfaces.</li>
+                  <li>Built reusable React components with consistent UI architecture and styling.</li>
+                  <li>Implemented responsive layouts supporting desktop and mobile devices.</li>
+                  <li>Collaborated using Git workflows and deployed application for real-world testing.</li>
+                </ul>
+              </div>
+              
+              <div class="project-item">
+                <h4>Podcast Platform — Fullstack Web Application</h4>
+                <p class="project-link">Live Demo: https://brians-fullstack.vercel.app/</p>
+                <ul>
+                  <li>Built a fullstack podcast platform enabling users to browse and interact with audio content.</li>
+                  <li>Developed dynamic React components for real-time content rendering.</li>
+                  <li>Integrated backend APIs to fetch and display application data reliably.</li>
+                  <li>Focused on performance optimization and accessibility across devices.</li>
+                </ul>
+              </div>
+              
+              <div class="project-item">
+                <h4>Project Tracker — React Application</h4>
+                <ul>
+                  <li>Developed a single-page React application for tracking projects and tasks.</li>
+                  <li>Implemented Firebase authentication and Firestore for persistent data management.</li>
+                  <li>Added search functionality, progress tracking, and theme customization features.</li>
+                  <li>Improved usability through structured layouts and clear interaction patterns.</li>
+                </ul>
+              </div>
+              
+              <div class="project-item">
+                <h4>Personal Portfolio Website</h4>
+                <ul>
+                  <li>Designed and developed a responsive portfolio showcasing projects and technical skills.</li>
+                  <li>Built reusable UI components using React and modern CSS practices.</li>
+                  <li>Implemented responsive layouts and animations to improve engagement.</li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="resume-section">
+              <h3>EDUCATION</h3>
+              <div class="education-item">
+                <h4>Software Development Program (In Progress)</h4>
+                <p><strong>Moringa School</strong></p>
+                <p>Kenya</p>
+              </div>
+              <div class="education-item">
+                <h4>Certificate of Secondary Education (KCSE)</h4>
+                <p><strong>Certificate of Merit — Mathematics Contest, St. Francis Mangu</strong></p>
+              </div>
+            </div>
+            
+            <div class="resume-section">
+              <h3>SOFT SKILLS</h3>
+              <div class="skills-grid">
+                <div class="skill-item">• Analytical Problem Solving</div>
+                <div class="skill-item">• Clear Technical Communication</div>
+                <div class="skill-item">• Time Management & Reliability</div>
+                <div class="skill-item">• Adaptability and Continuous Learning</div>
+                <div class="skill-item">• Team Collaboration (Remote & In-Person)</div>
+              </div>
+            </div>
+            
+            <div class="resume-section">
+              <h3>REFERENCES</h3>
+              <p>Available upon request.</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="Brian Muigai Resume (1).docx" download class="btn btn-outline">
+            <i class="fas fa-download"></i>
+            Download Resume
+          </a>
+          <button class="btn btn-primary" onclick="closeResumeModal()">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="snow"></div>
+  </div>
+
+  <!-- Featured Projects Section -->
+    <section id="featured-projects" class="page-section">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="featured-grid">
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="/App.png" alt="Kazi Connect App" />
+          </div>
+          <div class="featured-content">
+            <h3>Kazi Connect</h3>
+            <p class="featured-tagline">AI-powered job platform connecting skilled workers with opportunities</p>
+            <div class="featured-metrics">
+              <div class="metric">
+                <span class="metric-number">500+</span>
+                <span class="metric-label">Active Users</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">50+</span>
+                <span class="metric-label">Jobs Posted</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">95%</span>
+                <span class="metric-label">Match Rate</span>
+              </div>
+            </div>
+            <div class="featured-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">AI Integration</span>
+            </div>
+            <div class="featured-links">
+              <a href="https://hacker-thon-mg8o.vercel.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/brianmuigai2-stack/Hacker-thon" target="_blank" class="btn btn-outline">View Code</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card">
+          <div class="featured-image">
+            <img src="https://i.pinimg.com/736x/90/18/f1/9018f102382fac67bad8391c3d789564.jpg" alt="Podcast Platform" />
+          </div>
+          <div class="featured-content">
+            <h3>Podcast Platform</h3>
+            <p class="featured-tagline">Advanced podcast streaming and content creation platform</p>
+            <div class="featured-metrics">
+              <div class="metric">
+                <span class="metric-number">1000+</span>
+                <span class="metric-label">Podcasts</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">50K+</span>
+                <span class="metric-label">Minutes Streamed</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">99.9%</span>
+                <span class="metric-label">Uptime</span>
+              </div>
+            </div>
+            <div class="featured-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Flask API</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Real-time Streaming</span>
+            </div>
+            <div class="featured-links">
+              <a href="https://brians-fullstack.vercel.app/" target="_blank" class="btn btn-primary">Live Demo</a>
+              <a href="https://github.com/elvinmwarangu-stack/podcast-platform" target="_blank" class="btn btn-outline">View Code</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- System Design Section -->
+    <section id="system-design" class="page-section">
+      <h2 class="section-title">System Design & Architecture</h2>
+      <div class="architecture-content">
+        <div class="architecture-diagram">
+          <h3>Full-Stack Architecture</h3>
+          <div class="diagram-container">
+            <div class="arch-layer frontend">
+              <div class="layer-title">Frontend</div>
+              <div class="tech-items">
+                <span class="tech-item">React</span>
+                <span class="tech-item">TypeScript</span>
+                <span class="tech-item">Tailwind CSS</span>
+                <span class="tech-item">Redux</span>
+              </div>
+            </div>
+            <div class="arch-layer api">
+              <div class="layer-title">API Layer</div>
+              <div class="tech-items">
+                <span class="tech-item">Node.js</span>
+                <span class="tech-item">Express</span>
+                <span class="tech-item">FastAPI</span>
+                <span class="tech-item">REST/GraphQL</span>
+              </div>
+            </div>
+            <div class="arch-layer database">
+              <div class="layer-title">Database</div>
+              <div class="tech-items">
+                <span class="tech-item">PostgreSQL</span>
+                <span class="tech-item">MongoDB</span>
+                <span class="tech-item">Redis</span>
+                <span class="tech-item">Firebase</span>
+              </div>
+            </div>
+            <div class="arch-layer deployment">
+              <div class="layer-title">Deployment</div>
+              <div class="tech-items">
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">Vercel</span>
+                <span class="tech-item">AWS</span>
+                <span class="tech-item">CI/CD</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="architecture-details">
+          <h3>Technical Expertise</h3>
+          <div class="expertise-grid">
+            <div class="expertise-card">
+              <div class="expertise-icon">
+                <i class="fas fa-server"></i>
+              </div>
+              <h4>Backend Systems</h4>
+              <p>Scalable server architectures with microservices, RESTful APIs, and real-time communication</p>
+            </div>
+            <div class="expertise-card">
+              <div class="expertise-icon">
+                <i class="fas fa-database"></i>
+              </div>
+              <h4>Database Design</h4>
+              <p>Optimized database schemas, query performance, and data modeling for complex applications</p>
+            </div>
+            <div class="expertise-card">
+              <div class="expertise-icon">
+                <i class="fas fa-cloud"></i>
+              </div>
+              <h4>Cloud Deployment</h4>
+              <p>Containerized applications, CI/CD pipelines, and cloud-native development practices</p>
+            </div>
+            <div class="expertise-card">
+              <div class="expertise-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4>Security</h4>
+              <p>JWT authentication, OAuth, data encryption, and secure API development</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Highlights Section -->
+    <section id="technical-highlights" class="page-section">
+      <h2 class="section-title">Technical Skills & Expertise</h2>
+      <p class="section-subtitle">Comprehensive skill set built through hands-on development experience</p>
+      
+      <!-- Frontend Skills -->
+      <div class="skills-category">
+        <div class="skills-header">
+          <div class="skills-icon">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Frontend Development</h3>
+          <p class="skills-description">Building responsive, interactive user interfaces with modern frameworks</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">React.js</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="85"></div>
+                </div>
+                <span class="skill-percent">85%</span>
+              </div>
+            </div>
+            <p class="skill-details">Components, Hooks, State Management, Redux</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">JavaScript</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="90"></div>
+                </div>
+                <span class="skill-percent">90%</span>
+              </div>
+            </div>
+            <p class="skill-details">ES6+, Async/Await, DOM Manipulation, Event Handling</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">HTML/CSS</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="95"></div>
+                </div>
+                <span class="skill-percent">95%</span>
+              </div>
+            </div>
+            <p class="skill-details">Semantic HTML5, CSS3, Flexbox, Grid, Animations</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Responsive Design</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="88"></div>
+                </div>
+                <span class="skill-percent">88%</span>
+              </div>
+            </div>
+            <p class="skill-details">Mobile-First, Media Queries, Cross-Browser Compatibility</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Backend Skills -->
+      <div class="skills-category">
+        <div class="skills-header">
+          <div class="skills-icon">
+            <i class="fas fa-server"></i>
+          </div>
+          <h3>Backend Development</h3>
+          <p class="skills-description">Building robust server-side applications and APIs</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Node.js</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="75"></div>
+                </div>
+                <span class="skill-percent">75%</span>
+              </div>
+            </div>
+            <p class="skill-details">Express.js, Middleware, RESTful APIs, Authentication</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Python</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="65"></div>
+                </div>
+                <span class="skill-percent">65%</span>
+              </div>
+            </div>
+            <p class="skill-details">FastAPI, Data Processing, Automation Scripts</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">APIs</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="80"></div>
+                </div>
+                <span class="skill-percent">80%</span>
+              </div>
+            </div>
+            <p class="skill-details">RESTful Design, JSON, JWT Authentication, Webhooks</p>
+          </div>
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="skill-name">Databases</span>
+              <div class="skill-level">
+                <div class="skill-bar">
+                  <div class="skill-progress" data-width="70"></div>
+                </div>
+                <span class="skill-percent">70%</span>
+              </div>
+            </div>
+            <p class="skill-details">Firebase, MongoDB, PostgreSQL, Basic SQL</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tools & Technologies -->
+      <div class="skills-category">
+        <div class="skills-header">
+          <div class="skills-icon">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3>Tools & Technologies</h3>
+          <p class="skills-description">Development tools and platforms for modern workflows</p>
+        </div>
+        <div class="tech-cloud-enhanced">
+          <div class="tech-group">
+            <h4>Version Control</h4>
+            <div class="tech-items">
+              <span class="tech-badge">Git</span>
+              <span class="tech-badge">GitHub</span>
+              <span class="tech-badge">Git Flow</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <h4>Development Tools</h4>
+            <div class="tech-items">
+              <span class="tech-badge">VS Code</span>
+              <span class="tech-badge">Vite</span>
+              <span class="tech-badge">Chrome DevTools</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <h4>Deployment</h4>
+            <div class="tech-items">
+              <span class="tech-badge">Vercel</span>
+              <span class="tech-badge">Render</span>
+              <span class="tech-badge">Docker</span>
+            </div>
+          </div>
+          <div class="tech-group">
+            <h4>Design</h4>
+            <div class="tech-items">
+              <span class="tech-badge">Figma</span>
+              <span class="tech-badge">Tailwind CSS</span>
+              <span class="tech-badge">Responsive Design</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development Practices -->
+      <div class="skills-category">
+        <div class="skills-header">
+          <div class="skills-icon">
+            <i class="fas fa-code-branch"></i>
+          </div>
+          <h3>Development Practices</h3>
+          <p class="skills-description">Modern development methodologies and best practices</p>
+        </div>
+        <div class="practices-grid">
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-rocket"></i>
+            </div>
+            <h4>Performance Optimization</h4>
+            <p>Code splitting, lazy loading, caching strategies, bundle optimization</p>
+          </div>
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-bug"></i>
+            </div>
+            <h4>Testing & Debugging</h4>
+            <p>Unit testing, integration testing, browser dev tools, error handling</p>
+          </div>
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h4>Mobile-First Development</h4>
+            <p>Responsive design, touch interactions, progressive enhancement</p>
+          </div>
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-universal-access"></i>
+            </div>
+            <h4>Accessibility</h4>
+            <p>ARIA labels, semantic HTML, keyboard navigation, screen readers</p>
+          </div>
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h4>Security Best Practices</h4>
+            <p>Input validation, JWT tokens, HTTPS, secure API design</p>
+          </div>
+          <div class="practice-item">
+            <div class="practice-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>Agile & Collaboration</h4>
+            <p>Git workflows, code reviews, iterative development, team communication</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Currently Building Section -->
+    <section id="currently-building" class="page-section">
+      <h2 class="section-title">Currently Building</h2>
+      <div class="building-grid">
+        <div class="building-card">
+          <div class="building-status">
+            <i class="fas fa-tools"></i>
+            <span>In Development</span>
+          </div>
+          <h3>Smart Recruiter SaaS Platform</h3>
+          <p>AI-powered technical assessment platform for automated hiring with real-time coding challenges and automated scoring.</p>
+          <div class="building-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">AI/ML</span>
+            <span class="tech-tag">WebRTC</span>
+          </div>
+        </div>
+        <div class="building-card">
+          <div class="building-status">
+            <i class="fas fa-tools"></i>
+            <span>In Development</span>
+          </div>
+          <h3>AI Resume Analyzer</h3>
+          <p>Machine learning-powered tool for resume analysis and job matching with personalized feedback and optimization suggestions.</p>
+          <div class="building-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
+        </div>
+        <div class="building-card">
+          <div class="building-status">
+            <i class="fas fa-tools"></i>
+            <span>Planning</span>
+          </div>
+          <h3>Developer Portfolio Generator</h3>
+          <p>Automated portfolio builder with customizable templates and real-time preview for developers to showcase their work.</p>
+          <div class="building-tech">
+            <span class="tech-tag">Next.js</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">Tailwind</span>
+            <span class="tech-tag">Vercel</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main>
     <section id="services" aria-labelledby="services-heading" class="page-section">
       <h2 id="services-heading" class="section-title" data-translate="services-title">Services I Offer</h2>
       <div class="services-grid">
@@ -305,86 +925,6 @@
             <li data-translate="service-uiux-feature3">Design Systems</li>
           </ul>
           <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" aria-labelledby="skills-heading" class="page-section">
-      <h2 id="skills-heading" class="section-title" data-translate="skills-title">Skills</h2>
-      <div class="skills-container">
-        <div class="skills-grid">
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-js"></i>
-            </div>
-            <div class="skill-info">
-              <h3>JavaScript</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="85"></div></div>
-                <span class="skill-percent">85%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-react"></i>
-            </div>
-            <div class="skill-info">
-              <h3>React</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="75"></div></div>
-                <span class="skill-percent">75%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-node-js"></i>
-            </div>
-            <div class="skill-info">
-              <h3>Node.js</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="70"></div></div>
-                <span class="skill-percent">70%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-html5"></i>
-            </div>
-            <div class="skill-info">
-              <h3>HTML & CSS</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="90"></div></div>
-                <span class="skill-percent">90%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-git-alt"></i>
-            </div>
-            <div class="skill-info">
-              <h3>Git</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="80"></div></div>
-                <span class="skill-percent">80%</span>
-              </div>
-            </div>
-          </div>
-          <div class="skill">
-            <div class="skill-icon">
-              <i class="fab fa-python"></i>
-            </div>
-            <div class="skill-info">
-              <h3>Python</h3>
-              <div class="skill-level">
-                <div class="progress"><div class="bar" data-width="65"></div></div>
-                <span class="skill-percent">65%</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>
@@ -436,15 +976,17 @@
             </div>
             <div class="card-back">
               <div class="back-content">
-                <h3>Project Details</h3>
-                <p>Advanced project management system with real-time updates, team collaboration features, and comprehensive analytics dashboard.</p>
+                <h3>Project Tracker — Case Study</h3>
+                <p><strong>Problem:</strong> Teams struggled to track tasks, deadlines, and ownership across multiple tools.</p>
+                <p><strong>Solution:</strong> Built a real-time project dashboard with shared boards, live updates, and analytics.</p>
+                <p><strong>Impact:</strong> Reduced status sync time and made project health visible at a glance.</p>
                 <div class="back-tech">
-                  <h4>Technologies Used:</h4>
+                  <h4>Stack:</h4>
                   <ul>
                     <li>React.js with Hooks</li>
                     <li>Node.js & Express</li>
                     <li>MongoDB with Mongoose</li>
-                    <li>Socket.io for real-time</li>
+                    <li>Socket.io for real-time collaboration</li>
                     <li>JWT Authentication</li>
                   </ul>
                 </div>
@@ -486,16 +1028,17 @@
             </div>
             <div class="card-back">
               <div class="back-content">
-                <h3>Project Details</h3>
-                <p>Interactive typing speed test with real-time WPM calculation, accuracy tracking, and leaderboard functionality.</p>
+                <h3>Typing Speed Test — Case Study</h3>
+                <p><strong>Problem:</strong> Learners had no simple way to measure real typing progress over time.</p>
+                <p><strong>Solution:</strong> Built a browser-based typing lab with instant WPM, accuracy, and session history.</p>
+                <p><strong>Impact:</strong> Helped users track improvement session-by-session and compare runs.</p>
                 <div class="back-tech">
-                  <h4>Features:</h4>
+                  <h4>Key Features:</h4>
                   <ul>
-                    <li>Real-time speed calculation</li>
-                    <li>Accuracy tracking system</li>
-                    <li>Multiple difficulty levels</li>
-                    <li>Local storage for scores</li>
-                    <li>Responsive design</li>
+                    <li>Real-time speed and accuracy tracking</li>
+                    <li>Multiple difficulty modes</li>
+                    <li>Leaderboard using local storage</li>
+                    <li>Responsive, mobile-first layout</li>
                   </ul>
                 </div>
                 <div class="back-links">
@@ -534,16 +1077,18 @@
             </div>
             <div class="card-back">
               <div class="back-content">
-                <h3>Project Details</h3>
-                <p>Cross-platform mobile weather application with geolocation support, 7-day forecast, and beautiful weather animations.</p>
+                <h3>Weather App — Case Study</h3>
+                <p><strong>Problem:</strong> Users needed a fast, minimal weather view instead of ad-heavy apps.</p>
+                <p><strong>Solution:</strong> Built a clean mobile interface focused on current conditions and a 7‑day outlook.</p>
+                <p><strong>Impact:</strong> Delivered quick, glanceable forecasts with smooth animations and offline caching.</p>
                 <div class="back-tech">
-                  <h4>Features:</h4>
+                  <h4>Key Features:</h4>
                   <ul>
-                    <li>Geolocation support</li>
-                    <li>7-day weather forecast</li>
-                    <li>Beautiful weather animations</li>
-                    <li>Multiple cities support</li>
-                    <li>Offline functionality</li>
+                    <li>Geolocation-based current weather</li>
+                    <li>7-day forecast cards</li>
+                    <li>Icon-based weather animations</li>
+                    <li>Support for multiple saved cities</li>
+                    <li>Offline-friendly data cache</li>
                   </ul>
                 </div>
                 <div class="back-links">
@@ -764,105 +1309,6 @@
       ...
     </section>
     -->
-
-    <section id="testimonials" aria-labelledby="testimonials-heading" class="page-section">
-      <h2 id="testimonials-heading" class="section-title" data-translate="testimonials-title">What Clients Say</h2>
-      <div class="testimonials-carousel">
-        <div class="testimonial-track">
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p data-translate="testimonial1">"Brian delivered an exceptional web application that exceeded our expectations. His attention to detail and problem-solving skills are outstanding. Highly recommended!"</p>
-            </div>
-            <div class="testimonial-author">
-              <!-- ACTION: Replace with real client photos and info -->
-              <img src="https://picsum.photos/seed/client1/60/60.jpg" alt="Client photo">
-              <div class="author-info">
-                <h4>Sarah Johnson</h4>
-                <p data-translate="testimonial1-role">CEO, TechStart Inc.</p>
-              </div>
-            </div>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-          
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p data-translate="testimonial2">"Working with Brian was a pleasure. He brought our vision to life with clean code and innovative solutions. His communication and professionalism are top-notch."</p>
-            </div>
-            <div class="testimonial-author">
-              <!-- ACTION: Replace with real client photos and info -->
-              <img src="https://picsum.photos/seed/client2/60/60.jpg" alt="Client photo">
-              <div class="author-info">
-                <h4>Michael Chen</h4>
-                <p data-translate="testimonial2-role">Product Manager, InnovateCo</p>
-              </div>
-            </div>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p data-translate="testimonial3">"Brian's expertise in React and modern web technologies helped us launch our product ahead of schedule. His dedication to quality is impressive."</p>
-            </div>
-            <div class="testimonial-author">
-              <!-- ACTION: Replace with real client photos and info -->
-              <img src="https://picsum.photos/seed/client3/60/60.jpg" alt="Client photo">
-              <div class="author-info">
-                <h4>Emily Rodriguez</h4>
-                <p data-translate="testimonial3-role">CTO, StartupHub</p>
-              </div>
-            </div>
-            <div class="testimonial-rating">
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star"></i>
-              <i class="fas fa-star-half-alt"></i>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-controls">
-          <button class="carousel-btn prev" aria-label="Previous testimonial">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <button class="carousel-btn next" aria-label="Next testimonial">
-            <i class="fas fa-chevron-right"></i>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section id="newsletter" aria-labelledby="newsletter-heading" class="page-section">
-      <h2 id="newsletter-heading" class="section-title" data-translate="newsletter-title">Stay Updated</h2>
-      <p data-translate="newsletter-subtitle">Get the latest updates on my projects and articles delivered to your inbox</p>
-      <form class="newsletter-form" id="newsletter-form">
-        <div class="form-group">
-          <input type="email" id="newsletter-email" placeholder="Enter your email address" required>
-          <button type="submit" class="btn btn-primary">
-            <span data-translate="subscribe">Subscribe</span>
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </div>
-        <p class="newsletter-privacy" data-translate="privacy-notice">
-          I respect your privacy. Unsubscribe at any time. No spam, ever.
-        </p>
-      </form>
-      <div class="newsletter-success" id="newsletter-success">
-        <i class="fas fa-check-circle"></i>
-        <span data-translate="success-message">Successfully subscribed! Check your email for confirmation.</span>
-      </div>
-    </section>
 
     <section id="contact" aria-labelledby="contact-heading" class="page-section">
       <h2 id="contact-heading" class="section-title" data-translate="contact-title">Get In Touch</h2>
