@@ -977,18 +977,18 @@
       if (window.emailjs) {
         emailjs.sendForm("service_8g01mr", "template_vx207z1", "#contact-form")
           .then(() => {
-            alert("✅ Message sent! I'll get back to you soon.");
+            showNotification("✅ Message sent! I'll get back to you soon.", 'success');
             contactForm.reset();
             btn.disabled = false;
             btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
           }, (err) => {
             console.error("EmailJS error:", err);
-            alert("❌ Failed to send. Please try again or email me directly.");
+            showNotification("❌ Failed to send. Please try again or email me directly.", 'error');
             btn.disabled = false;
             btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
           });
       } else {
-        alert("⚠️ EmailJS not loaded. Contact form disabled.");
+        showNotification("⚠️ EmailJS not loaded. Contact form disabled.", 'warning');
         contactForm.reset();
         btn.disabled = false;
         btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
@@ -1404,6 +1404,47 @@
   if (typeof gtag !== 'undefined') {
     initAnalytics();
   }
+
+  /* ===========================
+     CUSTOM NOTIFICATION SYSTEM
+     =========================== */
+  function showNotification(message, type = 'info') {
+    const notification = document.createElement('div');
+    notification.className = `custom-notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 15px 20px;
+      background: ${type === 'success' ? '#4caf50' : type === 'error' ? '#f44336' : '#ff9800'};
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 10001;
+      animation: slideInRight 0.3s ease;
+      max-width: 300px;
+      font-size: 14px;
+    `;
+    document.body.appendChild(notification);
+    setTimeout(() => {
+      notification.style.animation = 'slideOutRight 0.3s ease';
+      setTimeout(() => document.body.removeChild(notification), 300);
+    }, 3000);
+  }
+
+  const notificationStyle = document.createElement('style');
+  notificationStyle.textContent = `
+    @keyframes slideInRight {
+      from { transform: translateX(400px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideOutRight {
+      from { transform: translateX(0); opacity: 1; }
+      to { transform: translateX(400px); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(notificationStyle);
   
   /* ===========================
      MUSIC PLAYER - IMPROVED VERSION

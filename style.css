@@ -3501,6 +3501,15 @@ textarea:focus {
   font-size: 0.95rem;
 }
 
+/* Resume modal content always visible */
+.modal-body .project-item,
+.modal-body .skill-item,
+.modal-body .skills-grid .skill-item {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 .resume-section ul {
   margin: 15px 0;
   padding-left: 20px;
