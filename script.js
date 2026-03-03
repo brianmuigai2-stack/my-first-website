@@ -954,17 +954,33 @@
   });
   
   /* ===========================
-     CONTACT FORM (EmailJS)
+     EMAILJS INITIALIZATION
      =========================== */
-  (function () {
-    if (window.emailjs) {
-      try {
-        emailjs.init("oD8O16m34hGHpi-1S");
-      } catch (e) {
-        console.warn("EmailJS init failed", e);
+  document.addEventListener('DOMContentLoaded', function() {
+    // Wait for EmailJS to load
+    setTimeout(() => {
+      if (window.emailjs) {
+        try {
+          // EmailJS v3 format with exact public key
+          emailjs.init("Q-z5wzQPltV7tnUty");
+          console.log("EmailJS v3 initialized successfully");
+        } catch (e) {
+          console.warn("EmailJS v3 init failed:", e);
+          // Fallback to object format
+          try {
+            emailjs.init({
+              publicKey: "Q-z5wzQPltV7tnUty"
+            });
+            console.log("EmailJS v3 object format initialized");
+          } catch (e2) {
+            console.warn("EmailJS object format failed:", e2);
+          }
+        }
+      } else {
+        console.warn("EmailJS not loaded - CDN may be blocked");
       }
-    }
-  })();
+    }, 2000); // Increased delay to ensure EmailJS loads
+  });
   
   const contactForm = document.getElementById("contact-form");
   if (contactForm) {
@@ -975,23 +991,37 @@
       btn.textContent = "Sending…";
   
       if (window.emailjs) {
-        emailjs.sendForm("service_8g01mr", "template_vx207z1", "#contact-form")
+        const templateParams = {
+          from_name: contactForm.querySelector("input[name='user_name']").value,
+          from_email: contactForm.querySelector("input[name='user_email']").value,
+          message: contactForm.querySelector("textarea[name='message']").value,
+          sent_date: new Date().toLocaleString('en-US', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+          }),
+          portfolio_url: "https://brianmuigai2-stack.github.io/my-first-website/"
+        };
+        emailjs.send("service_3qcsmah", "template_d2ydngr", templateParams)
           .then(() => {
             showNotification("✅ Message sent! I'll get back to you soon.", 'success');
             contactForm.reset();
+          })
+          .catch((error) => {
+            console.error("EmailJS error:", error);
+            showNotification("❌ Failed to send message. Please try again.", 'error');
+          })
+          .finally(() => {
             btn.disabled = false;
-            btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
-          }, (err) => {
-            console.error("EmailJS error:", err);
-            showNotification("❌ Failed to send. Please try again or email me directly.", 'error');
-            btn.disabled = false;
-            btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
+            btn.textContent = "Send Message";
           });
       } else {
-        showNotification("⚠️ EmailJS not loaded. Contact form disabled.", 'warning');
-        contactForm.reset();
+        showNotification("❌ Email service not available. Please try again later.", 'error');
         btn.disabled = false;
-        btn.textContent = translations[localStorage.getItem('language') || 'en']['send-message'];
+        btn.textContent = "Send Message";
       }
     });
   }
@@ -1018,33 +1048,6 @@
       }, 1000);
     });
   }
-  
-  /* ===========================
-     GITHUB: Recent Repos
-     =========================== */
-  (function loadRecentRepos() {
-    const username = "brianmuigai2-stack";
-    fetch(`https://api.github.com/users/${username}/repos?per_page=6&sort=updated`)
-      .then(r => r.ok ? r.json() : Promise.reject(r.status))
-      .then(repos => {
-        const recentRepos = repos.slice(0, 4);
-        const parent = document.getElementById("recent-repos");
-        if (!parent || recentRepos.length === 0) return;
-  
-        recentRepos.forEach(repo => {
-          const a = document.createElement("a");
-          a.href = repo.html_url;
-          a.target = "_blank";
-          a.rel = "noopener noreferrer";
-          a.className = "repo";
-          a.innerHTML = `<strong>${repo.name}</strong><span>★ ${repo.stargazers_count}</span>`;
-          parent.appendChild(a);
-        });
-      })
-      .catch(err => {
-        console.warn("GitHub repos failed:", err);
-      });
-  })();
   
   /* ===========================
      LAZY LOADING IMAGES

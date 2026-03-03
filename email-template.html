@@ -1,0 +1,58 @@
+<div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; animation: fadeIn 0.8s ease-out;">
+  <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; border-left: 4px solid #007bff; box-shadow: 0 4px 12px rgba(0,123,255,0.1); animation: slideIn 0.6s ease-out 0.2s both;">
+    <h2 style="color: #007bff; margin: 0 0 20px 0; font-size: 24px; font-weight: 600; position: relative;">📧 New Message from Portfolio</h2>
+    
+    <div style="margin-bottom: 15px; animation: slideIn 0.6s ease-out 0.3s both;">
+      <strong style="color: #333; font-size: 14px;">Name:</strong> 
+      <span style="color: #007bff; font-weight: 600; transition: all 0.3s ease;">{{from_name}}</span>
+    </div>
+    
+    <div style="margin-bottom: 15px; animation: slideIn 0.6s ease-out 0.4s both;">
+      <strong style="color: #333; font-size: 14px;">Email:</strong> 
+      <span style="color: #007bff; font-weight: 600; transition: all 0.3s ease;">{{from_email}}</span>
+    </div>
+    
+    <div style="margin-bottom: 20px; animation: slideIn 0.6s ease-out 0.5s both;">
+      <strong style="color: #333; font-size: 14px;">Message:</strong>
+      <p style="margin: 10px 0; padding: 15px; background: #fff; border-radius: 4px; border: 1px solid #dee2e6; color: #333; line-height: 1.6; transition: all 0.3s ease; position: relative;">{{message}}</p>
+    </div>
+    
+    <hr style="border: none; border-top: 1px solid #dee2e6; margin: 20px 0; animation: slideIn 0.6s ease-out 0.6s both;">
+    
+    <div style="font-size: 12px; color: #6c757d; animation: slideIn 0.6s ease-out 0.7s both;">
+      <p style="margin-bottom: 8px;">Sent from: 
+        <a href="https://brianmuigai2-stack.github.io/my-first-website/" target="_blank" style="color: #007bff; text-decoration: none; font-weight: 600; transition: all 0.3s ease; position: relative; display: inline-block;">Brian Muigai's Portfolio</a>
+        <span style="background: #007bff; color: white; padding: 2px 8px; border-radius: 12px; font-size: 10px; margin-left: 8px; animation: pulse 2s infinite;">PRO</span>
+      </p>
+      <p style="margin: 0; color: #28a745; font-weight: 500;">📅 Sent on: <span style="color: #007bff; font-weight: 600;">{{sent_date}}</span></p>
+    </div>
+  </div>
+  
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-30px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    a:hover {
+      color: #0056b3 !important;
+      text-decoration: underline !important;
+      transform: translateY(-2px);
+    }
+    
+    p:hover {
+      background: #f0f8ff !important;
+      border-color: #007bff !important;
+    }
+  </style>
+</div>
