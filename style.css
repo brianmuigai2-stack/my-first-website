@@ -1933,10 +1933,38 @@ img.loaded {
 .about-stats {
   display: flex;
   gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .stat {
   text-align: center;
+  padding: 25px 20px;
+  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-width: 120px;
+}
+
+.stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  border-radius: 3px 3px 0 0;
+}
+
+.stat:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--accent);
 }
 
 .stat-number {
@@ -1944,11 +1972,25 @@ img.loaded {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent);
+  margin-bottom: 8px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.stat-number::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-left: 4px;
+  opacity: 0.8;
 }
 
 .stat-label {
   font-size: 1rem;
   color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
 .about-image {
