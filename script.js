@@ -1314,18 +1314,13 @@
      PERFORMANCE MONITORING
      =========================== */
   function monitorPerformance() {
-    // Track Core Web Vitals
+    // Track Core Web Vitals silently (no console output)
     if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
         list.getEntries().forEach((entry) => {
-          if (entry.entryType === 'largest-contentful-paint') {
-            console.log('LCP:', entry.startTime);
-          }
-          if (entry.entryType === 'first-input') {
-            console.log('FID:', entry.processingStart - entry.startTime);
-          }
-          if (entry.entryType === 'layout-shift') {
-            console.log('CLS:', entry.value);
+          // Performance metrics tracked internally, not logged to console
+          if (entry.entryType === 'layout-shift' && entry.value > 0.1) {
+            // Could trigger alert for poor CLS if needed
           }
         });
       });
