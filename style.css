@@ -3648,3 +3648,31 @@ textarea:focus {
   }
 }
 /* (Hero gradient animation override removed to keep original theme-based hero colors) */
+
+/* ===========================
+   Offline Mode Styles
+   =========================== */
+img[data-offline="true"] {
+  opacity: 0.3 !important;
+  filter: grayscale(100%);
+}
+
+body.offline-mode .online-only {
+  display: none;
+}
+
+/* Offline notification animation */
+#offline-notification {
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}

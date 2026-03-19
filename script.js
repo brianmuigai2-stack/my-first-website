@@ -1398,6 +1398,52 @@
     }
   }
   
+  // Handle offline mode
+  function handleOfflineMode() {
+    // Handle external images that won't load offline
+    const externalImages = document.querySelectorAll('img[src^="https://"]');
+    externalImages.forEach(img => {
+      img.addEventListener('error', function() {
+        // Mark as offline - CSS will handle the styling
+        this.dataset.offline = 'true';
+      });
+    });
+    
+    // Show offline notification
+    function showOfflineNotification() {
+      if (!navigator.onLine) {
+        const notification = document.createElement('div');
+        notification.id = 'offline-notification';
+        notification.style.cssText = 'position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #ff9800; color: white; padding: 12px 24px; border-radius: 8px; z-index: 10000; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);';
+        notification.innerHTML = '<i class="fas fa-wifi"></i> You are offline. Some features may be limited.';
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 5000);
+      }
+    }
+    
+    window.addEventListener('online', () => {
+      const notification = document.getElementById('offline-notification');
+      if (notification) notification.remove();
+    });
+    
+    window.addEventListener('offline', showOfflineNotification);
+    
+    // Check initial status
+    if (!navigator.onLine) {
+      showOfflineNotification();
+    }
+  }
+  
+  // Initialize offline handling
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', handleOfflineMode);
+  } else {
+    handleOfflineMode();
+  }
+  
   // Initialize analytics if available
   if (typeof gtag !== 'undefined') {
     initAnalytics();
