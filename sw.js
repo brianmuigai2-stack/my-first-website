@@ -1,12 +1,11 @@
-const CACHE_NAME = 'portfolio-v2';
+const CACHE_NAME = 'portfolio-v3';
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/style.css',
-  '/script.js',
-  '/manifest.json',
-  '/Yobi.jpg',
-  '/profile.jpg',
+  './',
+  'index.html',
+  'style.css',
+  'script.js',
+  'manifest.json',
+  'Yobi.jpg',
   'App.png',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
   'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js'
