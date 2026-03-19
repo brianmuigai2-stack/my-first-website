@@ -2200,6 +2200,7 @@ img.loaded {
   cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   transform-style: preserve-3d;
+  will-change: transform;
 }
 
 .card-inner {

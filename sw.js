@@ -1,14 +1,15 @@
-const CACHE_NAME = 'portfolio-v1';
+const CACHE_NAME = 'portfolio-v2';
 const urlsToCache = [
   '/',
+  '/index.html',
   '/style.css',
   '/script.js',
+  '/manifest.json',
+  '/Yobi.jpg',
   '/profile.jpg',
-  '/app.jpg',
-  '/resume.pdf',
-  '/resume.docx',
+  '/App.png',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css',
-  'https://cdn.emailjs.com/sdk/3.2.0/email.min.js'
+  'https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js'
 ];
 
 self.addEventListener('install', (event) => {

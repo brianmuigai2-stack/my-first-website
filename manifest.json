@@ -1,0 +1,28 @@
+{
+  "name": "Brian Muigai Portfolio",
+  "short_name": "Brian's Portfolio",
+  "description": "Junior Developer Portfolio showcasing projects, skills, and experience",
+  "start_url": "/my-first-website/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#007bff",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "Yobi.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Yobi.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/my-first-website/"
+}
