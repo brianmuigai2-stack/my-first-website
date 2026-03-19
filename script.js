@@ -1427,6 +1427,17 @@
     window.addEventListener('online', () => {
       const notification = document.getElementById('offline-notification');
       if (notification) notification.remove();
+      
+      // Show online notification
+      const onlineNotification = document.createElement('div');
+      onlineNotification.id = 'online-notification';
+      onlineNotification.style.cssText = 'position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #4caf50; color: white; padding: 12px 24px; border-radius: 8px; z-index: 10000; font-size: 14px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);';
+      onlineNotification.innerHTML = '<i class="fas fa-wifi"></i> You are back online!';
+      document.body.appendChild(onlineNotification);
+      
+      setTimeout(() => {
+        onlineNotification.remove();
+      }, 3000);
     });
     
     window.addEventListener('offline', showOfflineNotification);

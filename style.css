@@ -3676,3 +3676,8 @@ body.offline-mode .online-only {
     transform: translateX(-50%) translateY(0);
   }
 }
+
+/* Online notification */
+#online-notification {
+  animation: slideUp 0.3s ease-out;
+}
