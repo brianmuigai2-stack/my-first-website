@@ -1415,6 +1415,7 @@ body.light .hero-tech-badge {
   box-shadow: 0 20px 60px var(--shadow);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: 650px;
 }
 
 .featured-card:hover {
@@ -1504,6 +1505,7 @@ body.light .hero-tech-badge {
 .featured-links {
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 }
 
 /* Enhanced Page Sections with Compact Spacing */
@@ -2194,7 +2196,7 @@ img.loaded {
 }
 
 .project-card-3d {
-  height: 450px;
+  height: 550px;
   cursor: pointer;
   transition: transform 0.35s ease, box-shadow 0.35s ease;
   transform-style: preserve-3d;
@@ -2237,9 +2239,26 @@ img.loaded {
   color: white;
   transform: rotateY(180deg);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 30px;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.card-back::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-back::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card-back::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
 }
 
 .back-content {
@@ -2277,6 +2296,8 @@ img.loaded {
   display: flex;
   gap: 10px;
   margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project-image {
@@ -2910,7 +2931,7 @@ footer {
   }
   
   .project-card-3d {
-    height: 400px;
+    height: 500px;
   }
   
   .services-grid {
@@ -2958,6 +2979,37 @@ footer {
   
   .theme-controls {
     order: 3;
+  }
+}
+
+/* Featured projects responsive adjustments */
+@media (max-width: 768px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .featured-card {
+    min-height: 600px;
+  }
+  
+  .featured-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .featured-content {
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-metrics {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-card {
+    min-height: 550px;
   }
 }
 
