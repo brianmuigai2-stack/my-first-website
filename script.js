@@ -1255,7 +1255,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const newWorker = registration.installing;
           newWorker.addEventListener('statechange', () => {
             if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // New update available
+              // New version available - show update button
               showUpdateNotification();
             }
           });
@@ -1264,6 +1264,15 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log('Service Worker registration failed:', err);
       });
     }
+    
+    // Also check periodically for updates
+    setInterval(() => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+          registration.update();
+        });
+      }
+    }, 60000); // Check every minute
     
     // Ensure canonical URL is correct
     ensureCanonicalURL();
@@ -1513,7 +1522,13 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor: pointer;
         font-weight: 600;
       `;
-      refreshBtn.onclick = () => window.location.reload();
+      refreshBtn.onclick = () => {
+      // Tell SW to activate new version immediately
+      if (navigator.serviceWorker.controller) {
+        navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
+      }
+      window.location.reload();
+    };
       
       const lastNotification = document.querySelector('.custom-notification:last-child');
       if (lastNotification) {

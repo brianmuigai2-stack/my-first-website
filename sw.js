@@ -17,21 +17,20 @@ const urlsToCache = [
   'assets/images/og-image.jpg'
 ];
 
-// Install event - cache all resources
+// Wait for the user to refresh - don't auto-update
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Service Worker: Caching app resources');
-        return cache.addAll(urlsToCache).catch((err) => {
-          console.log('Cache addAll error:', err);
-        });
+        return cache.addAll(urlsToCache);
       })
   );
-  self.skipWaiting();
+  // IMPORTANT: Don't skip waiting - let user decide when to update
+  // self.skipWaiting() removed - user will update manually
 });
 
-// Activate event - clean up old caches
+// Clean old caches and claim all clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
@@ -43,23 +42,47 @@ self.addEventListener('activate', (event) => {
           }
         })
       );
+    }).then(() => {
+      // Claim all clients immediately
+      return self.clients.claim();
     })
   );
-  self.clients.claim();
 });
 
-// Check for updates
-self.addEventListener('periodicsync', (event) => {
-  if (event.tag === 'content-sync') {
-    event.waitUntil(updateCache());
+// Fetch - network first, fall back to cache
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  const url = new URL(request.url);
+
+  // Skip cross-origin
+  if (url.origin !== location.origin) {
+    return;
+  }
+
+  event.respondWith(
+    caches.match(request)
+      .then((response) => {
+        if (response) return response;
+
+        return fetch(request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const responseClone = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(request, responseClone);
+            });
+          }
+          return networkResponse;
+        });
+      })
+  );
+});
+
+// Listen for skipWaiting message from main app
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
   }
 });
-
-function updateCache() {
-  return caches.open(CACHE_NAME).then((cache) => {
-    return cache.addAll(urlsToCache);
-  });
-}
 
 // Fetch event - network first, fall back to cache, then offline page
 self.addEventListener('fetch', (event) => {

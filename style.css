@@ -3111,14 +3111,66 @@ footer {
   
   .logo {
     order: 1;
+    flex-shrink: 0;
+  }
+  
+  .nav-controls {
+    order: 2;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+    position: static;
+    transform: none;
+  }
+  
+  .font-size-controls,
+  .language-switcher,
+  .theme-controls {
+    margin: 0;
+  }
+  
+  .font-btn,
+  .lang-btn,
+  .theme-toggle-btn {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+    min-width: 28px;
+    height: 28px;
+  }
+  
+  .font-size-label {
+    display: none;
+  }
+  
+  .lang-current,
+  .theme-toggle-btn span {
+    display: none;
+  }
+  
+  .theme-toggle-btn {
+    padding: 6px 8px;
+  }
+  
+  .theme-dropdown {
+    position: static;
+  }
+  
+  .theme-menu {
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    transform: none;
   }
   
   .menu-toggle {
     order: 3;
     display: flex;
     z-index: 1001;
-    margin-left: 0;
-    margin-right: 0;
+    flex-shrink: 0;
   }
   
   .nav-links {
@@ -3154,26 +3206,6 @@ footer {
   
   .nav-link::after {
     display: none;
-  }
-  
-  .nav-controls {
-    position: fixed;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    flex-direction: row;
-    gap: 10px;
-    padding: 15px 20px;
-    background: var(--card-bg);
-    border-radius: 50px;
-    box-shadow: 0 4px 20px var(--shadow);
-    z-index: 1002;
-  }
-  
-  .font-size-controls,
-  .language-switcher,
-  .theme-controls {
-    margin: 0;
   }
   
   .lang-menu,
