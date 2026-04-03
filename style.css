@@ -3162,13 +3162,13 @@ footer {
   }
   
   .theme-dropdown {
-    position: static;
+    position: relative;
   }
   
   .theme-menu {
     position: fixed;
-    top: 60px;
-    right: 10px;
+    top: 70px;
+    right: 15px;
     transform: none;
   }
   
@@ -3269,18 +3269,16 @@ footer {
   }
   
   .theme-dropdown {
-    position: static;
+    position: relative;
   }
   
   .theme-menu {
     position: fixed;
-    bottom: 90px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 90vw;
-    gap: 5px;
+    top: 70px;
+    right: 15px;
+    transform: none;
+    flex-direction: column;
+    gap: 0;
   }
   
   .theme-option {
