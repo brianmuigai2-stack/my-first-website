@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-v5';
+const CACHE_NAME = 'portfolio-v6';
 const urlsToCache = [
   './',
   'index.html',
@@ -10,13 +10,10 @@ const urlsToCache = [
   'Home.jpg',
   'profile.jpg',
   'audio/music.mp3',
-  // Font Awesome - downloaded locally for offline use
   'assets/font-awesome/css/all.min.css',
   'assets/font-awesome/webfonts/fa-solid-900.woff2',
   'assets/font-awesome/webfonts/fa-brands-400.woff2',
-  // EmailJS - bundled locally
   'assets/js/email.min.js',
-  // Local fallback images
   'assets/images/og-image.jpg'
 ];
 
@@ -25,7 +22,7 @@ self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => {
-        console.log('Opened cache');
+        console.log('Service Worker: Caching app resources');
         return cache.addAll(urlsToCache).catch((err) => {
           console.log('Cache addAll error:', err);
         });
@@ -41,7 +38,7 @@ self.addEventListener('activate', (event) => {
       return Promise.all(
         cacheNames.map((cacheName) => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
+            console.log('Service Worker: Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
@@ -50,6 +47,19 @@ self.addEventListener('activate', (event) => {
   );
   self.clients.claim();
 });
+
+// Check for updates
+self.addEventListener('periodicsync', (event) => {
+  if (event.tag === 'content-sync') {
+    event.waitUntil(updateCache());
+  }
+});
+
+function updateCache() {
+  return caches.open(CACHE_NAME).then((cache) => {
+    return cache.addAll(urlsToCache);
+  });
+}
 
 // Fetch event - network first, fall back to cache, then offline page
 self.addEventListener('fetch', (event) => {

@@ -11,7 +11,7 @@
       'sunset': 'Sunset',
       'galaxy': 'Galaxy',
       'hero-title': "Hey, I'm Brian 👋",
-      'hero-subtitle': 'Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.',
+      'hero-subtitle': 'Full Stack Developer | Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.',
       'view-projects': 'View Projects',
       'contact-me': 'Contact Me',
       'about-title': 'About Me',
@@ -1245,6 +1245,26 @@
       INITIALIZATION
       =========================== */
 document.addEventListener('DOMContentLoaded', () => {
+    // Register Service Worker for PWA
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js').then((registration) => {
+        console.log('Service Worker registered:', registration.scope);
+        
+        // Check for updates
+        registration.addEventListener('updatefound', () => {
+          const newWorker = registration.installing;
+          newWorker.addEventListener('statechange', () => {
+            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+              // New update available
+              showUpdateNotification();
+            }
+          });
+        });
+      }).catch((err) => {
+        console.log('Service Worker registration failed:', err);
+      });
+    }
+    
     // Ensure canonical URL is correct
     ensureCanonicalURL();
     
@@ -1476,6 +1496,32 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ===========================
      CUSTOM NOTIFICATION SYSTEM
      =========================== */
+  function showUpdateNotification() {
+    showNotification('A new version is available! Refresh to update.', 'info');
+    
+    // Add refresh button
+    setTimeout(() => {
+      const refreshBtn = document.createElement('button');
+      refreshBtn.textContent = 'Refresh Now';
+      refreshBtn.style.cssText = `
+        margin-top: 10px;
+        padding: 8px 16px;
+        background: white;
+        color: #ff9800;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 600;
+      `;
+      refreshBtn.onclick = () => window.location.reload();
+      
+      const lastNotification = document.querySelector('.custom-notification:last-child');
+      if (lastNotification) {
+        lastNotification.appendChild(refreshBtn);
+      }
+    }, 100);
+  }
+
   function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `custom-notification ${type}`;
