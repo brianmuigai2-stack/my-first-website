@@ -1303,7 +1303,7 @@
       ACTIVE LINK HIGHLIGHT
       =========================== */
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinkItems = document.querySelectorAll('.nav-link');
 
   function highlightNavLink() {
     const scrollPos = window.pageYOffset + 150;
@@ -1314,7 +1314,7 @@
       const id = section.getAttribute('id');
       
       if (scrollPos >= top && scrollPos < top + height) {
-        navLinks.forEach(link => {
+        navLinkItems.forEach(link => {
           link.classList.remove('active');
           if (link.getAttribute('href') === `#${id}`) {
             link.classList.add('active');
