@@ -785,32 +785,7 @@
         this.classList.add('active');
       }
     });
-  });
-  
-  // Enhanced parallax effect with smoother performance
-  let parallaxTicking = false;
-  
-  function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.hero-bg, .floating-shapes .shape');
-    
-    parallaxElements.forEach((element, index) => {
-      const speed = 0.3 + (index * 0.05); // Reduced speed for subtler effect
-      const yPos = -(scrolled * speed);
-      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
-    });
-    
-    parallaxTicking = false;
-  }
-  
-  function requestParallaxTick() {
-    if (!parallaxTicking) {
-      window.requestAnimationFrame(updateParallax);
-      parallaxTicking = true;
-    }
-  }
-  
-  window.addEventListener('scroll', requestParallaxTick);
+});
   
   // Enhanced reveal animations for specific elements
   const revealElements = document.querySelectorAll('.resume-achievements .achievement, .featured-card, .building-card');
@@ -819,14 +794,15 @@
       observer.observe(el);
     }, index * 50);
   });
-
+ 
   /* ===========================
      SCROLL PROGRESS INDICATOR
      =========================== */
   const scrollProgressBar = document.querySelector('.scroll-progress-bar');
+  const scrollProgressContainer = document.querySelector('.scroll-progress');
   
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  function updateScrollProgress() {
+    const scrollTop = window.pageYOffset;
     const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     const scrollProgress = (scrollTop / scrollHeight) * 100;
     
@@ -834,16 +810,12 @@
       scrollProgressBar.style.width = scrollProgress + '%';
     }
     
-    // Hide/show scroll progress based on scroll position
-    const scrollProgressContainer = document.querySelector('.scroll-progress');
     if (scrollProgressContainer) {
-      if (scrollTop > 100) {
-        scrollProgressContainer.style.opacity = '1';
-      } else {
-        scrollProgressContainer.style.opacity = '0';
-      }
+      scrollProgressContainer.style.opacity = scrollTop > 100 ? '1' : '0';
     }
-  });
+  }
+  
+  lenis.on('scroll', updateScrollProgress);
 
   /* ===========================
      IMAGE LOADING ANIMATIONS
@@ -858,33 +830,6 @@
       });
     }
   });
-
-  /* ===========================
-     ENHANCED PARALLAX EFFECTS
-     =========================== */
-  let ticking = false;
-  
-  function updateParallax() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('.floating-shapes .shape');
-    
-    parallaxElements.forEach((element, index) => {
-      const speed = 0.5 + (index * 0.1);
-      const yPos = -(scrolled * speed);
-      element.style.transform = `translate3d(0, ${yPos}px, 0)`;
-    });
-    
-    ticking = false;
-  }
-  
-  function requestTick() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateParallax);
-      ticking = true;
-    }
-  }
-  
-  window.addEventListener('scroll', requestTick);
 
   /* ===========================
      MOUSE TILT EFFECT FOR CARDS
@@ -1115,15 +1060,15 @@
      =========================== */
   const backToTopButton = document.querySelector('.back-to-top a');
   
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopButton.style.opacity = '1';
-      backToTopButton.style.visibility = 'visible';
-    } else {
-      backToTopButton.style.opacity = '0';
-      backToTopButton.style.visibility = 'hidden';
+  function updateBackToTop() {
+    if (backToTopButton) {
+      const isVisible = window.scrollY > 300;
+      backToTopButton.style.opacity = isVisible ? '1' : '0';
+      backToTopButton.style.visibility = isVisible ? 'visible' : 'hidden';
     }
-  });
+  }
+  
+  lenis.on('scroll', updateBackToTop);
   
   /* ===========================
      SEO CANONICAL URL FIX
@@ -1262,13 +1207,13 @@
       LENIS SMOOTH SCROLLING
       =========================== */
   const lenis = new Lenis({
-    duration: 1.2,
+    duration: 0.8,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
     orientation: 'vertical',
     gestureOrientation: 'vertical',
     smoothWheel: true,
-    wheelMultiplier: 1,
-    touchMultiplier: 2,
+    wheelMultiplier: 0.8,
+    touchMultiplier: 1.5,
     infinite: false,
   });
 
@@ -1278,26 +1223,43 @@
   }
   requestAnimationFrame(raf);
 
-  lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-  });
-
   /* ===========================
-      NAVBAR SHRINK ON SCROLL
+      NAVBAR SHRINK + ACTIVE LINK - COMBINED
       =========================== */
   const nav = document.querySelector('.nav');
-  let lastScroll = 0;
+  const sections = document.querySelectorAll('section[id]');
+  const navLinkItems = document.querySelectorAll('.nav-link');
 
-  window.addEventListener('scroll', () => {
+  function handleScroll() {
     const currentScroll = window.pageYOffset;
     
+    // Navbar shrink
     if (currentScroll > 100) {
       nav.classList.add('shrunk');
     } else {
       nav.classList.remove('shrunk');
     }
     
-    lastScroll = currentScroll;
-  });
+    // Active link highlight
+    const scrollPos = currentScroll + 150;
+    sections.forEach(section => {
+      const top = section.offsetTop;
+      const height = section.offsetHeight;
+      const id = section.getAttribute('id');
+      
+      if (scrollPos >= top && scrollPos < top + height) {
+        navLinkItems.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }
+
+  // Single scroll handler via Lenis
+  lenis.on('scroll', handleScroll);
 
   /* ===========================
       ACTIVE LINK HIGHLIGHT
@@ -1323,8 +1285,6 @@
       }
     });
   }
-
-  window.addEventListener('scroll', highlightNavLink);
 
   /* ===========================
       INITIALIZATION
