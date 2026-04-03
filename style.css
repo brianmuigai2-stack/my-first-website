@@ -506,8 +506,8 @@ body.galaxy .nav {
 }
 
 .font-btn {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   border: none;
   background: var(--accent);
   color: white;
@@ -517,7 +517,7 @@ body.galaxy .nav {
   align-items: center;
   justify-content: center;
   transition: var(--transition);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .font-btn:hover {
@@ -541,14 +541,14 @@ body.galaxy .nav {
 .lang-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 8px;
+  padding: 10px 18px;
   background: var(--accent);
   color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   transition: var(--transition);
 }
@@ -618,14 +618,14 @@ body.galaxy .nav {
 .theme-toggle-btn {
   display: flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 8px;
+  padding: 10px 18px;
   background: var(--accent);
   color: white;
   border: none;
   border-radius: 25px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   transition: var(--transition);
 }
@@ -687,13 +687,13 @@ body.galaxy .nav {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 21px;
+  width: 35px;
+  height: 25px;
   cursor: pointer;
 }
 
 .menu-toggle span {
-  height: 3px;
+  height: 4px;
   width: 100%;
   background: var(--text);
   border-radius: 3px;
@@ -1022,11 +1022,11 @@ body.light .hero-tech-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 11px 22px;
+  padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 1.1rem;
   letter-spacing: -0.01em;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
   cursor: pointer;
@@ -3142,10 +3142,10 @@ footer {
   .font-btn,
   .lang-btn,
   .theme-toggle-btn {
-    padding: 6px 8px;
-    font-size: 0.75rem;
-    min-width: 28px;
-    height: 28px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    min-width: 32px;
+    height: 32px;
   }
   
   .font-size-label {
@@ -3255,8 +3255,8 @@ footer {
   
   .lang-btn,
   .theme-toggle-btn {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 10px 18px;
+    font-size: 1rem;
   }
   
   .lang-btn span,
@@ -3347,10 +3347,10 @@ footer {
   .font-btn,
   .lang-btn,
   .theme-toggle-btn {
-    min-width: 24px;
-    height: 24px;
-    padding: 4px 6px;
-    font-size: 0.7rem;
+    min-width: 32px;
+    height: 32px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
   
   .lang-menu,
@@ -3373,9 +3373,9 @@ footer {
   .font-btn,
   .lang-btn,
   .theme-toggle-btn {
-    min-width: 22px;
-    height: 22px;
-    padding: 3px 5px;
+    min-width: 30px;
+    height: 30px;
+    padding: 8px 14px;
   }
 }
 
