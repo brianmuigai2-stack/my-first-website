@@ -2161,15 +2161,19 @@ img.loaded {
 
 .stat {
   text-align: center;
-  padding: 25px 20px;
-  background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255, 255, 255, 0.05) 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+  padding: 20px 16px;
+  background: var(--card-bg);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 3px var(--shadow);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
   position: relative;
   overflow: hidden;
-  min-width: 120px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .stat::before {
@@ -2178,9 +2182,8 @@ img.loaded {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent), var(--primary));
-  border-radius: 3px 3px 0 0;
+  height: 2px;
+  background: var(--accent);
 }
 
 .stat:hover {
@@ -2191,20 +2194,20 @@ img.loaded {
 
 .stat-number {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--accent);
-  margin-bottom: 8px;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4px;
   position: relative;
+  letter-spacing: -0.02em;
 }
 
 .stat-number::after {
   content: '+';
-  font-size: 1.2rem;
-  color: var(--primary);
-  margin-left: 4px;
-  opacity: 0.8;
+  font-size: 1rem;
+  color: var(--accent);
+  margin-left: 2px;
+  opacity: 0.7;
 }
 
 .stat-label {
@@ -2846,14 +2849,37 @@ img.loaded {
 /* CONTACT */
 .contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: start;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
+  padding: 40px;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  border-radius: 16px;
+  color: white;
+}
+
+.contact-info .contact-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.contact-info .contact-details h3 {
+  color: white;
+}
+
+.contact-info .contact-details a,
+.contact-info .contact-details p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.contact-info .contact-details a:hover {
+  color: white;
 }
 
 .contact-item {
@@ -2999,10 +3025,11 @@ img.loaded {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 30px 20px;
+  padding: 40px 20px;
   background: var(--card-bg);
   color: var(--text);
   position: relative;
+  border-top: 1px solid var(--border);
 }
 
 .footer-links {
