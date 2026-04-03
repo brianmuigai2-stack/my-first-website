@@ -1,4 +1,24 @@
 /* ===========================
+   LENIS SMOOTH SCROLLING (must be first)
+   =========================== */
+  const lenis = new Lenis({
+    duration: 0.8,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    gestureOrientation: 'vertical',
+    smoothWheel: true,
+    wheelMultiplier: 0.8,
+    touchMultiplier: 1.5,
+    infinite: false,
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  /* ===========================
    TRANSLATIONS
    =========================== */
    const translations = {
@@ -1204,26 +1224,6 @@
   document.head.appendChild(githubStyle);
 
 /* ===========================
-      LENIS SMOOTH SCROLLING
-      =========================== */
-  const lenis = new Lenis({
-    duration: 0.8,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    wheelMultiplier: 0.8,
-    touchMultiplier: 1.5,
-    infinite: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  /* ===========================
       NAVBAR SHRINK + ACTIVE LINK - COMBINED
       =========================== */
   const nav = document.querySelector('.nav');
