@@ -17,7 +17,7 @@ const urlsToCache = [
   'assets/images/og-image.jpg'
 ];
 
-// Wait for the user to refresh - don't auto-update
+// Install - cache resources
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -26,8 +26,7 @@ self.addEventListener('install', (event) => {
         return cache.addAll(urlsToCache);
       })
   );
-  // IMPORTANT: Don't skip waiting - let user decide when to update
-  // self.skipWaiting() removed - user will update manually
+  self.skipWaiting();
 });
 
 // Clean old caches and claim all clients

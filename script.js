@@ -1250,29 +1250,52 @@ document.addEventListener('DOMContentLoaded', () => {
       navigator.serviceWorker.register('./sw.js').then((registration) => {
         console.log('Service Worker registered:', registration.scope);
         
-        // Check for updates
-        registration.addEventListener('updatefound', () => {
-          const newWorker = registration.installing;
-          newWorker.addEventListener('statechange', () => {
-            if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-              // New version available - show update button
-              showUpdateNotification();
-            }
-          });
-        });
+        // Check for updates on every page load
+        checkForUpdates(registration);
       }).catch((err) => {
         console.log('Service Worker registration failed:', err);
       });
     }
     
-    // Also check periodically for updates
-    setInterval(() => {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then((registration) => {
-          registration.update();
+    // Function to check for updates
+    function checkForUpdates(registration) {
+      if (registration.update) {
+        registration.update().then(() => {
+          // Check if new worker is waiting
+          if (registration.waiting) {
+            showUpdateNotification();
+          }
+          
+          // Listen for new installation
+          registration.addEventListener('updatefound', () => {
+            const newWorker = registration.installing;
+            newWorker.addEventListener('statechange', () => {
+              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                showUpdateNotification();
+              }
+            });
+          });
         });
       }
-    }, 60000); // Check every minute
+    }
+    
+    // Check when app comes to foreground
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && 'serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+          checkForUpdates(registration);
+        });
+      }
+    });
+    
+    // Check on page focus
+    window.addEventListener('focus', () => {
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.ready.then((registration) => {
+          checkForUpdates(registration);
+        });
+      }
+    });
     
     // Ensure canonical URL is correct
     ensureCanonicalURL();
