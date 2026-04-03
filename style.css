@@ -366,19 +366,25 @@ body.galaxy .nav {
   
   .logo {
     margin-right: 0;
+    order: 1;
   }
   
   .nav-links {
     justify-content: flex-start;
   }
   
-  .menu-toggle {
+  .nav-controls {
+    order: 2;
     display: flex;
-    margin-left: auto;
+    align-items: center;
+    gap: 8px;
+    margin-right: 10px;
   }
   
-  .nav-controls {
-    display: none;
+  .menu-toggle {
+    order: 3;
+    display: flex;
+    margin-left: 0;
   }
 }
 
@@ -3211,22 +3217,24 @@ footer {
   .lang-menu,
   .theme-menu {
     position: fixed;
-    top: auto;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%) translateY(20px);
-    flex-direction: row;
-    gap: 5px;
+    top: 70px;
+    right: 15px;
+    transform: none;
+    flex-direction: column;
+    gap: 0;
     padding: 10px;
     background: var(--card-bg);
-    border-radius: 50px;
-    box-shadow: 0 4px 20px var(--shadow);
-    min-width: auto;
+    border-radius: var(--radius);
+    box-shadow: 0 10px 30px var(--shadow);
+    min-width: 150px;
+    z-index: 1002;
   }
   
   .lang-menu:hover,
   .theme-menu:hover {
-    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transform: none;
   }
   
   .lang-option,
@@ -3242,7 +3250,7 @@ footer {
   .theme-menu:hover {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(0);
+    transform: none;
   }
   
   .lang-btn,
@@ -3327,6 +3335,47 @@ footer {
   /* Body lock when menu open */
   body.menu-open {
     overflow: hidden;
+  }
+}
+
+/* Additional mobile optimizations for nav controls */
+@media (max-width: 768px) {
+  .nav-controls {
+    gap: 3px;
+  }
+  
+  .font-btn,
+  .lang-btn,
+  .theme-toggle-btn {
+    min-width: 24px;
+    height: 24px;
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+  
+  .lang-menu,
+  .theme-menu {
+    top: 65px;
+    right: 10px;
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+  
+  .nav-controls {
+    gap: 2px;
+  }
+  
+  .font-btn,
+  .lang-btn,
+  .theme-toggle-btn {
+    min-width: 22px;
+    height: 22px;
+    padding: 3px 5px;
   }
 }
 
