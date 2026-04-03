@@ -1107,10 +1107,12 @@
     try {
       // Fetch user data
       const userResponse = await fetch(`https://api.github.com/users/${githubUsername}`);
+      if (!userResponse.ok) throw new Error('User API blocked');
       const userData = await userResponse.json();
       
       // Fetch repositories
       const reposResponse = await fetch(`https://api.github.com/users/${githubUsername}/repos?sort=updated&per_page=10`);
+      if (!reposResponse.ok) throw new Error('Repos API blocked');
       const reposData = await reposResponse.json();
       
       // Update stats
@@ -1120,7 +1122,8 @@
       updateProjectsWithGitHubData(reposData);
       
     } catch (error) {
-      console.log('GitHub API rate limit reached or error occurred:', error);
+      // Silently fail - use default stats from HTML
+      console.log('GitHub data using defaults:', error.message);
     }
   }
   

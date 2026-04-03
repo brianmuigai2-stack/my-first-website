@@ -23,7 +23,17 @@ self.addEventListener('install', (event) => {
     caches.open(CACHE_NAME)
       .then((cache) => {
         console.log('Service Worker: Caching app resources');
-        return cache.addAll(urlsToCache);
+        // Add with promises to handle failures individually
+        const cachePromises = urlsToCache.map(url => {
+          return fetch(url).then(response => {
+            if (response.ok) {
+              return cache.put(url, response);
+            }
+          }).catch(() => {
+            // Skip failed URLs
+          });
+        });
+        return Promise.all(cachePromises);
       })
   );
   self.skipWaiting();
