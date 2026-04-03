@@ -1,24 +1,4 @@
 /* ===========================
-   LENIS SMOOTH SCROLLING (must be first)
-   =========================== */
-  const lenis = new Lenis({
-    duration: 0.8,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    orientation: 'vertical',
-    gestureOrientation: 'vertical',
-    smoothWheel: true,
-    wheelMultiplier: 0.8,
-    touchMultiplier: 1.5,
-    infinite: false,
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-  requestAnimationFrame(raf);
-
-  /* ===========================
    TRANSLATIONS
    =========================== */
    const translations = {
@@ -835,7 +815,7 @@
     }
   }
   
-  lenis.on('scroll', updateScrollProgress);
+  window.addEventListener('scroll', updateScrollProgress, { passive: true });
 
   /* ===========================
      IMAGE LOADING ANIMATIONS
@@ -1088,7 +1068,7 @@
     }
   }
   
-  lenis.on('scroll', updateBackToTop);
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
   
   /* ===========================
      SEO CANONICAL URL FIX
@@ -1258,8 +1238,8 @@
     });
   }
 
-  // Single scroll handler via Lenis
-  lenis.on('scroll', handleScroll);
+  // Native scroll handler with passive for better performance
+  window.addEventListener('scroll', handleScroll, { passive: true });
 
   /* ===========================
       INITIALIZATION
