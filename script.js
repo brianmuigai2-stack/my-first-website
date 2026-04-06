@@ -737,7 +737,7 @@
         entry.target.classList.add('visible');
         
         // Enhanced stagger animation for multiple elements
-        const staggerElements = entry.target.querySelectorAll('.skill-item, .practice-item, .tech-group, .achievement, .service-card, .project-item, .building-card, .featured-card');
+        const staggerElements = entry.target.querySelectorAll('.skill-item, .practice-item, .tech-group, .achievement, .service-card, .project-item, .building-card, .featured-card, .certificate-card');
         staggerElements.forEach((el, index) => {
           setTimeout(() => {
             el.classList.add('visible');
@@ -1864,6 +1864,31 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       closeResumeModal();
+      closeCertificateModal();
+    }
+  });
+
+  /* ===========================
+     CERTIFICATE MODAL FUNCTIONS
+     =========================== */
+  function openCertificateModal(certificateFile) {
+    const modal = document.getElementById('certificate-modal');
+    const iframe = document.getElementById('certificate-frame');
+    iframe.src = 'certificates/' + certificateFile;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCertificateModal() {
+    const modal = document.getElementById('certificate-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  // Close certificate modal when clicking outside
+  document.getElementById('certificate-modal').addEventListener('click', function(e) {
+    if (e.target === this) {
+      closeCertificateModal();
     }
   });
 
