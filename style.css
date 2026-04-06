@@ -1053,13 +1053,14 @@ body.light .hero-tech-badge {
 
 .btn-outline {
   background: transparent !important;
-  color: var(--hero-outline-text) !important;
-  border: 1.5px solid var(--hero-outline-border) !important;
+  color: var(--accent) !important;
+  border: 1.5px solid var(--accent) !important;
   box-shadow: none;
 }
 
 .btn-outline:hover {
-  background: rgba(255,255,255,0.12) !important;
+  background: var(--accent) !important;
+  color: white !important;
   transform: translateY(-2px);
 }
 
