@@ -63,6 +63,11 @@ self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
 
+  // Skip non-http(s) requests (chrome-extension, etc.)
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
+
   // Skip cross-origin
   if (url.origin !== location.origin) {
     return;
@@ -97,6 +102,11 @@ self.addEventListener('message', (event) => {
 self.addEventListener('fetch', (event) => {
   const request = event.request;
   const url = new URL(request.url);
+
+  // Skip non-http(s) requests (chrome-extension, etc.)
+  if (!url.protocol.startsWith('http')) {
+    return;
+  }
 
   // Handle cross-origin requests differently
   if (url.origin !== location.origin) {
