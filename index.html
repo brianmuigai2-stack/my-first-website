@@ -46,7 +46,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="style.css?v=5" />
   <script defer src="assets/js/email.min.js"></script>
   
   <!-- Structured Data -->
@@ -294,6 +294,25 @@
       </div>
     </div>
     
+    <div class="resume-certificates">
+      <h3>Certifications</h3>
+      <div class="certificates-grid">
+        <div class="certificate-card">
+          <div class="certificate-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="certificate-info">
+            <h4>AI Certification</h4>
+            <p class="certificate-issuer">Artificial Intelligence Fundamentals</p>
+            <p class="certificate-description">Completed comprehensive training in AI concepts, machine learning basics, and practical AI applications.</p>
+            <button class="btn btn-outline certificate-btn" onclick="openCertificateModal('brian-muigai-certificate.pdf')">
+              <i class="fas fa-eye"></i> View Certificate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
     <div class="resume-buttons">
       <button class="btn btn-primary" onclick="openResumeModal()">
         <i class="fas fa-eye"></i>
@@ -444,6 +463,25 @@
     </div>
     <div class="snow"></div>
   </div>
+     
+    <!-- Certificate Modal -->
+    <div id="certificate-modal" class="modal">
+      <div class="modal-content certificate-modal-content">
+        <div class="modal-header">
+          <h3>AI Certification</h3>
+          <button class="modal-close" onclick="closeCertificateModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+          <iframe id="certificate-frame" src="" class="certificate-iframe"></iframe>
+        </div>
+        <div class="modal-footer">
+          <a href="certificates/brian-muigai-certificate.pdf" download class="btn btn-outline">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <button class="btn btn-primary" onclick="closeCertificateModal()">Close</button>
+        </div>
+      </div>
+    </div>
 
   <!-- Featured Projects Section -->
     <section id="featured-projects" class="page-section">
