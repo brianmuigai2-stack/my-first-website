@@ -1314,6 +1314,32 @@ body.light .hero-tech-badge {
   border-radius: 8px;
 }
 
+.certificate-preview {
+  width: 100%;
+  max-height: 600px;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  margin-top: 20px;
+  position: relative;
+}
+
+.certificate-preview iframe,
+.certificate-preview object,
+.certificate-preview embed {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+.close-certificate {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+}
+
 .resume-buttons {
   display: flex;
   justify-content: center;

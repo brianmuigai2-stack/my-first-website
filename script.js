@@ -1885,12 +1885,14 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  // Close certificate modal when clicking outside
-  document.getElementById('certificate-modal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      closeCertificateModal();
+  function toggleCertificate() {
+    const preview = document.getElementById('certificate-preview');
+    if (preview.style.display === 'none') {
+      preview.style.display = 'block';
+    } else {
+      preview.style.display = 'none';
     }
-  });
+  }
 
   /* ===========================
      ENHANCED SKILL BARS ANIMATION
