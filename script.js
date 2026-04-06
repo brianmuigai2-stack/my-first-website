@@ -1701,7 +1701,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Show hint to user
     function showMusicHint() {
       const hint = document.createElement('div');
-      hint.style.cssText = `
+      hint.style.cssText = `                          
         position: fixed;
         bottom: 100px;
         right: 20px;
