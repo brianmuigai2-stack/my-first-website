@@ -5,9 +5,10 @@
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
-### **✨ Advanced Animations & Interactions**
+### Advanced Animations & Interactions
+- **AOS (Animate On Scroll)**: Smooth scroll-triggered animations with fade-down effect
 - **Swipe-in Scroll Animations**: Sections and elements slide in from alternating directions
 - **Staggered Element Reveals**: Professional timing for cards, skills, and achievements
 - **Parallax Effects**: Multi-layer depth animations in hero section
@@ -15,7 +16,7 @@
 - **Smooth Scroll Navigation**: Seamless scrolling with active state indicators
 - **Scroll Progress Bar**: Visual indicator showing page progress
 
-### **🎯 Professional Content Sections**
+### Professional Content Sections
 - **Enhanced Hero Section**: Professional positioning with tech stack badges
 - **About Section**: Personal introduction with animated statistics
 - **Resume Modal**: Complete professional resume with detailed experience
@@ -24,7 +25,7 @@
 - **Services Section**: Professional service offerings
 - **Contact Form**: EmailJS integration for direct communication
 
-### **🎨 Design & User Experience**
+### Design & User Experience
 - **Multiple Theme Options**: Light, Dark, Ocean, Forest, Sunset, Galaxy
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile
 - **Compact Professional Layout**: Balanced spacing with edge breathing room
@@ -32,8 +33,8 @@
 - **Loading Animations**: Smooth image and content loading effects
 - **Performance Optimized**: 60fps animations with requestAnimationFrame
 
-### **🔧 Technical Features**
-- **No Build Process**: Pure HTML/CSS/JavaScript - deploy anywhere
+### Technical Features
+- **NPM Package Management**: AOS installed via npm for easy updates
 - **GitHub Integration**: Live repository fetching and display
 - **EmailJS Contact Form**: Backend-free contact functionality
 - **SEO Optimized**: Meta tags, semantic HTML, structured data
@@ -42,7 +43,7 @@
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 | File/Folder | Description |
 |-------------|-------------|
@@ -53,24 +54,28 @@
 | `Brian Muigai Resume (1).docx` | Resume file for modal viewing |
 | `projects/` | Project screenshots and assets |
 | `App.png`, `/hacker-loop.mp4` | Visual assets for projects |
+| `package.json` | NPM configuration with AOS dependency |
 
 ---
 
-## 🛠 Technologies Used
+## Technologies Used
 
-### **Frontend**
+### Frontend
 - **HTML5** - Semantic structure and accessibility
 - **CSS3** - Advanced animations, Grid, Flexbox, custom properties
 - **JavaScript (ES6+)** - Modern features, async/await, modules
 
-### **Features & APIs**
+### NPM Packages
+- **AOS** - Animate On Scroll library for scroll animations
+
+### Features & APIs
 - **EmailJS** - Contact form without backend
 - **GitHub API** - Repository fetching and stats
 - **Intersection Observer API** - Scroll-triggered animations
 - **RequestAnimationFrame** - Smooth 60fps animations
 - **LocalStorage** - Theme and preference persistence
 
-### **Deployment**
+### Deployment
 - **GitHub Pages** - Free hosting
 - **Vercel** - Zero-config deployment
 - **Netlify** - Drag-and-drop hosting
@@ -78,13 +83,19 @@
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### **Quick Start**
+### Prerequisites
+- Node.js and npm installed
+
+### Installation
 ```bash
 # Clone the repository
 git clone https://github.com/brianmuigai2-stack/my-first-website.git
 cd my-first-website
+
+# Install dependencies (AOS animation library)
+npm install
 
 # Start a local server
 python -m http.server 8000
@@ -96,37 +107,37 @@ Open your browser and navigate to `http://localhost:8000`
 
 ---
 
-## 📱 Deployment Options
+## Deployment Options
 
-### **GitHub Pages (Recommended)**
+### GitHub Pages (Recommended)
 1. Push to GitHub repository
 2. Go to Settings → Pages
 3. Select source: Deploy from a branch
 4. Choose branch: `main` and folder: `/root`
 5. Your site will be live at: `https://brianmuigai2-stack.github.io/my-first-website/`
 
-### **Vercel (Automatic)**
+### Vercel (Automatic)
 1. Connect your GitHub repository to Vercel
 2. Vercel automatically detects and deploys your site
 3. Get a custom domain: `your-site.vercel.app`
 
-### **Netlify (Drag & Drop)**
+### Netlify (Drag & Drop)
 1. Drag the entire project folder to Netlify
 2. Your site is instantly live with a random URL
 3. Optional: Connect to GitHub for auto-deploys
 
 ---
 
-## ⚙️ Customization Guide
+## Customization Guide
 
-### **Personal Information**
+### Personal Information
 ```html
 <!-- Update in index.html -->
-<h1 data-translate="hero-title">Hey, I'm Brian 👋</h1>
+<h1 data-translate="hero-title">Hey, I'm Brian</h1>
 <p class="hero-eyebrow">Software Engineering Intern | Frontend-Focused Developer</p>
 ```
 
-### **Resume Content**
+### Resume Content
 ```html
 <!-- Update resume modal content -->
 <div class="resume-section">
@@ -136,7 +147,7 @@ Open your browser and navigate to `http://localhost:8000`
 </div>
 ```
 
-### **Contact Information**
+### Contact Information
 ```javascript
 // Update in script.js
 const contactInfo = {
@@ -147,7 +158,7 @@ const contactInfo = {
 };
 ```
 
-### **Theme Colors**
+### Theme Colors
 ```css
 :root {
   --accent: #4F46E5; /* Change to your brand color */
@@ -155,9 +166,27 @@ const contactInfo = {
 }
 ```
 
+### Animation Customization
+The project uses AOS (Animate On Scroll) for scroll animations. You can customize in two ways:
+
+1. **Via HTML attributes** on elements:
+```html
+<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="100">
+```
+
+2. **Via AOS.init()** in script.js:
+```javascript
+AOS.init({
+  once: true,        // Animation happens only once
+  offset: 100,       // Offset (in px) from the original trigger point
+  duration: 1500,    // Duration of animation
+  easing: 'linear'   // Easing function
+});
+```
+
 ---
 
-## 📧 EmailJS Setup
+## EmailJS Setup
 
 1. **Create EmailJS Account**: [EmailJS.com](https://www.emailjs.com/)
 2. **Add Email Service**: Connect your Gmail or other email provider
@@ -175,46 +204,19 @@ emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
 
 ---
 
-## 🎨 Animation Customization
+## Performance Optimization
 
-### **Adjust Animation Speed**
-```css
-.page-section {
-  transition: opacity 0.8s ease, transform 0.8s ease; /* Adjust duration */
-}
-```
-
-### **Change Swipe Direction**
-```css
-.page-section:nth-child(even) {
-  transform: translateX(100px); /* Change to translateY for vertical swipe */
-}
-```
-
-### **Modify Stagger Delays**
-```javascript
-staggerElements.forEach((el, index) => {
-  setTimeout(() => {
-    el.classList.add('visible');
-  }, index * 150); // Adjust delay multiplier
-});
-```
-
----
-
-## 📊 Performance Optimization
-
-### **Image Optimization**
+### Image Optimization
 - Use WebP format for better compression
 - Add `loading="lazy"` for below-fold images
 - Compress images to under 500KB each
 
-### **Animation Performance**
+### Animation Performance
 - Uses `transform` and `opacity` for GPU acceleration
 - Implements `requestAnimationFrame` for smooth 60fps
 - Throttled scroll handlers for better performance
 
-### **SEO Best Practices**
+### SEO Best Practices
 - Semantic HTML5 structure
 - Meta tags for social sharing
 - Structured data for search engines
@@ -222,14 +224,15 @@ staggerElements.forEach((el, index) => {
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
-### **Common Issues**
+### Common Issues
 
 **Animations not working?**
 - Check browser console for JavaScript errors
 - Ensure you're using a local server, not `file://`
 - Verify CSS transitions are not being overridden
+- Run `npm install` to ensure AOS is properly installed
 
 **Contact form not sending?**
 - Test on a live domain (EmailJS blocks local origins)
@@ -247,19 +250,19 @@ staggerElements.forEach((el, index) => {
 
 ---
 
-## 📱 Browser Support
+## Browser Support
 
 | Browser | Version | Support |
 |---------|---------|---------|
-| Chrome | 90+ | ✅ Full |
-| Firefox | 88+ | ✅ Full |
-| Safari | 14+ | ✅ Full |
-| Edge | 90+ | ✅ Full |
-| Mobile | iOS 14+, Android 10+ | ✅ Full |
+| Chrome | 90+ | Full |
+| Firefox | 88+ | Full |
+| Safari | 14+ | Full |
+| Edge | 90+ | Full |
+| Mobile | iOS 14+, Android 10+ | Full |
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
@@ -269,13 +272,13 @@ staggerElements.forEach((el, index) => {
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - feel free to use, modify, and share!
 
 ---
 
-## 🌟 Connect With Me
+## Connect With Me
 
 **Portfolio**: [brianmuigai2-stack.github.io/my-first-website](https://brianmuigai2-stack.github.io/my-first-website/)
 
@@ -289,12 +292,10 @@ This project is licensed under the MIT License - feel free to use, modify, and s
 
 ---
 
-## ⭐ Show Some Love
-
 If you find this portfolio helpful or inspiring, please give it a star on GitHub!
 
 [![Star History Chart](https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&theme=dark)](https://www.star-history.com/#brianmuigai2-stack/my-first-website&type=date)
 
 ---
 
-*Built with ❤️ by Brian Muigai - Software Engineering Intern*
+*Built by Brian Muigai - Software Engineering Intern*
