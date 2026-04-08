@@ -47,6 +47,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css?v=7" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script defer src="assets/js/email.min.js"></script>
   
   <!-- Structured Data -->
@@ -201,22 +202,22 @@
     </div>
     <div class="hero-content">
       <div class="hero-text">
-        <p class="hero-eyebrow">Software Engineering Intern | Frontend-Focused Developer</p>
-        <h1 data-translate="hero-title">Hey, I'm Brian <span class="wave">👋</span></h1>
-        <p id="typed" data-translate="hero-subtitle">Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.</p>
-        <div class="hero-buttons">
-          <a href="#featured-projects" class="btn btn-primary" data-translate="view-projects">View Projects</a>
-          <a href="#contact" class="btn btn-outline" data-translate="contact-me">Contact Me</a>
+        <p class="hero-eyebrow" data-aos="fade-down" data-aos-duration="800" data-aos-delay="200">Software Engineering Intern | Full-Stack Developer</p>
+        <h1 data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400" data-translate="hero-title">Hey, I'm Brian <span class="wave">👋</span></h1>
+        <p id="typed" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600" data-aos-easing="ease-out" data-translate="hero-subtitle">Building responsive web applications, fullstack systems, and intelligent digital solutions with modern technologies.</p>
+        <div class="hero-buttons" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="800">
+          <a href="#featured-projects" class="btn btn-primary" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1000" data-translate="view-projects">View Projects</a>
+          <a href="#contact" class="btn btn-outline" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1200" data-translate="contact-me">Contact Me</a>
         </div>
-        <div class="hero-tech-badges" aria-label="Primary tech stack">
-          <span class="hero-tech-badge">React</span>
-          <span class="hero-tech-badge">JavaScript</span>
-          <span class="hero-tech-badge">HTML/CSS</span>
-          <span class="hero-tech-badge">Git</span>
-          <span class="hero-tech-badge">Firebase</span>
+        <div class="hero-tech-badges" aria-label="Primary tech stack" data-aos="fade-up" data-aos-duration="800" data-aos-delay="1400">
+          <span class="hero-tech-badge" data-aos="flip-left" data-aos-duration="600" data-aos-delay="1500">React</span>
+          <span class="hero-tech-badge" data-aos="flip-left" data-aos-duration="600" data-aos-delay="1600">JavaScript</span>
+          <span class="hero-tech-badge" data-aos="flip-left" data-aos-duration="600" data-aos-delay="1700">HTML/CSS</span>
+          <span class="hero-tech-badge" data-aos="flip-left" data-aos-duration="600" data-aos-delay="1800">Git</span>
+          <span class="hero-tech-badge" data-aos="flip-left" data-aos-duration="600" data-aos-delay="1900">Firebase</span>
         </div>
       </div>
-      <div class="hero-gif">
+      <div class="hero-gif" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="1000">
         <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Animated coding illustration" loading="lazy">
       </div>
     </div>
@@ -226,8 +227,8 @@
   <section id="about" class="page-section">
     <h2 class="section-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-translate="about-title">About Me</h2>
     <div class="about-content">
-      <div class="about-text">
-        <p data-translate="about-text">
+      <div class="about-text" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <p data-aos="fade-up" data-aos-duration="800" data-aos-delay="400" data-aos-easing="ease-out" data-translate="about-text">
           I'm a passionate software engineering student focused on building clean, responsive web applications.
           I enjoy solving problems with code, contributing to open-source, and continuously learning modern frameworks.
           Currently exploring React and full-stack development to create impactful digital experiences.
@@ -235,30 +236,30 @@
           tools and AI-powered applications. My development philosophy centers on writing clean, maintainable code
           and creating user experiences that make a difference.
         </p>
-        <div class="about-stats">
-          <div class="stat">
+        <div class="about-stats" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
+          <div class="stat" data-aos="flip-down" data-aos-duration="600" data-aos-delay="800">
             <span class="stat-number" data-target="12">0</span>
             <span class="stat-label" data-translate="projects-label">Projects</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-aos="flip-down" data-aos-duration="600" data-aos-delay="900">
             <span class="stat-number" data-target="15">0</span>
             <span class="stat-label" data-translate="technologies-label">Technologies</span>
           </div>
-          <div class="stat">
+          <div class="stat" data-aos="flip-down" data-aos-duration="600" data-aos-delay="1000">
             <span class="stat-number" data-target="850">0</span>
             <span class="stat-label" data-translate="commits-label">Commits</span>
           </div>
         </div>
       </div>
-      <div class="about-image">
-        <div class="image-container">
+      <div class="about-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400">
+        <div class="image-container" data-aos="zoom-in-up" data-aos-duration="800" data-aos-delay="600">
           <img src="Yobi.jpg" alt="Photo of Brian Muigai" loading="lazy">
-          <div class="image-overlay">
+          <div class="image-overlay" data-aos="fade-up" data-aos-duration="600" data-aos-delay="800">
             <div class="tech-stack">
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-              <i class="fab fa-js"></i>
-              <i class="fab fa-react"></i>
+              <i class="fab fa-html5" data-aos="flip-right" data-aos-duration="400" data-aos-delay="1000"></i>
+              <i class="fab fa-css3-alt" data-aos="flip-right" data-aos-duration="400" data-aos-delay="1100"></i>
+              <i class="fab fa-js" data-aos="flip-right" data-aos-duration="400" data-aos-delay="1200"></i>
+              <i class="fab fa-react" data-aos="flip-right" data-aos-duration="400" data-aos-delay="1300"></i>
               </div>
           </div>
         </div>
@@ -369,7 +370,7 @@
                 </div>
                 <div class="skill-group">
                   <h4>Databases</h4>
-                  <p>Firebase, MongoDB (introductory), PostgreSQL (basic exposure)</p>
+                  <p>Firebase, PostgreSQL (basic exposure)</p>
                 </div>
                 <div class="skill-group">
                   <h4>Tools &amp; Platforms</h4>
@@ -474,70 +475,70 @@
     <section id="featured-projects" class="page-section">
       <h2 class="section-title" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">Featured Projects</h2>
       <div class="featured-grid">
-        <div class="featured-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="0">
-          <div class="featured-image">
+        <div class="featured-card" data-aos="fade-down" data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos-delay="0">
+          <div class="featured-image" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <img src="App.png" alt="Kazi Connect App" loading="lazy" />
           </div>
-          <div class="featured-content">
+          <div class="featured-content" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
             <h3>Kazi Connect</h3>
             <p class="featured-tagline">AI-powered job platform connecting skilled workers with opportunities</p>
-            <div class="featured-metrics">
-              <div class="metric">
+            <div class="featured-metrics" data-aos="zoom-out" data-aos-duration="600" data-aos-delay="600">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="800">
                 <span class="metric-number">500+</span>
                 <span class="metric-label">Active Users</span>
               </div>
-              <div class="metric">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="900">
                 <span class="metric-number">50+</span>
                 <span class="metric-label">Jobs Posted</span>
               </div>
-              <div class="metric">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="1000">
                 <span class="metric-number">95%</span>
                 <span class="metric-label">Match Rate</span>
               </div>
             </div>
-            <div class="featured-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Firebase</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">AI Integration</span>
+            <div class="featured-tech" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1200">
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1300">React</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1400">Firebase</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1500">Tailwind CSS</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1600">AI Integration</span>
             </div>
-            <div class="featured-links">
-              <a href="https://hacker-thon-mg8o.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
-              <a href="https://github.com/brianmuigai2-stack/Hacker-thon" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View Code</a>
+            <div class="featured-links" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="1800">
+              <a href="https://hacker-thon-mg8o.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-aos="fade-right" data-aos-duration="400" data-aos-delay="1900">Live Demo</a>
+              <a href="https://github.com/brianmuigai2-stack/Hacker-thon" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-aos="fade-left" data-aos-duration="400" data-aos-delay="2000">View Code</a>
             </div>
           </div>
         </div>
 
-        <div class="featured-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="100">
-          <div class="featured-image">
+        <div class="featured-card" data-aos="fade-down" data-aos-easing="ease-in-sine" data-aos-duration="1500" data-aos-delay="200">
+          <div class="featured-image" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
             <img src="https://i.pinimg.com/736x/90/18/f1/9018f102382fac67bad8391c3d789564.jpg" alt="Podcast Platform" loading="lazy" />
           </div>
-          <div class="featured-content">
+          <div class="featured-content" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
             <h3>Podcast Platform</h3>
             <p class="featured-tagline">Advanced podcast streaming and content creation platform</p>
-            <div class="featured-metrics">
-              <div class="metric">
+            <div class="featured-metrics" data-aos="zoom-out" data-aos-duration="600" data-aos-delay="800">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="1000">
                 <span class="metric-number">1000+</span>
                 <span class="metric-label">Podcasts</span>
               </div>
-              <div class="metric">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="1100">
                 <span class="metric-number">50K+</span>
                 <span class="metric-label">Minutes Streamed</span>
               </div>
-              <div class="metric">
+              <div class="metric" data-aos="flip-left" data-aos-duration="400" data-aos-delay="1200">
                 <span class="metric-number">99.9%</span>
                 <span class="metric-label">Uptime</span>
               </div>
             </div>
-            <div class="featured-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Flask API</span>
-              <span class="tech-tag">Tailwind CSS</span>
-              <span class="tech-tag">Real-time Streaming</span>
+            <div class="featured-tech" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1400">
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1500">React</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1600">Flask API</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1700">Tailwind CSS</span>
+              <span class="tech-tag" data-aos="flip-up" data-aos-duration="400" data-aos-delay="1800">Real-time Streaming</span>
             </div>
-            <div class="featured-links">
-              <a href="https://brians-fullstack.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Live Demo</a>
-              <a href="https://github.com/elvinmwarangu-stack/podcast-platform" target="_blank" rel="noopener noreferrer" class="btn btn-outline">View Code</a>
+            <div class="featured-links" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="2000">
+              <a href="https://brians-fullstack.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-aos="fade-right" data-aos-duration="400" data-aos-delay="2100">Live Demo</a>
+              <a href="https://github.com/elvinmwarangu-stack/podcast-platform" target="_blank" rel="noopener noreferrer" class="btn btn-outline" data-aos="fade-left" data-aos-duration="400" data-aos-delay="2200">View Code</a>
             </div>
           </div>
         </div>
@@ -902,46 +903,46 @@
     <section id="services" aria-labelledby="services-heading" class="page-section">
       <h2 id="services-heading" class="section-title" data-translate="services-title">Services I Offer</h2>
       <div class="services-grid">
-        <div class="service-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="0">
-          <div class="service-icon">
+        <div class="service-card" data-aos="fade-down" data-aos-easing="ease-out-back" data-aos-duration="1500" data-aos-delay="0">
+          <div class="service-icon" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="200">
             <i class="fas fa-code"></i>
           </div>
-          <h3 data-translate="service-frontend">Front-End Development</h3>
-          <p data-translate="service-frontend-desc">Creating responsive, interactive web applications using React, Vue.js, and modern JavaScript frameworks.</p>
-          <ul class="service-features">
-            <li data-translate="service-frontend-feature1">React/Vue.js Development</li>
-            <li data-translate="service-frontend-feature2">Responsive Design</li>
-            <li data-translate="service-frontend-feature3">Performance Optimization</li>
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="400" data-translate="service-frontend">Front-End Development</h3>
+          <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="600" data-translate="service-frontend-desc">Creating responsive, interactive web applications using React, Vue.js, and modern JavaScript frameworks.</p>
+          <ul class="service-features" data-aos="flip-up" data-aos-duration="600" data-aos-delay="800">
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="900" data-translate="service-frontend-feature1">React/Vue.js Development</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1000" data-translate="service-frontend-feature2">Responsive Design</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1100" data-translate="service-frontend-feature3">Performance Optimization</li>
           </ul>
-          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+          <a href="#contact" class="service-link" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1200" data-translate="get-quote">Get Quote →</a>
         </div>
         
-        <div class="service-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="100">
-          <div class="service-icon">
+        <div class="service-card" data-aos="fade-down" data-aos-easing="ease-out-back" data-aos-duration="1500" data-aos-delay="200">
+          <div class="service-icon" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="400">
             <i class="fas fa-server"></i>
           </div>
-          <h3 data-translate="service-backend">Back-End Development</h3>
-          <p data-translate="service-backend-desc">Building robust server-side applications with Node.js, Express, and database integration.</p>
-          <ul class="service-features">
-            <li data-translate="service-backend-feature1">Node.js/Express APIs</li>
-            <li data-translate="service-backend-feature2">Database Design</li>
-            <li data-translate="service-backend-feature3">Authentication Systems</li>
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="600" data-translate="service-backend">Back-End Development</h3>
+          <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="800" data-translate="service-backend-desc">Building robust server-side applications with Node.js, Express, and database integration.</p>
+          <ul class="service-features" data-aos="flip-up" data-aos-duration="600" data-aos-delay="1000">
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1100" data-translate="service-backend-feature1">Node.js/Express APIs</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1200" data-translate="service-backend-feature2">Database Design</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1300" data-translate="service-backend-feature3">Authentication Systems</li>
           </ul>
-          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+          <a href="#contact" class="service-link" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1400" data-translate="get-quote">Get Quote →</a>
         </div>
         
-        <div class="service-card" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="200">
-          <div class="service-icon">
+        <div class="service-card" data-aos="fade-down" data-aos-easing="ease-out-back" data-aos-duration="1500" data-aos-delay="400">
+          <div class="service-icon" data-aos="zoom-in" data-aos-duration="800" data-aos-delay="600">
             <i class="fas fa-paint-brush"></i>
           </div>
-          <h3 data-translate="service-uiux">UI/UX Design</h3>
-          <p data-translate="service-uiux-desc">Designing beautiful, user-centered interfaces that provide exceptional user experiences.</p>
-          <ul class="service-features">
-            <li data-translate="service-uiux-feature1">Wireframing & Prototyping</li>
-            <li data-translate="service-uiux-feature2">User Research</li>
-            <li data-translate="service-uiux-feature3">Design Systems</li>
+          <h3 data-aos="fade-up" data-aos-duration="600" data-aos-delay="800" data-translate="service-uiux">UI/UX Design</h3>
+          <p data-aos="fade-right" data-aos-duration="800" data-aos-delay="1000" data-translate="service-uiux-desc">Designing beautiful, user-centered interfaces that provide exceptional user experiences.</p>
+          <ul class="service-features" data-aos="flip-up" data-aos-duration="600" data-aos-delay="1200">
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1300" data-translate="service-uiux-feature1">Wireframing & Prototyping</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1400" data-translate="service-uiux-feature2">User Research</li>
+            <li data-aos="flip-left" data-aos-duration="400" data-aos-delay="1500" data-translate="service-uiux-feature3">Design Systems</li>
           </ul>
-          <a href="#contact" class="service-link" data-translate="get-quote">Get Quote →</a>
+          <a href="#contact" class="service-link" data-aos="zoom-in" data-aos-duration="600" data-aos-delay="1600" data-translate="get-quote">Get Quote →</a>
         </div>
       </div>
     </section>
@@ -1349,6 +1350,7 @@
     Your browser does not support the audio element.
   </audio>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="script.js" type="module"></script>
   
   <!-- Service Worker Registration for PWA -->

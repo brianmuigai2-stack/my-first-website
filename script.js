@@ -1,8 +1,3 @@
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-
-AOS.init();
-
 /* ===========================
    TRANSLATIONS
    =========================== */
@@ -1811,13 +1806,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 2000);
     }
     
-    // Add keyboard controls
-    document.addEventListener('keydown', function(e) {
-      if (e.code === 'Space' && musicPlayer.classList.contains('active')) {
-        e.preventDefault();
-        playBtn.click();
-      }
-    });
+    // Space bar control is disabled
     
     // Add visual feedback for loading
     backgroundMusic.addEventListener('loadstart', function() {
@@ -1925,5 +1914,16 @@ document.addEventListener('DOMContentLoaded', () => {
     enhancedSkillBars.forEach(bar => {
       const width = bar.dataset.width;
       bar.style.width = width + '%';
+    });
+  }
+
+  /* ===========================
+     AOS INITIALIZATION
+     =========================== */
+  if (typeof AOS !== 'undefined') {
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
     });
   }
