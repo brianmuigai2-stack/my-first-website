@@ -1808,6 +1808,27 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Space bar control is disabled
     
+    // Add click-to-flip functionality for project cards
+    const projectCards = document.querySelectorAll('.project-card-3d');
+    projectCards.forEach(card => {
+      card.addEventListener('click', function(e) {
+        // Prevent flip if clicking on links
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+          return;
+        }
+        
+        // Toggle flip class
+        this.classList.toggle('flipped');
+        
+        // Close other cards if you want only one open at a time
+        projectCards.forEach(otherCard => {
+          if (otherCard !== this) {
+            otherCard.classList.remove('flipped');
+          }
+        });
+      });
+    });
+    
     // Add visual feedback for loading
     backgroundMusic.addEventListener('loadstart', function() {
       playBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
@@ -1923,7 +1944,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof AOS !== 'undefined') {
     AOS.init({
       duration: 1000,
-      once: true,
-      offset: 100
+      once: false, // Changed from true to false to allow animations on both scroll directions
+      offset: 100,
+      mirror: true, // Enable animations on scroll up as well
+      anchorPlacement: 'top-bottom'
     });
   }

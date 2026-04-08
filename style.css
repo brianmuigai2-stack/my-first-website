@@ -2566,12 +2566,13 @@ img.loaded {
   transform-style: preserve-3d;
 }
 
-.project-card-3d:hover .card-inner {
+.project-card-3d.flipped .card-inner {
   transform: rotateY(180deg);
 }
 
-.project-card-3d:hover {
+.project-card-3d {
   transform: translateY(-8px) scale(1.01);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card-front,
