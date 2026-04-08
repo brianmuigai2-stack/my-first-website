@@ -1,0 +1,24 @@
+{
+  "name": "my-first-website",
+  "version": "1.0.0",
+  "description": "> A modern, animated, and responsive portfolio website showcasing my projects, skills, and professional experience as a Software Engineering Intern.   > Built with **HTML**, **CSS**, and **JavaScript** — featuring cinema-quality animations, interactive elements, and professional design!",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brianmuigai2-stack/my-first-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/brianmuigai2-stack/my-first-website/issues"
+  },
+  "homepage": "https://github.com/brianmuigai2-stack/my-first-website#readme",
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
+}
