@@ -1378,10 +1378,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
   
-  /* ===========================
-     PERFORMANCE MONITORING
-     =========================== */
-  function monitorPerformance() {
+/* ===========================
+   CERTIFICATE FUNCTIONS
+   =========================== */
+function toggleCertificate() {
+    const certificatePreview = document.getElementById('certificate-preview');
+    if (certificatePreview.style.display === 'none' || certificatePreview.style.display === '') {
+        certificatePreview.style.display = 'block';
+    } else {
+        certificatePreview.style.display = 'none';
+    }
+}
+
+/* ===========================
+   RESUME MODAL FUNCTIONS
+   =========================== */
+function openResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    if (modal) {
+        modal.style.display = 'block';
+        // Prevent scrolling behind modal
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeResumeModal() {
+    const modal = document.getElementById('resume-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        // Re-enable scrolling
+        document.body.style.overflow = '';
+    }
+}
+
+/* ===========================
+   PERFORMANCE MONITORING
+   =========================== */
+function monitorPerformance() {
     // Track Core Web Vitals silently (no console output)
     if ('PerformanceObserver' in window) {
       const observer = new PerformanceObserver((list) => {
