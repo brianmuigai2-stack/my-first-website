@@ -2693,6 +2693,66 @@ img.loaded {
   gap: 20px;
 }
 
+.flip-instruction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: var(--transition);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.flip-instruction .instruction-title {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.flip-instruction .instruction-subtitle {
+  font-size: 11px;
+  opacity: 0.9;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.5px;
+}
+
+.flip-instruction i {
+  font-size: 24px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.project-card-3d:hover .project-overlay,
+.project-card-3d .project-overlay {
+  opacity: 1;
+}
+
 .project-links a {
   width: 50px;
   height: 50px;
