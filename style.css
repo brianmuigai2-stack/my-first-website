@@ -2657,6 +2657,17 @@ img.loaded {
   justify-content: center;
 }
 
+.back-links .btn-outline {
+  background: transparent !important;
+  color: white !important;
+  border: 2px solid white !important;
+}
+
+.back-links .btn-outline:hover {
+  background: white !important;
+  color: var(--accent) !important;
+}
+
 .project-image {
   position: relative;
   height: 250px;
