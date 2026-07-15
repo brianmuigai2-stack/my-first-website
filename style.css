@@ -2516,6 +2516,21 @@ img.loaded {
   z-index: 2;
 }
 
+.project-instruction {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  opacity: 0.85;
+  position: relative;
+  z-index: 2;
+}
+
+.project-instruction i {
+  margin-right: 8px;
+  color: var(--accent);
+}
+
 .filter-btn {
   padding: 7px 16px;
   border-radius: var(--radius-sm);

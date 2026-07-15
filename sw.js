@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portfolio-v6';
+const CACHE_NAME = 'portfolio-v7';
 const urlsToCache = [
   './',
   'index.html',
@@ -9,6 +9,7 @@ const urlsToCache = [
   'App.png',
   'Home.jpg',
   'profile.jpg',
+  'FaithFlow.jpeg',
   'audio/music.mp3',
   'assets/font-awesome/css/all.min.css',
   'assets/font-awesome/webfonts/fa-solid-900.woff2',
