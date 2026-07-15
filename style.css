@@ -2694,6 +2694,12 @@ img.loaded {
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
+  filter: saturate(1.2) contrast(1.1) brightness(1.05);
+}
+
+.project-card-3d:hover .project-image img {
+  filter: saturate(1.4) contrast(1.2) brightness(1.1);
+  transform: scale(1.05);
 }
 
 .project-overlay {
