@@ -1,167 +1,19 @@
-const CACHE_NAME = 'portfolio-v7';
-const urlsToCache = [
-  './',
-  'index.html',
-  'style.css',
-  'script.js',
-  'manifest.json',
-  'Yobi.jpg',
-  'App.png',
-  'Home.jpg',
-  'profile.jpg',
-  'FaithFlow.jpeg',
-  'audio/music.mp3',
-  'assets/font-awesome/css/all.min.css',
-  'assets/font-awesome/webfonts/fa-solid-900.woff2',
-  'assets/font-awesome/webfonts/fa-brands-400.woff2',
-  'assets/js/email.min.js',
-  'assets/images/og-image.jpg'
-];
-
-// Install - cache resources
 self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then((cache) => {
-        console.log('Service Worker: Caching app resources');
-        // Add with promises to handle failures individually
-        const cachePromises = urlsToCache.map(url => {
-          return fetch(url).then(response => {
-            if (response.ok) {
-              return cache.put(url, response);
-            }
-          }).catch(() => {
-            // Skip failed URLs
-          });
-        });
-        return Promise.all(cachePromises);
-      })
-  );
   self.skipWaiting();
 });
 
-// Clean old caches and claim all clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((cacheNames) => {
-      return Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName !== CACHE_NAME) {
-            console.log('Service Worker: Deleting old cache:', cacheName);
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    }).then(() => {
-      // Claim all clients immediately
-      return self.clients.claim();
-    })
-  );
-});
-
-// Fetch - network first, fall back to cache
-self.addEventListener('fetch', (event) => {
-  const request = event.request;
-  const url = new URL(request.url);
-
-  // Skip non-http(s) requests (chrome-extension, etc.)
-  if (!url.protocol.startsWith('http')) {
-    return;
-  }
-
-  // Skip cross-origin
-  if (url.origin !== location.origin) {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(request)
-      .then((response) => {
-        if (response) return response;
-
-        return fetch(request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
-          }
-          return networkResponse;
-        });
+    caches.keys()
+      .then((cacheNames) => Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName))))
+      .then(() => self.registration.unregister())
+      .then(() => self.clients.matchAll())
+      .then((clients) => {
+        clients.forEach((client) => client.navigate(client.url));
       })
   );
 });
 
-// Listen for skipWaiting message from main app
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
-
-// Fetch event - network first, fall back to cache, then offline page
-self.addEventListener('fetch', (event) => {
-  const request = event.request;
-  const url = new URL(request.url);
-
-  // Skip non-http(s) requests (chrome-extension, etc.)
-  if (!url.protocol.startsWith('http')) {
-    return;
-  }
-
-  // Handle cross-origin requests differently
-  if (url.origin !== location.origin) {
-    // For external resources, try network first
-    event.respondWith(
-      fetch(request)
-        .then((response) => {
-          // Clone and cache successful responses
-          if (response.status === 200) {
-            const responseClone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
-          }
-          return response;
-        })
-        .catch(() => {
-          // Return offline fallback for HTML requests
-          if (request.headers.get('accept').includes('text/html')) {
-            return caches.match('index.html');
-          }
-          // Return a placeholder for other resources
-          return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
-        })
-    );
-    return;
-  }
-
-  // For local resources, use cache-first strategy
-  event.respondWith(
-    caches.match(request)
-      .then((response) => {
-        // Return cached version if available
-        if (response) {
-          return response;
-        }
-
-        // Otherwise fetch from network
-        return fetch(request).then((networkResponse) => {
-          // Cache the new response for future use
-          if (networkResponse && networkResponse.status === 200) {
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(request, responseClone);
-            });
-          }
-          return networkResponse;
-        }).catch(() => {
-          // If both cache and network fail, return index.html for navigation
-          if (request.mode === 'navigate') {
-            return caches.match('index.html');
-          }
-          return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
-        });
-      })
-  );
+self.addEventListener('fetch', () => {
+  return;
 });

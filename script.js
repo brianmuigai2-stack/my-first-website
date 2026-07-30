@@ -871,57 +871,22 @@
       INITIALIZATION
       =========================== */
 document.addEventListener('DOMContentLoaded', () => {
-    // Register Service Worker for PWA
+    // Remove existing service workers and cached assets so the site always loads fresh files.
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js').then((registration) => {
-        console.log('Service Worker registered:', registration.scope);
-        
-        // Check for updates on every page load
-        checkForUpdates(registration);
-      }).catch((err) => {
-        console.log('Service Worker registration failed:', err);
-      });
+      navigator.serviceWorker.getRegistrations()
+        .then((registrations) => Promise.all(registrations.map((registration) => registration.unregister())))
+        .catch((err) => {
+          console.log('Service Worker cleanup failed:', err);
+        });
     }
-    
-    // Function to check for updates
-    function checkForUpdates(registration) {
-      if (registration.update) {
-        registration.update().then(() => {
-          // Check if new worker is waiting
-          if (registration.waiting) {
-            showUpdateNotification();
-          }
-          
-          // Listen for new installation
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            newWorker.addEventListener('statechange', () => {
-              if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                showUpdateNotification();
-              }
-            });
-          });
+
+    if ('caches' in window) {
+      caches.keys()
+        .then((cacheNames) => Promise.all(cacheNames.map((cacheName) => caches.delete(cacheName))))
+        .catch((err) => {
+          console.log('Cache cleanup failed:', err);
         });
-      }
     }
-    
-    // Check when app comes to foreground
-    document.addEventListener('visibilitychange', () => {
-      if (document.visibilityState === 'visible' && 'serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then((registration) => {
-          checkForUpdates(registration);
-        });
-      }
-    });
-    
-    // Check on page focus
-    window.addEventListener('focus', () => {
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then((registration) => {
-          checkForUpdates(registration);
-        });
-      }
-    });
     
     // Ensure canonical URL is correct
     ensureCanonicalURL();
@@ -1187,37 +1152,6 @@ function monitorPerformance() {
   /* ===========================
      CUSTOM NOTIFICATION SYSTEM
      =========================== */
-  function showUpdateNotification() {
-    showNotification('A new version is available! Refresh to update.', 'info');
-    
-    // Add refresh button
-    setTimeout(() => {
-      const refreshBtn = document.createElement('button');
-      refreshBtn.textContent = 'Refresh Now';
-      refreshBtn.style.cssText = `
-        margin-top: 10px;
-        padding: 8px 16px;
-        background: white;
-        color: #ff9800;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-weight: 600;
-      `;
-      refreshBtn.onclick = () => {
-      // Tell SW to activate new version immediately
-      if (navigator.serviceWorker.controller) {
-        navigator.serviceWorker.controller.postMessage({ type: 'SKIP_WAITING' });
-      }
-      window.location.reload();
-    };
-      
-      const lastNotification = document.querySelector('.custom-notification:last-child');
-      if (lastNotification) {
-        lastNotification.appendChild(refreshBtn);
-      }
-    }, 100);
-  }
 
   function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
