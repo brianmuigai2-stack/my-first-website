@@ -3883,8 +3883,7 @@ textarea:focus {
    .music-player {
     position: fixed;
     bottom: 20px;
-    right: 20px;
-    z-index: 1000;
+    left: 20px;
     transition: all 0.3s ease;
   }
   
@@ -3921,7 +3920,7 @@ textarea:focus {
   .music-player-controls {
     position: absolute;
     bottom: 60px;
-    right: 0;
+    left: 0;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 15px;
@@ -4056,7 +4055,7 @@ textarea:focus {
   @media (max-width: 768px) {
     .music-player {
       bottom: 15px;
-      right: 15px;
+      left: 15px;
     }
     
     .music-player-controls {
@@ -4105,7 +4104,7 @@ textarea:focus {
 @media (max-width: 480px) {
   .music-player {
     bottom: 15px;
-    right: 15px;
+    left: 15px;
   }
   
   .music-player-controls {
