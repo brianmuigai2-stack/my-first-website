@@ -42,11 +42,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-   <link rel="stylesheet" href="style.css?v=7" />
+   <link rel="stylesheet" href="style.css?v=12" />
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
    <script defer src="assets/js/email.min.js"></script>
    <script defer src="script.js"></script>
@@ -121,11 +117,11 @@
         <!-- Font Size Adjuster -->
         <div class="font-size-controls">
           <button class="font-btn" data-size="decrease" aria-label="Decrease font size">
-            <i class="fas fa-minus"></i>
+            -
           </button>
           <span class="font-size-label">A</span>
           <button class="font-btn" data-size="increase" aria-label="Increase font size">
-            <i class="fas fa-plus"></i>
+            +
           </button>
         </div>
 
@@ -133,33 +129,26 @@
         <div class="theme-controls">
           <div class="theme-dropdown">
             <button class="theme-toggle-btn" aria-label="Select theme">
-              <i class="fas fa-palette"></i>
-              <span >Themes</span>
+              <span>Themes</span>
             </button>
             <div class="theme-menu">
               <button class="theme-option active" data-theme="light">
-                <i class="fas fa-sun"></i>
-                <span >Light</span>
+                <span>Light</span>
               </button>
               <button class="theme-option" data-theme="dark">
-                <i class="fas fa-moon"></i>
-                <span >Dark</span>
+                <span>Dark</span>
               </button>
               <button class="theme-option" data-theme="ocean">
-                <i class="fas fa-water"></i>
-                <span >Ocean</span>
+                <span>Ocean</span>
               </button>
               <button class="theme-option" data-theme="forest">
-                <i class="fas fa-tree"></i>
-                <span >Forest</span>
+                <span>Forest</span>
               </button>
               <button class="theme-option" data-theme="sunset">
-                <i class="fas fa-cloud-sun"></i>
-                <span >Sunset</span>
+                <span>Sunset</span>
               </button>
               <button class="theme-option" data-theme="galaxy">
-                <i class="fas fa-star"></i>
-                <span >Galaxy</span>
+                <span>Galaxy</span>
               </button>
             </div>
           </div>
@@ -241,14 +230,6 @@
       <div class="about-image" data-aos="fade-up">
         <div class="image-container">
           <img src="Yobi.jpg" alt="Photo of Brian Muigai" loading="lazy">
-          <div class="image-overlay">
-            <div class="tech-stack">
-              <i class="fab fa-html5"></i>
-              <i class="fab fa-css3-alt"></i>
-              <i class="fab fa-js"></i>
-              <i class="fab fa-react"></i>
-              </div>
-          </div>
         </div>
       </div>
     </div>
@@ -261,22 +242,18 @@
     
     <div class="resume-achievements" data-aos="fade-up">
       <div class="achievement">
-        <i class="fas fa-code"></i>
         <h4>Built 17+ Full-Stack Applications</h4>
         <p>From concept to deployment with modern tech stacks</p>
       </div>
       <div class="achievement">
-        <i class="fas fa-server"></i>
         <h4>Designed Production APIs</h4>
         <p>RESTful services serving thousands of requests daily</p>
       </div>
       <div class="achievement">
-        <i class="fas fa-cloud"></i>
         <h4>Deployed Cloud-Based Systems</h4>
         <p>AWS, Vercel, and Docker containerization</p>
       </div>
       <div class="achievement">
-        <i class="fas fa-brain"></i>
         <h4>Developed AI-Integrated Platforms</h4>
         <p>Machine learning-powered applications</p>
       </div>
@@ -286,15 +263,12 @@
       <h3>Certifications</h3>
       <div class="certificates-grid">
         <div class="certificate-card">
-          <div class="certificate-icon">
-            <i class="fas fa-robot"></i>
-          </div>
           <div class="certificate-info">
             <h4>AI Certification</h4>
             <p class="certificate-issuer">Artificial Intelligence Fundamentals</p>
             <p class="certificate-description">Completed comprehensive training in AI concepts, machine learning basics, and practical AI applications.</p>
             <button class="btn btn-outline certificate-btn" onclick="toggleCertificate()">
-              <i class="fas fa-eye"></i> View Certificate
+              View Certificate
             </button>
           </div>
         </div>
@@ -302,14 +276,13 @@
       <div class="certificate-preview" id="certificate-preview" style="display: none;">
         <iframe src="certificates/brian-muigai_certificate%20(3).pdf#toolbar=0&navpanes=0&scrollbar=0"></iframe>
         <button class="btn btn-outline close-certificate" onclick="toggleCertificate()">
-          <i class="fas fa-times"></i> Close
+          Close
         </button>
       </div>
     </div>
     
     <div class="resume-buttons" data-aos="fade-up">
       <button class="btn btn-primary" onclick="openResumeModal()">
-        <i class="fas fa-eye"></i>
         <span>View Resume</span>
       </button>
     </div>
@@ -525,30 +498,18 @@
           <h3>Technical Expertise</h3>
           <div class="expertise-grid">
             <div class="expertise-card">
-              <div class="expertise-icon">
-                <i class="fas fa-server"></i>
-              </div>
               <h4>Backend Systems</h4>
               <p>Scalable server architectures with microservices, RESTful APIs, and real-time communication</p>
             </div>
             <div class="expertise-card">
-              <div class="expertise-icon">
-                <i class="fas fa-database"></i>
-              </div>
               <h4>Database Design</h4>
               <p>Optimized database schemas, query performance, and data modeling for complex applications</p>
             </div>
             <div class="expertise-card">
-              <div class="expertise-icon">
-                <i class="fas fa-cloud"></i>
-              </div>
               <h4>Cloud Deployment</h4>
               <p>Containerized applications, CI/CD pipelines, and cloud-native development practices</p>
             </div>
             <div class="expertise-card">
-              <div class="expertise-icon">
-                <i class="fas fa-shield-alt"></i>
-              </div>
               <h4>Security</h4>
               <p>JWT authentication, OAuth, data encryption, and secure API development</p>
             </div>
@@ -565,9 +526,6 @@
       <!-- Frontend Skills -->
       <div class="skills-category" data-aos="fade-up">
         <div class="skills-header">
-          <div class="skills-icon">
-            <i class="fas fa-laptop-code"></i>
-          </div>
           <h3>Frontend Development</h3>
           <p class="skills-description">Building responsive, interactive user interfaces with modern frameworks</p>
         </div>
@@ -639,9 +597,6 @@
       <!-- Tools & Technologies -->
       <div class="skills-category" data-aos="fade-up">
         <div class="skills-header">
-          <div class="skills-icon">
-            <i class="fas fa-tools"></i>
-          </div>
           <h3>Tools & Technologies</h3>
           <p class="skills-description">Development tools and platforms for modern workflows</p>
         </div>
@@ -692,44 +647,26 @@
         </div>
         <div class="practices-grid">
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
             <h4>Performance Optimization</h4>
             <p>Code splitting, lazy loading, caching strategies, bundle optimization</p>
           </div>
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-bug"></i>
-            </div>
             <h4>Testing & Debugging</h4>
             <p>Unit testing, integration testing, browser dev tools, error handling</p>
           </div>
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-mobile-alt"></i>
-            </div>
             <h4>Mobile-First Development</h4>
             <p>Responsive design, touch interactions, progressive enhancement</p>
           </div>
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-universal-access"></i>
-            </div>
             <h4>Accessibility</h4>
             <p>ARIA labels, semantic HTML, keyboard navigation, screen readers</p>
           </div>
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-shield-alt"></i>
-            </div>
             <h4>Security Best Practices</h4>
             <p>Input validation, JWT tokens, HTTPS, secure API design</p>
           </div>
           <div class="practice-item">
-            <div class="practice-icon">
-              <i class="fas fa-users"></i>
-            </div>
             <h4>Agile & Collaboration</h4>
             <p>Git workflows, code reviews, iterative development, team communication</p>
           </div>
@@ -743,7 +680,6 @@
       <div class="building-grid" data-aos="fade-up">
         <div class="building-card">
           <div class="building-status">
-            <i class="fas fa-tools"></i>
             <span>In Development</span>
           </div>
           <h3>Smart Recruiter SaaS Platform</h3>
@@ -757,7 +693,6 @@
         </div>
         <div class="building-card">
           <div class="building-status">
-            <i class="fas fa-tools"></i>
             <span>In Development</span>
           </div>
           <h3>AI Resume Analyzer</h3>
@@ -771,7 +706,6 @@
         </div>
         <div class="building-card">
           <div class="building-status">
-            <i class="fas fa-tools"></i>
             <span>Planning</span>
           </div>
           <h3>Developer Portfolio Generator</h3>
@@ -791,9 +725,6 @@
       <h2 id="services-heading" class="section-title" >Services I Offer</h2>
       <div class="services-grid">
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-code"></i>
-          </div>
           <h3>Front-End Development</h3>
           <p>Creating responsive, interactive web applications using React, Vue.js, and modern JavaScript frameworks.</p>
           <ul class="service-features">
@@ -803,11 +734,8 @@
           </ul>
           <a href="#contact" class="service-link">Get Quote →</a>
         </div>
-        
+
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-server"></i>
-          </div>
           <h3>Back-End Development</h3>
           <p>Building robust server-side applications with Node.js, Express, and database integration.</p>
           <ul class="service-features">
@@ -817,11 +745,8 @@
           </ul>
           <a href="#contact" class="service-link">Get Quote →</a>
         </div>
-        
+
         <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-paint-brush"></i>
-          </div>
           <h3>UI/UX Design</h3>
           <p>Designing beautiful, user-centered interfaces that provide exceptional user experiences.</p>
           <ul class="service-features">
@@ -1004,27 +929,18 @@
       <div class="contact-container" data-aos="fade-up">
         <div class="contact-info">
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
             <div class="contact-details">
               <h3>Email</h3>
               <a href="mailto:brian11613bmw@gmail.com">brian11613bmw@gmail.com</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-phone"></i>
-            </div>
             <div class="contact-details">
               <h3>Phone</h3>
               <a href="tel:+254707528414">+254 707 528 414</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
             <div class="contact-details">
               <h3>Location</h3>
               <p>Nairobi, Kenya</p>
@@ -1032,17 +948,17 @@
           </div>
           <div class="social-links" aria-label="Social media links">
             <a href="https://github.com/brianmuigai2-stack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <i class="fab fa-github"></i>
+              GitHub
             </a>
             <a href="https://www.linkedin.com/in/brian-muigai-197210382/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i class="fab fa-linkedin"></i>
+              LinkedIn
             </a>
             <a href="https://wa.me/254707528414?text=Hello%20Brian!%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
-              <i class="fab fa-whatsapp"></i>
+              WhatsApp
             </a>
-            
+
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <i class="fab fa-twitter"></i>
+              Twitter
             </a>
           </div>
         </div>
@@ -1083,7 +999,7 @@
     -->
     <div class="back-to-top">
       <a href="#home" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
+        ↑
       </a>
     </div>
   </footer>
@@ -1091,7 +1007,7 @@
   <!-- Music Player - Updated Version -->
   <div class="music-player" id="music-player">
     <div class="music-player-toggle" id="music-toggle" title="Click to open music player">
-      <i class="fas fa-music"></i>
+      ♫
     </div>
     <div class="music-player-controls">
       <div class="music-info">
@@ -1100,17 +1016,17 @@
       </div>
       <div class="music-controls">
         <button id="prev-btn" class="control-btn" title="Previous track">
-          <i class="fas fa-backward"></i>
+          ◀
         </button>
         <button id="play-btn" class="control-btn play-pause" title="Play/Pause">
-          <i class="fas fa-play"></i>
+          ▶
         </button>
         <button id="next-btn" class="control-btn" title="Next track">
-          <i class="fas fa-forward"></i>
+          ▶
         </button>
       </div>
       <div class="volume-control">
-        <i class="fas fa-volume-up"></i>
+        🔊
         <input type="range" id="volume-slider" min="0" max="100" value="30" title="Volume">
       </div>
       <div class="progress-bar">

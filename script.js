@@ -97,28 +97,11 @@
     
     // Save to localStorage
     localStorage.setItem('theme', themeName);
-    
-    // Update button icon
-    updateThemeButton(themeName);
-    
+
     // Fix hero text visibility
     setTimeout(fixHeroTextVisibility, 100);
   }
-  
-  function updateThemeButton(themeName) {
-    const icons = {
-      light: 'fa-sun',
-      dark: 'fa-moon',
-      ocean: 'fa-water',
-      forest: 'fa-tree',
-      sunset: 'fa-cloud-sun',
-      galaxy: 'fa-star'
-    };
-    
-    const icon = themeToggleBtn.querySelector('i');
-    icon.className = `fas ${icons[themeName]}`;
-  }
-  
+
   function loadThemeFromStorage() {
     const saved = localStorage.getItem('theme') || 'light';
     applyTheme(saved);
@@ -281,10 +264,10 @@
      TYPED HERO TEXT
      =========================== */
   const roles = [
-    "Software Engineering student.",
     "Web developer.",
     "Problem solver.",
-    "Open-source contributor."
+    "Open-source contributor.",
+    "Software Engineer."
   ];
   const typedEl = document.getElementById("typed");
   let ti = 0, ci = 0, deleting = false;
@@ -457,23 +440,23 @@
   /* ===========================
      MOUSE TILT EFFECT FOR CARDS
      =========================== */
-  const cards = document.querySelectorAll('.service-card, .project-item, .featured-card, .building-card');
-  
+  const cards = document.querySelectorAll('.project-item, .featured-card');
+
   cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      
+
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
-      
+
       const rotateX = (y - centerY) / 10;
       const rotateY = (centerX - x) / 10;
-      
+
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
     });
-    
+
     card.addEventListener('mouseleave', () => {
       card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
     });
