@@ -219,7 +219,7 @@ export function ResumeSection() {
                   Completed comprehensive training in AI concepts, machine learning basics, and practical AI applications.
                 </p>
                 <a
-                  href="/certificates/brian-muigai_certificate%20(3).pdf"
+                  href={import.meta.env.BASE_URL + 'certificates/brian-muigai_certificate%20(3).pdf'}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{

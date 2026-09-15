@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone, Github, Linkedin, MessageCircle, Twitter, Send } f
 import emailjs from '@emailjs/browser'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 
-const PROFILE_IMG = '/Yobi.jpg'
+const PROFILE_IMG = import.meta.env.BASE_URL + 'Yobi.jpg'
 const EMAILJS_PUBLIC_KEY = 'Q-z5wzQPltV7tnUty'
 const EMAILJS_SERVICE_ID = 'service_3qcsmah'
 const EMAILJS_TEMPLATE_ID = 'template_d2ydngr'

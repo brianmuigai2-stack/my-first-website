@@ -2,7 +2,7 @@ import { motion, useInView } from 'motion/react'
 import { useRef, useEffect, useState } from 'react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 
-const PROFILE_IMG = '/Yobi.jpg'
+const PROFILE_IMG = import.meta.env.BASE_URL + 'Yobi.jpg'
 
 const roles = [
   "Web developer.",

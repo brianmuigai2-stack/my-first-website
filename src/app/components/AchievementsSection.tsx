@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { Code2, Cpu, Globe, GitBranch } from 'lucide-react'
 import { ImageWithFallback } from './figma/ImageWithFallback'
 
-const PROFILE_IMG = '/Yobi.jpg'
+const PROFILE_IMG = import.meta.env.BASE_URL + 'Yobi.jpg'
 
 const achievements = [
   { icon: Code2, num: '15+', label: 'Full-Stack Apps', desc: 'Built and deployed across diverse tech stacks — React, Node.js, Python, and more.' },

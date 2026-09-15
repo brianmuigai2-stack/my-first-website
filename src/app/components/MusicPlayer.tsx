@@ -5,7 +5,7 @@ const playlist = [
   {
     title: 'Creative Minds',
     artist: 'Background Music',
-    src: '/audio/music.mp3',
+    src: import.meta.env.BASE_URL + 'audio/music.mp3',
   },
 ]
 
