@@ -1,45 +1,48 @@
 # Brian Muigai — Professional Developer Portfolio
 
-> A modern, animated, and responsive portfolio website showcasing my projects, skills, and professional experience as a Software Engineering Intern.  
-> Built with **HTML**, **CSS**, and **JavaScript** — featuring cinema-quality animations, interactive elements, and professional design!
+> A modern, animated, and responsive portfolio website showcasing my projects, skills, and professional experience as a Software Engineer. Built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Framer Motion** — featuring cinema-quality animations, interactive elements, and professional design!
 
 ---
 
 ## Key Features
 
 ### Advanced Animations & Interactions
-- **AOS (Animate On Scroll)**: Smooth scroll-triggered animations with fade-down effect
-- **Swipe-in Scroll Animations**: Sections and elements slide in from alternating directions
+- **Framer Motion**: Smooth scroll-triggered animations, staggered reveals, and exit/enter transitions
+- **Scroll-Linked Effects**: Parallax backgrounds, scroll progress bar, and view-aware animations via `useInView`
 - **Staggered Element Reveals**: Professional timing for cards, skills, and achievements
 - **Parallax Effects**: Multi-layer depth animations in hero section
 - **Interactive Card Tilts**: 3D mouse-responsive hover effects
 - **Smooth Scroll Navigation**: Seamless scrolling with active state indicators
-- **Scroll Progress Bar**: Visual indicator showing page progress
+- **Custom Dual Cursor**: A primary dot and trailing follower that reacts to clicks
 
 ### Professional Content Sections
-- **Enhanced Hero Section**: Professional positioning with tech stack badges
-- **About Section**: Personal introduction with animated statistics
-- **Resume Modal**: Complete professional resume with detailed experience
-- **Skills Section**: Animated progress bars with comprehensive breakdown
-- **Featured Projects**: Showcase of top projects with live demos
-- **Services Section**: Professional service offerings
+- **Hero Section**: Professional positioning with animated stats, typing rotation, and tech badges
+- **About Section**: Personal introduction with animated skill bars and tool tags
+- **Resume Modal**: Complete professional resume with detailed experience (view/download)
+- **Projects Section**: 8 showcase projects with live demos and source links
+- **Services Section**: 6 professional service offerings with icons
+- **Achievements Section**: By-the-numbers stats + education & certifications
+- **System Design**: Architecture diagram and technical expertise cards
+- **Technical Highlights**: Comprehensive skills grid (frontend, backend, tools, practices)
+- **Currently Building**: In-progress SaaS projects
 - **Contact Form**: EmailJS integration for direct communication
 
 ### Design & User Experience
-- **Multiple Theme Options**: Light, Dark, Ocean, Forest, Sunset, Galaxy
+- **Multiple Theme Options**: Light, Dark, Ocean, Forest, Sunset, Galaxy (persisted to `localStorage`)
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile
-- **Compact Professional Layout**: Balanced spacing with edge breathing room
-- **Typography Controls**: Adjustable font sizes for accessibility
-- **Loading Animations**: Smooth image and content loading effects
-- **Performance Optimized**: 60fps animations with requestAnimationFrame
+- **Font Size Adjuster**: Adjustable font sizes for accessibility (persisted)
+- **Loading & Page Transitions**: Overlay transition animations
+- **Snow Effect**: Subtle animated snow that adapts to the active theme
+- **PWA Support**: Web app manifest and service worker
 
 ### Technical Features
-- **NPM Package Management**: AOS installed via npm for easy updates
-- **GitHub Integration**: Live repository fetching and display
-- **EmailJS Contact Form**: Backend-free contact functionality
-- **SEO Optimized**: Meta tags, semantic HTML, structured data
+- **Vite Build System**: Lightning-fast dev server and optimized production builds
+- **Tailwind CSS v4**: Utility-first styling with custom design tokens
+- **TypeScript**: Type-safe components throughout
+- **lucide-react**: Icon library for crisp, consistent icons
+- **EmailJS**: Contact form without a backend (`@emailjs/browser`)
+- **SEO Optimized**: Meta tags, semantic HTML, structured data (JSON-LD)
 - **Accessibility**: ARIA labels, keyboard navigation, screen reader support
-- **Cross-browser Compatible**: Works on all modern browsers
 
 ---
 
@@ -47,46 +50,47 @@
 
 | File/Folder | Description |
 |-------------|-------------|
-| `index.html` | Main structure with all sections and modal |
-| `style.css` | Comprehensive styling with animations and themes |
-| `script.js` | Interactive features, animations, and dynamic content |
-| `Yobi.jpg` | Professional profile photo |
-| `Brian Muigai Resume (1).docx` | Resume file for modal viewing |
-| `projects/` | Project screenshots and assets |
-| `App.png`, `/hacker-loop.mp4` | Visual assets for projects |
-| `package.json` | NPM configuration with AOS dependency |
+| `index.html` | Root HTML with SEO meta tags and PWA manifest link |
+| `src/main.tsx` | React entry point, service worker registration |
+| `src/app/App.tsx` | Root component composing all sections + ThemeProvider |
+| `src/app/components/` | All React components (sections, features) |
+| `src/app/lib/ThemeContext.tsx` | Theme context for 6-theme switching |
+| `src/styles/` | Tailwind config, theme variables, and global CSS |
+| `public/` | Static assets (images, audio, certificates, manifest, sw) |
+| `package.json` | NPM configuration with all dependencies |
+| `vite.config.ts` | Vite + React + Tailwind configuration |
 
 ---
 
 ## Technologies Used
 
 ### Frontend
-- **HTML5** - Semantic structure and accessibility
-- **CSS3** - Advanced animations, Grid, Flexbox, custom properties
-- **JavaScript (ES6+)** - Modern features, async/await, modules
+- **React 18** — Component-based UI with hooks
+- **TypeScript** — Type-safe JavaScript
+- **Tailwind CSS v4** — Utility-first styling
+- **Framer Motion** — Production-ready animations (`motion/react`)
+- **lucide-react** — Beautiful icon library
 
-### NPM Packages
-- **AOS** - Animate On Scroll library for scroll animations
+### Build Tooling
+- **Vite 6** — Next-generation build tool
+- **@vitejs/plugin-react** — Fast HMR and JSX transform
 
-### Features & APIs
-- **EmailJS** - Contact form without backend
-- **GitHub API** - Repository fetching and stats
-- **Intersection Observer API** - Scroll-triggered animations
-- **RequestAnimationFrame** - Smooth 60fps animations
-- **LocalStorage** - Theme and preference persistence
+### Packages
+- **@emailjs/browser** — EmailJS SDK for the contact form
+- **clsx** / **tailwind-merge** — Utility class composition
 
 ### Deployment
-- **GitHub Pages** - Free hosting
-- **Vercel** - Zero-config deployment
-- **Netlify** - Drag-and-drop hosting
-- **Any static host** - No build process required
+- **Vercel** — Zero-config deployment
+- **GitHub Pages** — Static hosting (requires SPA fallback config)
+- **Netlify** — Drag-and-drop hosting
+- **Any static host** — `npm run build` outputs a `dist/` folder
 
 ---
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js and npm installed
+- Node.js 18+ and npm installed
 
 ### Installation
 ```bash
@@ -94,159 +98,81 @@
 git clone https://github.com/brianmuigai2-stack/my-first-website.git
 cd my-first-website
 
-# Install dependencies (AOS animation library)
+# Install dependencies
 npm install
 
-# Start a local server
-python -m http.server 8000
-# or use Node.js: npx serve .
-# or use VS Code Live Server extension
+# Start the development server
+npm run dev
 ```
 
-Open your browser and navigate to `http://localhost:8000`
+Open your browser and navigate to `http://localhost:5173`
+
+### Building for Production
+```bash
+npm run build
+```
+
+This creates an optimized `dist/` folder ready for deployment. Preview it locally with `npm run preview`.
 
 ---
 
-## Deployment Options
+## Theme System
 
-### GitHub Pages (Recommended)
-1. Push to GitHub repository
-2. Go to Settings → Pages
-3. Select source: Deploy from a branch
-4. Choose branch: `main` and folder: `/root`
-5. Your site will be live at: `https://brianmuigai2-stack.github.io/my-first-website/`
+The portfolio supports 6 themes, persisted to `localStorage`:
+- **Dark** (default) — warm dark amber (#0d0b08 / #e07b2a)
+- **Light** — light background with amber accents
+- **Ocean** — deep blue palette
+- **Forest** — dark green palette
+- **Sunset** — warm orange/red palette
+- **Galaxy** — deep purple palette
 
-### Vercel (Automatic)
-1. Connect your GitHub repository to Vercel
-2. Vercel automatically detects and deploys your site
-3. Get a custom domain: `your-site.vercel.app`
-
-### Netlify (Drag & Drop)
-1. Drag the entire project folder to Netlify
-2. Your site is instantly live with a random URL
-3. Optional: Connect to GitHub for auto-deploys
-
----
-
-## Customization Guide
-
-### Personal Information
-```html
-<!-- Update in index.html -->
-<h1 data-translate="hero-title">Hey, I'm Brian</h1>
-<p class="hero-eyebrow">Software Engineering Intern | Frontend-Focused Developer</p>
-```
-
-### Resume Content
-```html
-<!-- Update resume modal content -->
-<div class="resume-section">
-  <h1 class="resume-name">Your Name</h1>
-  <p class="resume-title">Your Professional Title</p>
-  <!-- Add your experience, skills, projects -->
-</div>
-```
-
-### Contact Information
-```javascript
-// Update in script.js
-const contactInfo = {
-  email: 'your-email@example.com',
-  phone: '+254 XXX XXX XXX',
-  github: 'your-username',
-  linkedin: 'your-profile-url'
-};
-```
-
-### Theme Colors
-```css
-:root {
-  --accent: #4F46E5; /* Change to your brand color */
-  --glow-color: #6366F1; /* Adjust glow effect */
-}
-```
-
-### Animation Customization
-The project uses AOS (Animate On Scroll) for scroll animations. You can customize in two ways:
-
-1. **Via HTML attributes** on elements:
-```html
-<div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" data-aos-delay="100">
-```
-
-2. **Via AOS.init()** in script.js:
-```javascript
-AOS.init({
-  once: true,        // Animation happens only once
-  offset: 100,       // Offset (in px) from the original trigger point
-  duration: 1500,    // Duration of animation
-  easing: 'linear'   // Easing function
-});
-```
+Themes are managed via the `ThemeProvider` in `src/app/lib/ThemeContext.tsx`, which sets a `data-theme` attribute on the document element. All components use CSS custom properties (`var(--primary)`, `var(--background)`, etc.) so they automatically adapt.
 
 ---
 
 ## EmailJS Setup
 
+The contact form uses EmailJS to send messages without a backend.
+
 1. **Create EmailJS Account**: [EmailJS.com](https://www.emailjs.com/)
 2. **Add Email Service**: Connect your Gmail or other email provider
-3. **Create Email Template**: Include variables: `from_name`, `user_email`, `message`
-4. **Get Your IDs**: User ID, Service ID, Template ID
-5. **Update Script**: Replace placeholders in `script.js`
-
-```javascript
-// Update these values in script.js
-emailjs.init("YOUR_USER_ID");
-emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
-```
-
-**Important**: EmailJS only works on live domains, not `file://` protocol.
+3. **Create Email Template**: Include variables: `from_name`, `from_email`, `message`, `sent_date`, `portfolio_url`
+4. **Get Your IDs**: User ID (public key), Service ID, Template ID
+5. **Update** the constants in `src/app/components/ContactSection.tsx`:
+   ```ts
+   const EMAILJS_PUBLIC_KEY = 'your-key'
+   const EMAILJS_SERVICE_ID = 'your-service-id'
+   const EMAILJS_TEMPLATE_ID = 'your-template-id'
+   ```
 
 ---
 
-## Performance Optimization
+## Deployment Options
 
-### Image Optimization
-- Use WebP format for better compression
-- Add `loading="lazy"` for below-fold images
-- Compress images to under 500KB each
+### Vercel (Recommended)
+1. Connect your GitHub repository to Vercel
+2. Vercel automatically detects Vite and deploys your site
+3. Get a custom domain: `your-site.vercel.app`
 
-### Animation Performance
-- Uses `transform` and `opacity` for GPU acceleration
-- Implements `requestAnimationFrame` for smooth 60fps
-- Throttled scroll handlers for better performance
+### GitHub Pages
+1. Push to GitHub repository
+2. Go to Settings → Pages → Build and deployment → Source: `Deploy from a GitHub Action`
+3. Or use a static export with `npm run build` and configure SPA fallback (404.html)
+4. Your site will be live at: `https://brianmuigai2-stack.github.io/my-first-website/`
 
-### SEO Best Practices
-- Semantic HTML5 structure
-- Meta tags for social sharing
-- Structured data for search engines
-- Alt text for all images
+### Netlify (Drag & Drop)
+1. Run `npm run build`
+2. Drag the entire `dist/` folder to Netlify
+3. Your site is instantly live
 
 ---
 
-## Troubleshooting
+## Development Notes
 
-### Common Issues
-
-**Animations not working?**
-- Check browser console for JavaScript errors
-- Ensure you're using a local server, not `file://`
-- Verify CSS transitions are not being overridden
-- Run `npm install` to ensure AOS is properly installed
-
-**Contact form not sending?**
-- Test on a live domain (EmailJS blocks local origins)
-- Verify your EmailJS IDs are correct
-- Check EmailJS dashboard for error logs
-
-**GitHub repos not loading?**
-- May have hit GitHub API rate limit (wait a few minutes)
-- Check if username is correct in the script
-- Verify network connection
-
-**Theme not persisting?**
-- Check if LocalStorage is enabled in browser
-- Look for console errors related to theme switching
+- All animations use Framer Motion (no external AOS dependency)
+- The custom cursor is disabled on mobile; it listens for `mousemove`/`mousedown`/`mouseup`
+- Project images use the `ImageWithFallback` component (`<src/app/components/figma/ImageWithFallback.tsx>`) which shows a fallback SVG if an image fails to load
+- Static assets live in `public/` and are served from the root URL (e.g., `/Yobi.jpg`)
 
 ---
 
@@ -266,15 +192,17 @@ emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", "#contact-form");
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+3. Install dependencies: `npm install`
+4. Start dev server: `npm run dev`
+5. Commit your changes: `git commit -m 'Add amazing feature'`
+6. Push to branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
 
 ---
 
 ## License
 
-This project is licensed under the MIT License - feel free to use, modify, and share!
+This project is licensed under the MIT License.
 
 ---
 
@@ -292,10 +220,4 @@ This project is licensed under the MIT License - feel free to use, modify, and s
 
 ---
 
-If you find this portfolio helpful or inspiring, please give it a star on GitHub!
-
-[![Star History Chart](https://api.star-history.com/svg?repos=brianmuigai2-stack/my-first-website&type=date&theme=dark)](https://www.star-history.com/#brianmuigai2-stack/my-first-website&type=date)
-
----
-
-*Built by Brian Muigai - Software Engineering Intern*
+*Built by Brian Muigai — Software Engineer*
