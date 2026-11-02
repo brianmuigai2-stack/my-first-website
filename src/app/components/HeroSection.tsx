@@ -5,10 +5,10 @@ import { ImageWithFallback } from './figma/ImageWithFallback'
 const PROFILE_IMG = import.meta.env.BASE_URL + 'Yobi.jpg'
 
 const roles = [
-  "Web developer.",
-  "Problem solver.",
-  "Open-source contributor.",
-  "Software Engineer.",
+  "Product-minded developer.",
+  "Full-stack engineer.",
+  "Mobile app builder.",
+  "Software engineer.",
 ]
 
 export function HeroSection() {
@@ -82,8 +82,8 @@ export function HeroSection() {
                 fontFamily: "'JetBrains Mono', monospace",
               }}
             >
-              <span className="hidden sm:inline">Software Engineer · Nairobi, Kenya</span>
-              <span className="sm:hidden">Software Engineer</span>
+              <span className="hidden sm:inline">Full-stack developer · Nairobi, Kenya</span>
+              <span className="sm:hidden">Full-stack developer</span>
             </span>
           </motion.div>
 
@@ -149,7 +149,7 @@ export function HeroSection() {
                 ;(e.currentTarget as HTMLElement).style.translate = '0 0'
               }}
             >
-              Projects
+              View My Work
             </a>
             <a
               href="#contact"
@@ -175,7 +175,7 @@ export function HeroSection() {
                 ;(e.currentTarget as HTMLElement).style.color = 'var(--foreground)'
               }}
             >
-              Get in Touch
+              Let’s Talk
             </a>
           </motion.div>
 

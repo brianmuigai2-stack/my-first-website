@@ -122,7 +122,7 @@ export function ContactSection() {
               maxWidth: '38ch',
             }}
           >
-            Whether it's a new project, an open-source collaboration, or an internship opportunity — I'd love to connect.
+            I build products that are practical, polished, and easy to use. If you need a developer for a product, platform, or mobile experience, let’s talk.
           </p>
 
           <div className="space-y-4 mb-10">
