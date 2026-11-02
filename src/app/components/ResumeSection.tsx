@@ -98,7 +98,6 @@ const resumeSections = [
     type: 'education',
     body: [
       { h4: 'Software Development Program', p: 'Moringa School' },
-      { h4: 'Kenya Certificate of Secondary Education (KCSE)', p: 'Certificate of Merit — Mathematics Contest, St. Francis Mangu' },
     ],
   },
   {

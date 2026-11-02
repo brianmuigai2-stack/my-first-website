@@ -15,7 +15,6 @@ const achievements = [
 const certifications = [
   { title: 'AI Fundamentals Certification', body: 'Machine learning concepts, practical AI applications, and ML pipeline basics.' },
   { title: 'Moringa School — Software Development', body: 'Full-stack curriculum covering frontend, backend, databases, and agile practices. In progress.' },
-  { title: 'Certificate of Merit — Mathematics', body: 'St. Francis Mangu High School, KCSE excellence in mathematics.' },
 ]
 
 const resumeAchievements = [

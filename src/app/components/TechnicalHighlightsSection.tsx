@@ -15,6 +15,10 @@ const backendSkills = [
   { name: 'Databases', desc: 'Firebase, MongoDB, PostgreSQL, Basic SQL' },
 ]
 
+const mobileSkills = [
+  { name: 'Mobile Development', desc: 'Android app development with Kotlin' },
+]
+
 const techGroups = [
   { title: 'Version Control', items: ['Git', 'GitHub', 'Git Flow'] },
   { title: 'Development Tools', items: ['VS Code', 'Vite', 'Chrome DevTools'] },
@@ -97,6 +101,7 @@ export function TechnicalHighlightsSection() {
 
         {renderCategory('Frontend Development', frontendSkills, 0.1)}
         {renderCategory('Backend Development', backendSkills, 0.2)}
+        {renderCategory('Mobile Development', mobileSkills, 0.3)}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

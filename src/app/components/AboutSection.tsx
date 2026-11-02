@@ -13,6 +13,7 @@ const skills = [
   { label: 'REST APIs' },
   { label: 'Python / FastAPI' },
   { label: 'Databases (SQL/NoSQL)' },
+  { label: 'Mobile Development (Kotlin)' },
 ]
 
 const tools = ['Git', 'GitHub', 'VS Code', 'Vite', 'Figma', 'Vercel', 'Render', 'Docker']
