@@ -85,9 +85,9 @@ export function AboutSection() {
               marginBottom: '1.5rem',
             }}
           >
-            Problem-solver,
+            I build products that
             <br />
-            <em style={{ color: 'var(--primary)' }}>builder</em> at heart.
+            <em style={{ color: 'var(--primary)' }}>people enjoy using.</em>
           </h2>
           <p
             className="leading-relaxed mb-4"
@@ -97,9 +97,8 @@ export function AboutSection() {
               color: 'var(--muted-foreground)',
             }}
           >
-            I'm Brian Muigai — a software engineer based in Nairobi, Kenya. I enjoy building
-            fullstack systems that solve real problems: job platforms, AI-powered tools, streaming apps, and real-time
-            collaboration dashboards.
+            I’m Brian Muigai, a full-stack developer based in Nairobi, Kenya. I design and build digital products that blend strong
+            user experience with practical business value — from job platforms and AI tools to streaming experiences and responsive web apps.
           </p>
           <p
             className="leading-relaxed mb-6"
@@ -109,8 +108,8 @@ export function AboutSection() {
               color: 'var(--muted-foreground)',
             }}
           >
-            My philosophy: clean, maintainable code and user experiences that actually matter. I hold an AI Fundamentals Certification
-            and a Software Engineering Certificate from Moringa.
+            I care about clean engineering, thoughtful product decisions, and shipping work that has a real impact. I’ve trained through
+            Moringa School and hold an AI Fundamentals certification, with a strong focus on building products that are useful, scalable, and easy to use.
           </p>
 
           <div className="flex flex-wrap gap-2 mb-10">

@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     category: 'Streaming · Full-Stack',
     title: 'Podcast Platform',
-    desc: 'Full-featured podcast streaming platform with 1,000+ podcast catalogue and 50,000+ minutes of content streamed. Built with React and Flask.',
+    desc: 'Built a podcast platform for discovery and streaming, with a full catalogue and a smooth experience for users browsing and listening at scale.',
     year: '2024',
     tags: ['React', 'Flask', 'Tailwind', 'Streaming'],
     bg: 'https://i.pinimg.com/736x/90/18/f1/9018f102382fac67bad8391c3d789564.jpg',
@@ -19,7 +19,7 @@ const projects = [
     id: 2,
     category: 'Sports · Frontend',
     title: 'Football Streaming App',
-    desc: 'Live football match streaming with real-time scores, match stats, and a clean responsive UI. Built with Next.js and deployed on Vercel.',
+    desc: 'Designed a football streaming experience focused on live updates, match detail, and mobile-friendly browsing for fans following games in real time.',
     year: '2023',
     tags: ['React', 'Next.js', 'Vercel', 'Live Data'],
     bg: 'https://i.pinimg.com/736x/40/65/6d/40656d4b05c92b5f4a424fb0e7f3891d.jpg',
@@ -31,7 +31,7 @@ const projects = [
     id: 3,
     category: 'Faith · Frontend',
     title: 'Faithflow',
-    desc: 'Bible verse app with daily verses, bookmarks, reading plans, and share card functionality for spiritual growth tracking.',
+    desc: 'Created a faith-focused reading app that helps users engage with daily scripture, track progress, and save meaningful verses for reflection.',
     year: '2024',
     tags: ['React', 'JavaScript', 'CSS'],
     bg: import.meta.env.BASE_URL + 'FaithFlow.jpeg',
@@ -43,7 +43,7 @@ const projects = [
     id: 4,
     category: 'Streaming · Frontend',
     title: 'LiveCast',
-    desc: 'A modern live streaming platform for content creators to broadcast and share their content with audiences. Built with React and Next.js.',
+    desc: 'Built a creator-first live streaming product with a clean interface for publishing content, interacting with audiences, and managing a stream experience.',
     year: '2024',
     tags: ['React', 'Next.js', 'Streaming'],
     bg: import.meta.env.BASE_URL + 'images/livecast-landing.png',
@@ -55,7 +55,7 @@ const projects = [
     id: 5,
     category: 'Utility · Frontend',
     title: 'QR Code Generator',
-    desc: 'A versatile QR code generator that creates custom QR codes for various purposes including URLs, text, and contact information.',
+    desc: 'Developed a simple utility app for generating custom QR codes quickly, making content sharing more efficient and user-friendly.',
     year: '2024',
     tags: ['React', 'JavaScript', 'QR Library'],
     bg: import.meta.env.BASE_URL + 'images/qr-code.png',
@@ -252,9 +252,9 @@ export function WorkSection() {
                 color: 'var(--foreground)',
               }}
             >
-              What I've
+              Products I’ve
               <br />
-              <em style={{ color: 'var(--primary)' }}>Built</em>
+              <em style={{ color: 'var(--primary)' }}>Shipped</em>
             </h2>
             <a
               href="https://github.com/brianmuigai2-stack"
