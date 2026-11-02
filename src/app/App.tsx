@@ -11,7 +11,6 @@ import { TechnicalHighlightsSection } from './components/TechnicalHighlightsSect
 import { ContactSection } from './components/ContactSection'
 import { Footer } from './components/Footer'
 import { MusicPlayer } from './components/MusicPlayer'
-import { CustomCursor } from './components/CustomCursor'
 import { ScrollProgress } from './components/ScrollProgress'
 import { SnowEffect } from './components/SnowEffect'
 
@@ -33,7 +32,6 @@ export default function App() {
       <ContactSection />
       <Footer />
       <MusicPlayer />
-      <CustomCursor />
     </div>
   )
 }
